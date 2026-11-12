@@ -1,6 +1,7 @@
 materials
 warpwood
 plants
+wands
 stubs
 recipes
 testing

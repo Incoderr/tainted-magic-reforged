@@ -1,10 +1,4 @@
 ITEMS = [
-    "warpwood_rod",
-    "warpwood_staff_core",
-    "shadow_metal_wand_cap",
-    "cloth_wand_cap",
-    "crimson_cloth_wand_cap",
-    "shadow_cloth_wand_cap",
     "focus_taint_swarm",
     "focus_dark_matter",
     "focus_mage_mace",

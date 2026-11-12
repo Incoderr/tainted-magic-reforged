@@ -10,6 +10,7 @@ import taintedmagic.wands.WandsFeature;
 import taintedmagic.plants.PlantsFeature;
 import taintedmagic.test.MaterialsGameTests;
 import taintedmagic.test.PlantsGameTests;
+import taintedmagic.test.WandsGameTests;
 import taintedmagic.test.WarpwoodGameTests;
 import taintedmagic.warpwood.WarpwoodFeature;
 
@@ -40,5 +41,6 @@ public final class Features {
         MaterialsGameTests.register(modEventBus);
         WarpwoodGameTests.register(modEventBus);
         PlantsGameTests.register(modEventBus);
+        WandsGameTests.register(modEventBus);
     }
 }
