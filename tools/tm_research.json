@@ -1,0 +1,3033 @@
+[
+  {
+    "aspectTriggers": [],
+    "aspects": [],
+    "autoUnlock": false,
+    "category": "TAINTEDMAGIC",
+    "column": 7,
+    "complexity": 1,
+    "complexityClamped": 1,
+    "concealed": true,
+    "fake": {
+      "category": "ELDRITCH",
+      "original": "ELDRITCHMAJOR"
+    },
+    "hidden": true,
+    "icon": {
+      "texture": "thaumcraft:textures/misc/r_eldritchmajor.png"
+    },
+    "itemTriggers": [],
+    "key": "TMELDRITCHMAJOR",
+    "lost": false,
+    "pages": [],
+    "parents": [],
+    "parentsHidden": [],
+    "round": true,
+    "row": -7,
+    "secondary": false,
+    "siblings": [],
+    "special": true,
+    "stub": true,
+    "virtual": false,
+    "warp": 0
+  },
+  {
+    "aspectTriggers": [],
+    "aspects": [],
+    "autoUnlock": true,
+    "category": "TAINTEDMAGIC",
+    "column": 2,
+    "complexity": 0,
+    "complexityClamped": 1,
+    "concealed": false,
+    "fake": null,
+    "hidden": false,
+    "icon": {
+      "item": "thaumcraft:jar_label"
+    },
+    "itemTriggers": [],
+    "key": "TAINTEDMAGIC",
+    "lost": false,
+    "pages": [
+      {
+        "text": "1",
+        "type": "text"
+      },
+      {
+        "text": "2",
+        "type": "text"
+      }
+    ],
+    "parents": [],
+    "parentsHidden": [],
+    "round": true,
+    "row": -1,
+    "secondary": false,
+    "siblings": [],
+    "special": false,
+    "stub": false,
+    "virtual": false,
+    "warp": 0
+  },
+  {
+    "aspectTriggers": [],
+    "aspects": [
+      [
+        "metallum",
+        1
+      ],
+      [
+        "tenebrae",
+        1
+      ],
+      [
+        "praecantatio",
+        1
+      ]
+    ],
+    "autoUnlock": false,
+    "category": "TAINTEDMAGIC",
+    "column": 0,
+    "complexity": 1,
+    "complexityClamped": 1,
+    "concealed": true,
+    "fake": null,
+    "hidden": false,
+    "icon": {
+      "item": "taintedmagic:shadow_metal_ingot"
+    },
+    "itemTriggers": [],
+    "key": "SHADOWMETAL",
+    "lost": false,
+    "pages": [
+      {
+        "text": "1",
+        "type": "text"
+      },
+      {
+        "recipes": [
+          "ItemMaterial:0"
+        ],
+        "type": "crucible"
+      },
+      {
+        "recipes": [
+          "ItemShadowmetalPick"
+        ],
+        "type": "crafting"
+      },
+      {
+        "recipes": [
+          "ItemShadowmetalSpade"
+        ],
+        "type": "crafting"
+      },
+      {
+        "recipes": [
+          "ItemShadowmetalAxe"
+        ],
+        "type": "crafting"
+      },
+      {
+        "recipes": [
+          "ItemShadowmetalHoe"
+        ],
+        "type": "crafting"
+      },
+      {
+        "recipes": [
+          "ItemShadowmetalSword"
+        ],
+        "type": "crafting"
+      }
+    ],
+    "parents": [
+      "TAINTEDMAGIC"
+    ],
+    "parentsHidden": [],
+    "round": false,
+    "row": 1,
+    "secondary": false,
+    "siblings": [],
+    "special": false,
+    "stub": false,
+    "virtual": false,
+    "warp": 1
+  },
+  {
+    "aspectTriggers": [],
+    "aspects": [
+      [
+        "metallum",
+        4
+      ],
+      [
+        "tenebrae",
+        4
+      ],
+      [
+        "alienis",
+        4
+      ],
+      [
+        "praecantatio",
+        4
+      ]
+    ],
+    "autoUnlock": false,
+    "category": "TAINTEDMAGIC",
+    "column": -3,
+    "complexity": 2,
+    "complexityClamped": 2,
+    "concealed": true,
+    "fake": null,
+    "hidden": false,
+    "icon": {
+      "item": "taintedmagic:shadow_metal_wand_cap"
+    },
+    "itemTriggers": [],
+    "key": "CAP_shadowmetal",
+    "lost": false,
+    "pages": [
+      {
+        "text": "1",
+        "type": "text"
+      },
+      {
+        "recipes": [
+          "ItemWandCap:0"
+        ],
+        "type": "infusion"
+      }
+    ],
+    "parents": [
+      "SHADOWMETAL",
+      "CAP_void",
+      "PRIMPEARL"
+    ],
+    "parentsHidden": [
+      "INFUSION"
+    ],
+    "round": false,
+    "row": 2,
+    "secondary": false,
+    "siblings": [],
+    "special": false,
+    "stub": false,
+    "virtual": false,
+    "warp": 4
+  },
+  {
+    "aspectTriggers": [],
+    "aspects": [
+      [
+        "pannus",
+        1
+      ],
+      [
+        "tenebrae",
+        1
+      ]
+    ],
+    "autoUnlock": false,
+    "category": "TAINTEDMAGIC",
+    "column": -2,
+    "complexity": 0,
+    "complexityClamped": 1,
+    "concealed": true,
+    "fake": null,
+    "hidden": false,
+    "icon": {
+      "item": "taintedmagic:shadow_cloth"
+    },
+    "itemTriggers": [],
+    "key": "SHADOWCLOTH",
+    "lost": false,
+    "pages": [
+      {
+        "text": "1",
+        "type": "text"
+      },
+      {
+        "recipes": [
+          "ItemMaterial:1"
+        ],
+        "type": "arcane"
+      }
+    ],
+    "parents": [
+      "ENCHFABRIC",
+      "SHADOWMETAL"
+    ],
+    "parentsHidden": [],
+    "round": false,
+    "row": 4,
+    "secondary": true,
+    "siblings": [],
+    "special": false,
+    "stub": false,
+    "virtual": false,
+    "warp": 0
+  },
+  {
+    "aspectTriggers": [],
+    "aspects": [
+      [
+        "arbor",
+        4
+      ],
+      [
+        "tenebrae",
+        4
+      ],
+      [
+        "alienis",
+        4
+      ]
+    ],
+    "autoUnlock": false,
+    "category": "TAINTEDMAGIC",
+    "column": 8,
+    "complexity": 3,
+    "complexityClamped": 3,
+    "concealed": true,
+    "fake": null,
+    "hidden": false,
+    "icon": {
+      "item": "taintedmagic:warpwood_rod"
+    },
+    "itemTriggers": [],
+    "key": "ROD_warpwood",
+    "lost": false,
+    "pages": [
+      {
+        "text": "1",
+        "type": "text"
+      },
+      {
+        "recipes": [
+          "ItemWandRod:0"
+        ],
+        "type": "infusion"
+      }
+    ],
+    "parents": [
+      "WARPTREE",
+      "VOIDMETAL",
+      "PRIMPEARL",
+      "ROD_primal_staff"
+    ],
+    "parentsHidden": [
+      "SHADOWMETAL",
+      "INFUSION"
+    ],
+    "round": false,
+    "row": 0,
+    "secondary": false,
+    "siblings": [],
+    "special": false,
+    "stub": false,
+    "virtual": false,
+    "warp": 5
+  },
+  {
+    "aspectTriggers": [],
+    "aspects": [
+      [
+        "arbor",
+        4
+      ],
+      [
+        "tenebrae",
+        4
+      ],
+      [
+        "alienis",
+        4
+      ]
+    ],
+    "autoUnlock": false,
+    "category": "TAINTEDMAGIC",
+    "column": 10,
+    "complexity": 2,
+    "complexityClamped": 2,
+    "concealed": true,
+    "fake": null,
+    "hidden": false,
+    "icon": {
+      "item": "taintedmagic:warpwood_staff_core"
+    },
+    "itemTriggers": [],
+    "key": "ROD_warpwood_staff",
+    "lost": false,
+    "pages": [
+      {
+        "text": "1",
+        "type": "text"
+      },
+      {
+        "recipes": [
+          "ItemWandRod:1"
+        ],
+        "type": "arcane"
+      }
+    ],
+    "parents": [
+      "ROD_warpwood"
+    ],
+    "parentsHidden": [
+      "CREATIONSHARD"
+    ],
+    "round": false,
+    "row": -1,
+    "secondary": true,
+    "siblings": [],
+    "special": false,
+    "stub": false,
+    "virtual": false,
+    "warp": 0
+  },
+  {
+    "aspectTriggers": [],
+    "aspects": [
+      [
+        "vitreus",
+        4
+      ],
+      [
+        "tenebrae",
+        4
+      ]
+    ],
+    "autoUnlock": false,
+    "category": "TAINTEDMAGIC",
+    "column": 4,
+    "complexity": 0,
+    "complexityClamped": 1,
+    "concealed": true,
+    "fake": null,
+    "hidden": false,
+    "icon": {
+      "item": "taintedmagic:tainted_shard"
+    },
+    "itemTriggers": [],
+    "key": "UNBALANCEDSHARDS",
+    "lost": false,
+    "pages": [
+      {
+        "text": "1",
+        "type": "text"
+      },
+      {
+        "recipes": [
+          "ItemMaterial:4"
+        ],
+        "type": "crucible"
+      },
+      {
+        "recipes": [
+          "ItemMaterial:3"
+        ],
+        "type": "crucible"
+      }
+    ],
+    "parents": [
+      "TAINTEDMAGIC"
+    ],
+    "parentsHidden": [],
+    "round": false,
+    "row": -1,
+    "secondary": true,
+    "siblings": [],
+    "special": false,
+    "stub": false,
+    "virtual": false,
+    "warp": 1
+  },
+  {
+    "aspectTriggers": [],
+    "aspects": [
+      [
+        "praecantatio",
+        4
+      ],
+      [
+        "tenebrae",
+        4
+      ],
+      [
+        "arbor",
+        4
+      ]
+    ],
+    "autoUnlock": false,
+    "category": "TAINTEDMAGIC",
+    "column": 6,
+    "complexity": 3,
+    "complexityClamped": 3,
+    "concealed": true,
+    "fake": null,
+    "hidden": false,
+    "icon": {
+      "item": "taintedmagic:warp_fertilizer"
+    },
+    "itemTriggers": [],
+    "key": "WARPTREE",
+    "lost": false,
+    "pages": [
+      {
+        "text": "1",
+        "type": "text"
+      },
+      {
+        "recipes": [
+          "ItemWarpFertilizer"
+        ],
+        "type": "arcane"
+      }
+    ],
+    "parents": [
+      "UNBALANCEDSHARDS"
+    ],
+    "parentsHidden": [],
+    "round": false,
+    "row": -2,
+    "secondary": false,
+    "siblings": [],
+    "special": false,
+    "stub": false,
+    "virtual": false,
+    "warp": 2
+  },
+  {
+    "aspectTriggers": [],
+    "aspects": [
+      [
+        "pannus",
+        4
+      ],
+      [
+        "permutatio",
+        4
+      ],
+      [
+        "tutamen",
+        4
+      ]
+    ],
+    "autoUnlock": false,
+    "category": "TAINTEDMAGIC",
+    "column": -2,
+    "complexity": 2,
+    "complexityClamped": 2,
+    "concealed": true,
+    "fake": null,
+    "hidden": false,
+    "icon": {
+      "item": "taintedmagic:crimson_cloth"
+    },
+    "itemTriggers": [],
+    "key": "CRIMSONROBES",
+    "lost": false,
+    "pages": [
+      {
+        "text": "1",
+        "type": "text"
+      },
+      {
+        "recipes": [
+          "ItemMaterial:2"
+        ],
+        "type": "arcane"
+      },
+      {
+        "recipes": [
+          "ItemHelmetCultistRobe"
+        ],
+        "type": "arcane"
+      },
+      {
+        "recipes": [
+          "ItemChestCultistRobe"
+        ],
+        "type": "arcane"
+      },
+      {
+        "recipes": [
+          "ItemLegsCultistRobe"
+        ],
+        "type": "arcane"
+      },
+      {
+        "recipes": [
+          "ItemBootsCultist"
+        ],
+        "type": "arcane"
+      }
+    ],
+    "parents": [
+      "HOLLOWDAGGER"
+    ],
+    "parentsHidden": [],
+    "round": false,
+    "row": -1,
+    "secondary": false,
+    "siblings": [],
+    "special": false,
+    "stub": false,
+    "virtual": false,
+    "warp": 0
+  },
+  {
+    "aspectTriggers": [],
+    "aspects": [
+      [
+        "tutamen",
+        5
+      ],
+      [
+        "alienis",
+        3
+      ],
+      [
+        "tenebrae",
+        3
+      ],
+      [
+        "vacuos",
+        5
+      ]
+    ],
+    "autoUnlock": false,
+    "category": "TAINTEDMAGIC",
+    "column": 8,
+    "complexity": 2,
+    "complexityClamped": 2,
+    "concealed": true,
+    "fake": null,
+    "hidden": false,
+    "icon": {
+      "item": "taintedmagic:void_fortress_helmet"
+    },
+    "itemTriggers": [],
+    "key": "VOIDFORTRESS",
+    "lost": false,
+    "pages": [
+      {
+        "text": "1",
+        "type": "text"
+      },
+      {
+        "recipes": [
+          "ItemVoidFortressHelmet"
+        ],
+        "type": "infusion"
+      },
+      {
+        "recipes": [
+          "ItemVoidFortressChestplate"
+        ],
+        "type": "infusion"
+      },
+      {
+        "recipes": [
+          "ItemVoidFortressLeggings"
+        ],
+        "type": "infusion"
+      }
+    ],
+    "parents": [
+      "TMELDRITCHMAJOR"
+    ],
+    "parentsHidden": [
+      "ARMORVOIDFORTRESS",
+      "ARMORFORTRESS",
+      "INFUSION"
+    ],
+    "round": false,
+    "row": -9,
+    "secondary": false,
+    "siblings": [],
+    "special": false,
+    "stub": false,
+    "virtual": false,
+    "warp": 2
+  },
+  {
+    "aspectTriggers": [],
+    "aspects": [
+      [
+        "tutamen",
+        8
+      ],
+      [
+        "alienis",
+        4
+      ],
+      [
+        "tenebrae",
+        4
+      ]
+    ],
+    "autoUnlock": false,
+    "category": "TAINTEDMAGIC",
+    "column": 2,
+    "complexity": 1,
+    "complexityClamped": 1,
+    "concealed": true,
+    "fake": null,
+    "hidden": false,
+    "icon": {
+      "item": "taintedmagic:warped_goggles"
+    },
+    "itemTriggers": [],
+    "key": "WARPEDGOGGLES",
+    "lost": false,
+    "pages": [
+      {
+        "text": "1",
+        "type": "text"
+      },
+      {
+        "recipes": [
+          "ItemWarpedGoggles"
+        ],
+        "type": "infusion"
+      }
+    ],
+    "parents": [
+      "SHADOWMETAL"
+    ],
+    "parentsHidden": [
+      "TAINTEDMAGIC",
+      "GOGGLES",
+      "INFUSION"
+    ],
+    "round": false,
+    "row": 4,
+    "secondary": true,
+    "siblings": [],
+    "special": false,
+    "stub": false,
+    "virtual": false,
+    "warp": 0
+  },
+  {
+    "aspectTriggers": [],
+    "aspects": [
+      [
+        "pannus",
+        4
+      ],
+      [
+        "tenebrae",
+        4
+      ],
+      [
+        "tutamen",
+        4
+      ]
+    ],
+    "autoUnlock": false,
+    "category": "TAINTEDMAGIC",
+    "column": -4,
+    "complexity": 2,
+    "complexityClamped": 2,
+    "concealed": true,
+    "fake": null,
+    "hidden": false,
+    "icon": {
+      "item": "taintedmagic:crimson_plating"
+    },
+    "itemTriggers": [],
+    "key": "KNIGHTROBES",
+    "lost": false,
+    "pages": [
+      {
+        "text": "1",
+        "type": "text"
+      },
+      {
+        "recipes": [
+          "ItemMaterial:7"
+        ],
+        "type": "infusion"
+      },
+      {
+        "recipes": [
+          "ItemHelmetCultistPlate"
+        ],
+        "type": "arcane"
+      },
+      {
+        "recipes": [
+          "ItemChestCultistPlate"
+        ],
+        "type": "arcane"
+      },
+      {
+        "recipes": [
+          "ItemLegsCultistPlate"
+        ],
+        "type": "arcane"
+      }
+    ],
+    "parents": [
+      "CRIMSONROBES"
+    ],
+    "parentsHidden": [
+      "ELDRITCHMINOR",
+      "INFUSION"
+    ],
+    "round": false,
+    "row": -2,
+    "secondary": false,
+    "siblings": [],
+    "special": false,
+    "stub": false,
+    "virtual": false,
+    "warp": 0
+  },
+  {
+    "aspectTriggers": [],
+    "aspects": [
+      [
+        "pannus",
+        4
+      ],
+      [
+        "tenebrae",
+        4
+      ],
+      [
+        "tutamen",
+        4
+      ],
+      [
+        "alienis",
+        4
+      ]
+    ],
+    "autoUnlock": false,
+    "category": "TAINTEDMAGIC",
+    "column": -6,
+    "complexity": 2,
+    "complexityClamped": 2,
+    "concealed": true,
+    "fake": null,
+    "hidden": false,
+    "icon": {
+      "item": "thaumcraft:crimson_praetor_helm"
+    },
+    "itemTriggers": [],
+    "key": "PRAETORARMOR",
+    "lost": false,
+    "pages": [
+      {
+        "text": "1",
+        "type": "text"
+      },
+      {
+        "recipes": [
+          "ItemHelmetCultistLeaderPlate"
+        ],
+        "type": "arcane"
+      },
+      {
+        "recipes": [
+          "ItemChestCultistLeaderPlate"
+        ],
+        "type": "arcane"
+      },
+      {
+        "recipes": [
+          "ItemLegsCultistLeaderPlate"
+        ],
+        "type": "arcane"
+      }
+    ],
+    "parents": [
+      "KNIGHTROBES"
+    ],
+    "parentsHidden": [
+      "CRIMSONROBES",
+      "TMELDRITCHMAJOR",
+      "VOIDMETAL"
+    ],
+    "round": false,
+    "row": 0,
+    "secondary": false,
+    "siblings": [],
+    "special": false,
+    "stub": false,
+    "virtual": false,
+    "warp": 0
+  },
+  {
+    "aspectTriggers": [],
+    "aspects": [
+      [
+        "vacuos",
+        14
+      ],
+      [
+        "tenebrae",
+        8
+      ],
+      [
+        "tutamen",
+        18
+      ],
+      [
+        "auram",
+        4
+      ]
+    ],
+    "autoUnlock": false,
+    "category": "TAINTEDMAGIC",
+    "column": -2,
+    "complexity": 0,
+    "complexityClamped": 1,
+    "concealed": true,
+    "fake": null,
+    "hidden": false,
+    "icon": {
+      "item": "taintedmagic:void_blood"
+    },
+    "itemTriggers": [],
+    "key": "VOIDBLOOD",
+    "lost": false,
+    "pages": [
+      {
+        "text": "1",
+        "type": "text"
+      },
+      {
+        "recipes": [
+          "ItemVoidBlood"
+        ],
+        "type": "arcane"
+      }
+    ],
+    "parents": [
+      "HOLLOWDAGGER"
+    ],
+    "parentsHidden": [
+      "ELDRITCHMAJOR",
+      "BREAKPEARL"
+    ],
+    "round": false,
+    "row": -5,
+    "secondary": true,
+    "siblings": [],
+    "special": false,
+    "stub": false,
+    "virtual": false,
+    "warp": 3
+  },
+  {
+    "aspectTriggers": [],
+    "aspects": [
+      [
+        "praecantatio",
+        4
+      ],
+      [
+        "tenebrae",
+        8
+      ],
+      [
+        "tutamen",
+        8
+      ],
+      [
+        "alienis",
+        8
+      ]
+    ],
+    "autoUnlock": false,
+    "category": "TAINTEDMAGIC",
+    "column": 4,
+    "complexity": 3,
+    "complexityClamped": 3,
+    "concealed": true,
+    "fake": null,
+    "hidden": false,
+    "icon": {
+      "item": "taintedmagic:voidwalker_boots"
+    },
+    "itemTriggers": [],
+    "key": "VOIDWALKERBOOTS",
+    "lost": false,
+    "pages": [
+      {
+        "text": "1",
+        "type": "text"
+      },
+      {
+        "recipes": [
+          "ItemVoidwalkerBoots"
+        ],
+        "type": "infusion"
+      }
+    ],
+    "parents": [
+      "TMELDRITCHMAJOR"
+    ],
+    "parentsHidden": [
+      "PRIMPEARL",
+      "BOOTSTRAVELLER",
+      "SHADOWCLOTH",
+      "ARMORVOIDFORTRESS",
+      "INFUSION"
+    ],
+    "round": false,
+    "row": -8,
+    "secondary": false,
+    "siblings": [],
+    "special": false,
+    "stub": false,
+    "virtual": false,
+    "warp": 4
+  },
+  {
+    "aspectTriggers": [],
+    "aspects": [
+      [
+        "ignis",
+        4
+      ],
+      [
+        "aqua",
+        4
+      ],
+      [
+        "terra",
+        4
+      ],
+      [
+        "aer",
+        4
+      ],
+      [
+        "ordo",
+        4
+      ],
+      [
+        "perditio",
+        16
+      ]
+    ],
+    "autoUnlock": false,
+    "category": "TAINTEDMAGIC",
+    "column": 8,
+    "complexity": 0,
+    "complexityClamped": 1,
+    "concealed": true,
+    "fake": null,
+    "hidden": false,
+    "icon": {
+      "item": "taintedmagic:primordial_nodule"
+    },
+    "itemTriggers": [],
+    "key": "BREAKPEARL",
+    "lost": false,
+    "pages": [
+      {
+        "text": "1",
+        "type": "text"
+      },
+      {
+        "recipes": [
+          "ItemMaterial:9"
+        ],
+        "type": "arcane"
+      },
+      {
+        "recipes": [
+          "ItemMaterial:10"
+        ],
+        "type": "arcane"
+      }
+    ],
+    "parents": [
+      "PRIMPEARL"
+    ],
+    "parentsHidden": [],
+    "round": false,
+    "row": -6,
+    "secondary": true,
+    "siblings": [],
+    "special": false,
+    "stub": false,
+    "virtual": false,
+    "warp": 0
+  },
+  {
+    "aspectTriggers": [],
+    "aspects": [
+      [
+        "ignis",
+        16
+      ],
+      [
+        "aqua",
+        16
+      ],
+      [
+        "terra",
+        16
+      ],
+      [
+        "aer",
+        16
+      ],
+      [
+        "ordo",
+        16
+      ],
+      [
+        "perditio",
+        16
+      ]
+    ],
+    "autoUnlock": false,
+    "category": "TAINTEDMAGIC",
+    "column": 9,
+    "complexity": 3,
+    "complexityClamped": 3,
+    "concealed": true,
+    "fake": null,
+    "hidden": false,
+    "icon": {
+      "item": "taintedmagic:creation_shard"
+    },
+    "itemTriggers": [],
+    "key": "CREATIONSHARD",
+    "lost": false,
+    "pages": [
+      {
+        "text": "1",
+        "type": "text"
+      },
+      {
+        "recipes": [
+          "ItemMaterial:5"
+        ],
+        "type": "infusion"
+      },
+      {
+        "recipes": [
+          "ItemMaterial:11"
+        ],
+        "type": "arcane"
+      }
+    ],
+    "parents": [
+      "TMELDRITCHMAJOR"
+    ],
+    "parentsHidden": [
+      "PRIMPEARL",
+      "INFUSION"
+    ],
+    "round": false,
+    "row": -7,
+    "secondary": false,
+    "siblings": [],
+    "special": true,
+    "stub": false,
+    "virtual": false,
+    "warp": 9
+  },
+  {
+    "aspectTriggers": [],
+    "aspects": [],
+    "autoUnlock": false,
+    "category": "TAINTEDMAGIC",
+    "column": 11,
+    "complexity": 0,
+    "complexityClamped": 1,
+    "concealed": true,
+    "fake": null,
+    "hidden": true,
+    "icon": {
+      "texture": "taintedmagic:textures/misc/r_creation.png"
+    },
+    "itemTriggers": [],
+    "key": "CREATION",
+    "lost": false,
+    "pages": [
+      {
+        "text": "1",
+        "type": "text"
+      },
+      {
+        "text": "2",
+        "type": "text"
+      },
+      {
+        "text": "3",
+        "type": "text"
+      },
+      {
+        "text": "4",
+        "type": "text"
+      },
+      {
+        "text": "5",
+        "type": "text"
+      },
+      {
+        "text": "6",
+        "type": "text"
+      }
+    ],
+    "parents": [
+      "CREATIONSHARD"
+    ],
+    "parentsHidden": [],
+    "round": true,
+    "row": -5,
+    "secondary": false,
+    "siblings": [],
+    "special": true,
+    "stub": false,
+    "virtual": false,
+    "warp": 0
+  },
+  {
+    "aspectTriggers": [],
+    "aspects": [
+      [
+        "ignis",
+        4
+      ],
+      [
+        "aqua",
+        4
+      ],
+      [
+        "terra",
+        4
+      ],
+      [
+        "aer",
+        4
+      ],
+      [
+        "ordo",
+        4
+      ],
+      [
+        "perditio",
+        4
+      ],
+      [
+        "tempestas",
+        4
+      ]
+    ],
+    "autoUnlock": false,
+    "category": "TAINTEDMAGIC",
+    "column": 12,
+    "complexity": 0,
+    "complexityClamped": 1,
+    "concealed": true,
+    "fake": null,
+    "hidden": false,
+    "icon": {
+      "item": "taintedmagic:salis_tempestas"
+    },
+    "itemTriggers": [],
+    "key": "SKYSALT",
+    "lost": false,
+    "pages": [
+      {
+        "text": "1",
+        "type": "text"
+      },
+      {
+        "recipes": [
+          "ItemSalis:0"
+        ],
+        "type": "infusion"
+      }
+    ],
+    "parents": [
+      "CREATION"
+    ],
+    "parentsHidden": [
+      "INFUSION"
+    ],
+    "round": false,
+    "row": -7,
+    "secondary": true,
+    "siblings": [],
+    "special": false,
+    "stub": false,
+    "virtual": false,
+    "warp": 0
+  },
+  {
+    "aspectTriggers": [],
+    "aspects": [
+      [
+        "ignis",
+        4
+      ],
+      [
+        "aqua",
+        4
+      ],
+      [
+        "terra",
+        4
+      ],
+      [
+        "aer",
+        4
+      ],
+      [
+        "ordo",
+        4
+      ],
+      [
+        "perditio",
+        4
+      ],
+      [
+        "permutatio",
+        4
+      ]
+    ],
+    "autoUnlock": false,
+    "category": "TAINTEDMAGIC",
+    "column": 13,
+    "complexity": 0,
+    "complexityClamped": 1,
+    "concealed": true,
+    "fake": null,
+    "hidden": false,
+    "icon": {
+      "item": "taintedmagic:salis_aevum"
+    },
+    "itemTriggers": [],
+    "key": "TIMESALT",
+    "lost": false,
+    "pages": [
+      {
+        "text": "1",
+        "type": "text"
+      },
+      {
+        "recipes": [
+          "ItemSalis:1"
+        ],
+        "type": "infusion"
+      }
+    ],
+    "parents": [
+      "CREATION"
+    ],
+    "parentsHidden": [
+      "INFUSION"
+    ],
+    "round": false,
+    "row": -6,
+    "secondary": true,
+    "siblings": [],
+    "special": false,
+    "stub": false,
+    "virtual": false,
+    "warp": 0
+  },
+  {
+    "aspectTriggers": [],
+    "aspects": [
+      [
+        "metallum",
+        4
+      ],
+      [
+        "telum",
+        8
+      ],
+      [
+        "instrumentum",
+        4
+      ]
+    ],
+    "autoUnlock": false,
+    "category": "TAINTEDMAGIC",
+    "column": 6,
+    "complexity": 3,
+    "complexityClamped": 3,
+    "concealed": true,
+    "fake": null,
+    "hidden": false,
+    "icon": {
+      "item": "taintedmagic:thaumic_disassembler"
+    },
+    "itemTriggers": [],
+    "key": "THAUMICDISASSEMBLER",
+    "lost": false,
+    "pages": [
+      {
+        "text": "1",
+        "type": "text"
+      },
+      {
+        "recipes": [
+          "ItemThaumicDisassembler"
+        ],
+        "type": "infusion"
+      },
+      {
+        "recipes": [
+          "ItemMaterial:6"
+        ],
+        "type": "arcane"
+      }
+    ],
+    "parents": [
+      "TMELDRITCHMAJOR"
+    ],
+    "parentsHidden": [
+      "THAUMIUM",
+      "VOIDMETAL",
+      "PRIMPEARL",
+      "INFUSION"
+    ],
+    "round": false,
+    "row": -9,
+    "secondary": false,
+    "siblings": [],
+    "special": false,
+    "stub": false,
+    "virtual": false,
+    "warp": 0
+  },
+  {
+    "aspectTriggers": [],
+    "aspects": [
+      [
+        "vacuos",
+        4
+      ],
+      [
+        "metallum",
+        8
+      ],
+      [
+        "tutamen",
+        4
+      ]
+    ],
+    "autoUnlock": false,
+    "category": "TAINTEDMAGIC",
+    "column": 3,
+    "complexity": 0,
+    "complexityClamped": 1,
+    "concealed": true,
+    "fake": null,
+    "hidden": false,
+    "icon": {
+      "item": "taintedmagic:voidwalker_sash"
+    },
+    "itemTriggers": [],
+    "key": "VOIDSASH",
+    "lost": false,
+    "pages": [
+      {
+        "text": "1",
+        "type": "text"
+      },
+      {
+        "recipes": [
+          "ItemVoidwalkerSash"
+        ],
+        "type": "infusion"
+      }
+    ],
+    "parents": [
+      "VOIDWALKERBOOTS"
+    ],
+    "parentsHidden": [
+      "PRIMPEARL",
+      "INFUSION"
+    ],
+    "round": false,
+    "row": -9,
+    "secondary": true,
+    "siblings": [],
+    "special": false,
+    "stub": false,
+    "virtual": false,
+    "warp": 3
+  },
+  {
+    "aspectTriggers": [],
+    "aspects": [
+      [
+        "praecantatio",
+        2
+      ],
+      [
+        "fames",
+        4
+      ],
+      [
+        "herba",
+        2
+      ]
+    ],
+    "autoUnlock": false,
+    "category": "TAINTEDMAGIC",
+    "column": 2,
+    "complexity": 0,
+    "complexityClamped": 1,
+    "concealed": true,
+    "fake": null,
+    "hidden": false,
+    "icon": {
+      "item": "taintedmagic:magic_funguar"
+    },
+    "itemTriggers": [],
+    "key": "MAGICFUNGUAR",
+    "lost": false,
+    "pages": [
+      {
+        "text": "1",
+        "type": "text"
+      },
+      {
+        "recipes": [
+          "ItemMagicFunguar"
+        ],
+        "type": "arcane"
+      }
+    ],
+    "parents": [
+      "VISHROOMCRAFT"
+    ],
+    "parentsHidden": [],
+    "round": false,
+    "row": -4,
+    "secondary": true,
+    "siblings": [],
+    "special": false,
+    "stub": false,
+    "virtual": false,
+    "warp": 0
+  },
+  {
+    "aspectTriggers": [],
+    "aspects": [
+      [
+        "praecantatio",
+        4
+      ],
+      [
+        "fabrico",
+        2
+      ],
+      [
+        "herba",
+        3
+      ]
+    ],
+    "autoUnlock": false,
+    "category": "TAINTEDMAGIC",
+    "column": 3,
+    "complexity": 0,
+    "complexityClamped": 1,
+    "concealed": true,
+    "fake": null,
+    "hidden": true,
+    "icon": {
+      "item": "thaumcraft:vishroom"
+    },
+    "itemTriggers": [
+      "thaumcraft:vishroom"
+    ],
+    "key": "VISHROOMCRAFT",
+    "lost": false,
+    "pages": [
+      {
+        "text": "1",
+        "type": "text"
+      },
+      {
+        "recipes": [
+          "Vishroom_red"
+        ],
+        "type": "crucible"
+      },
+      {
+        "recipes": [
+          "Vishroom_brown"
+        ],
+        "type": "crucible"
+      }
+    ],
+    "parents": [],
+    "parentsHidden": [],
+    "round": false,
+    "row": -3,
+    "secondary": true,
+    "siblings": [],
+    "special": false,
+    "stub": false,
+    "virtual": false,
+    "warp": 0
+  },
+  {
+    "aspectTriggers": [],
+    "aspects": [
+      [
+        "telum",
+        4
+      ],
+      [
+        "ignis",
+        4
+      ],
+      [
+        "sano",
+        4
+      ]
+    ],
+    "autoUnlock": false,
+    "category": "TAINTEDMAGIC",
+    "column": 0,
+    "complexity": 2,
+    "complexityClamped": 2,
+    "concealed": false,
+    "fake": null,
+    "hidden": false,
+    "icon": {
+      "item": "taintedmagic:hollow_dagger"
+    },
+    "itemTriggers": [],
+    "key": "HOLLOWDAGGER",
+    "lost": false,
+    "pages": [
+      {
+        "text": "1",
+        "type": "text"
+      },
+      {
+        "recipes": [
+          "ItemHollowDagger"
+        ],
+        "type": "arcane"
+      }
+    ],
+    "parents": [
+      "TAINTEDMAGIC"
+    ],
+    "parentsHidden": [
+      "ENCHFABRIC",
+      "ESSENTIACRYSTAL",
+      "ELDRITCHMINOR"
+    ],
+    "round": false,
+    "row": -3,
+    "secondary": false,
+    "siblings": [],
+    "special": false,
+    "stub": false,
+    "virtual": false,
+    "warp": 2
+  },
+  {
+    "aspectTriggers": [],
+    "aspects": [
+      [
+        "perditio",
+        8
+      ],
+      [
+        "alienis",
+        2
+      ],
+      [
+        "telum",
+        16
+      ],
+      [
+        "vacuos",
+        6
+      ]
+    ],
+    "autoUnlock": false,
+    "category": "TAINTEDMAGIC",
+    "column": -6,
+    "complexity": 0,
+    "complexityClamped": 1,
+    "concealed": true,
+    "fake": null,
+    "hidden": false,
+    "icon": {
+      "item": "thaumcraft:crimson_blade"
+    },
+    "itemTriggers": [],
+    "key": "CRIMSONBLADE",
+    "lost": false,
+    "pages": [
+      {
+        "text": "1",
+        "type": "text"
+      },
+      {
+        "recipes": [
+          "ItemSwordCrimson"
+        ],
+        "type": "infusion"
+      }
+    ],
+    "parents": [
+      "PRAETORARMOR"
+    ],
+    "parentsHidden": [
+      "INFUSION"
+    ],
+    "round": false,
+    "row": 2,
+    "secondary": true,
+    "siblings": [],
+    "special": false,
+    "stub": false,
+    "virtual": false,
+    "warp": 5
+  },
+  {
+    "aspectTriggers": [],
+    "aspects": [
+      [
+        "metallum",
+        4
+      ],
+      [
+        "tenebrae",
+        8
+      ],
+      [
+        "tutamen",
+        8
+      ],
+      [
+        "vacuos",
+        2
+      ]
+    ],
+    "autoUnlock": false,
+    "category": "TAINTEDMAGIC",
+    "column": 0,
+    "complexity": 3,
+    "complexityClamped": 3,
+    "concealed": true,
+    "fake": null,
+    "hidden": false,
+    "icon": {
+      "item": "taintedmagic:shadow_fortress_helmet"
+    },
+    "itemTriggers": [],
+    "key": "SHADOWFORTRESS",
+    "lost": false,
+    "pages": [
+      {
+        "text": "1",
+        "type": "text"
+      },
+      {
+        "recipes": [
+          "ItemShadowFortressHelmet"
+        ],
+        "type": "infusion"
+      },
+      {
+        "recipes": [
+          "ItemShadowFortressChestplate"
+        ],
+        "type": "infusion"
+      },
+      {
+        "recipes": [
+          "ItemShadowFortressLeggings"
+        ],
+        "type": "infusion"
+      }
+    ],
+    "parents": [
+      "SHADOWMETAL"
+    ],
+    "parentsHidden": [
+      "VOIDFORTRESS",
+      "TMELDRITCHMAJOR",
+      "UNBALANCEDSHARDS",
+      "INFUSION"
+    ],
+    "round": false,
+    "row": 3,
+    "secondary": false,
+    "siblings": [],
+    "special": false,
+    "stub": false,
+    "virtual": false,
+    "warp": 3
+  },
+  {
+    "aspectTriggers": [],
+    "aspects": [
+      [
+        "praecantatio",
+        4
+      ],
+      [
+        "pannus",
+        4
+      ]
+    ],
+    "autoUnlock": false,
+    "category": "TAINTEDMAGIC",
+    "column": 3,
+    "complexity": 0,
+    "complexityClamped": 1,
+    "concealed": true,
+    "fake": null,
+    "hidden": false,
+    "icon": {
+      "item": "taintedmagic:cloth_wand_cap"
+    },
+    "itemTriggers": [],
+    "key": "CAP_cloth",
+    "lost": false,
+    "pages": [
+      {
+        "text": "1",
+        "type": "text"
+      },
+      {
+        "recipes": [
+          "ItemWandCap:1"
+        ],
+        "type": "arcane"
+      }
+    ],
+    "parents": [],
+    "parentsHidden": [
+      "CAP_gold",
+      "ENCHFABRIC"
+    ],
+    "round": false,
+    "row": 1,
+    "secondary": true,
+    "siblings": [],
+    "special": false,
+    "stub": false,
+    "virtual": false,
+    "warp": 0
+  },
+  {
+    "aspectTriggers": [],
+    "aspects": [
+      [
+        "praecantatio",
+        8
+      ],
+      [
+        "pannus",
+        4
+      ],
+      [
+        "sano",
+        8
+      ]
+    ],
+    "autoUnlock": false,
+    "category": "TAINTEDMAGIC",
+    "column": -1,
+    "complexity": 0,
+    "complexityClamped": 1,
+    "concealed": true,
+    "fake": null,
+    "hidden": false,
+    "icon": {
+      "item": "taintedmagic:crimson_cloth_wand_cap"
+    },
+    "itemTriggers": [],
+    "key": "CAP_crimsoncloth",
+    "lost": false,
+    "pages": [
+      {
+        "text": "1",
+        "type": "text"
+      },
+      {
+        "recipes": [
+          "ItemWandCap:2"
+        ],
+        "type": "arcane"
+      }
+    ],
+    "parents": [
+      "CRIMSONROBES"
+    ],
+    "parentsHidden": [
+      "CAP_cloth"
+    ],
+    "round": false,
+    "row": -1,
+    "secondary": true,
+    "siblings": [],
+    "special": false,
+    "stub": false,
+    "virtual": false,
+    "warp": 0
+  },
+  {
+    "aspectTriggers": [],
+    "aspects": [
+      [
+        "praecantatio",
+        16
+      ],
+      [
+        "pannus",
+        8
+      ],
+      [
+        "vacuos",
+        16
+      ],
+      [
+        "tenebrae",
+        8
+      ]
+    ],
+    "autoUnlock": false,
+    "category": "TAINTEDMAGIC",
+    "column": -3,
+    "complexity": 0,
+    "complexityClamped": 1,
+    "concealed": true,
+    "fake": null,
+    "hidden": false,
+    "icon": {
+      "item": "taintedmagic:shadow_cloth_wand_cap"
+    },
+    "itemTriggers": [],
+    "key": "CAP_shadowcloth",
+    "lost": false,
+    "pages": [
+      {
+        "text": "1",
+        "type": "text"
+      },
+      {
+        "recipes": [
+          "ItemWandCap:3"
+        ],
+        "type": "arcane"
+      }
+    ],
+    "parents": [
+      "SHADOWCLOTH"
+    ],
+    "parentsHidden": [
+      "CAP_cloth"
+    ],
+    "round": false,
+    "row": 5,
+    "secondary": true,
+    "siblings": [],
+    "special": false,
+    "stub": false,
+    "virtual": false,
+    "warp": 1
+  },
+  {
+    "aspectTriggers": [],
+    "aspects": [
+      [
+        "praecantatio",
+        1
+      ],
+      [
+        "alienis",
+        1
+      ],
+      [
+        "telum",
+        1
+      ],
+      [
+        "vacuos",
+        1
+      ],
+      [
+        "auram",
+        1
+      ]
+    ],
+    "autoUnlock": false,
+    "category": "TAINTEDMAGIC",
+    "column": 11,
+    "complexity": 3,
+    "complexityClamped": 3,
+    "concealed": true,
+    "fake": null,
+    "hidden": false,
+    "icon": {
+      "item": "taintedmagic:primal_blade"
+    },
+    "itemTriggers": [],
+    "key": "PRIMALBLADE",
+    "lost": false,
+    "pages": [
+      {
+        "text": "1",
+        "type": "text"
+      },
+      {
+        "recipes": [
+          "ItemPrimalBlade"
+        ],
+        "type": "infusion"
+      }
+    ],
+    "parents": [
+      "CREATION"
+    ],
+    "parentsHidden": [
+      "VOIDMETAL",
+      "PRIMALCRUSHER",
+      "UNBALANCEDSHARDS",
+      "HOLLOWDAGGER",
+      "INFUSION"
+    ],
+    "round": false,
+    "row": -3,
+    "secondary": false,
+    "siblings": [],
+    "special": false,
+    "stub": false,
+    "virtual": false,
+    "warp": 5
+  },
+  {
+    "aspectTriggers": [],
+    "aspects": [
+      [
+        "metallum",
+        8
+      ],
+      [
+        "praecantatio",
+        4
+      ],
+      [
+        "telum",
+        6
+      ]
+    ],
+    "autoUnlock": false,
+    "category": "TAINTEDMAGIC",
+    "column": 12,
+    "complexity": 3,
+    "complexityClamped": 3,
+    "concealed": true,
+    "fake": null,
+    "hidden": false,
+    "icon": {
+      "item": "taintedmagic:thaumium_katana"
+    },
+    "itemTriggers": [],
+    "key": "THAUMIUMKATANA",
+    "lost": false,
+    "pages": [
+      {
+        "text": "1",
+        "type": "text"
+      },
+      {
+        "recipes": [
+          "ItemKatana:0"
+        ],
+        "type": "infusion"
+      }
+    ],
+    "parents": [],
+    "parentsHidden": [
+      "ARMORFORTRESS",
+      "INFUSION"
+    ],
+    "round": false,
+    "row": -1,
+    "secondary": false,
+    "siblings": [],
+    "special": false,
+    "stub": false,
+    "virtual": false,
+    "warp": 0
+  },
+  {
+    "aspectTriggers": [],
+    "aspects": [
+      [
+        "metallum",
+        16
+      ],
+      [
+        "praecantatio",
+        8
+      ],
+      [
+        "telum",
+        12
+      ],
+      [
+        "vacuos",
+        12
+      ]
+    ],
+    "autoUnlock": false,
+    "category": "TAINTEDMAGIC",
+    "column": 7,
+    "complexity": 3,
+    "complexityClamped": 3,
+    "concealed": true,
+    "fake": null,
+    "hidden": false,
+    "icon": {
+      "item": "taintedmagic:void_metal_katana"
+    },
+    "itemTriggers": [],
+    "key": "VOIDMETALKATANA",
+    "lost": false,
+    "pages": [
+      {
+        "text": "1",
+        "type": "text"
+      },
+      {
+        "recipes": [
+          "ItemKatana:1"
+        ],
+        "type": "infusion"
+      }
+    ],
+    "parents": [
+      "VOIDFORTRESS"
+    ],
+    "parentsHidden": [
+      "THAUMIUMKATANA",
+      "INFUSION"
+    ],
+    "round": false,
+    "row": -10,
+    "secondary": true,
+    "siblings": [],
+    "special": false,
+    "stub": false,
+    "virtual": false,
+    "warp": 3
+  },
+  {
+    "aspectTriggers": [],
+    "aspects": [
+      [
+        "metallum",
+        16
+      ],
+      [
+        "praecantatio",
+        8
+      ],
+      [
+        "telum",
+        12
+      ],
+      [
+        "vacuos",
+        12
+      ],
+      [
+        "tenebrae",
+        14
+      ]
+    ],
+    "autoUnlock": false,
+    "category": "TAINTEDMAGIC",
+    "column": 0,
+    "complexity": 3,
+    "complexityClamped": 3,
+    "concealed": true,
+    "fake": null,
+    "hidden": false,
+    "icon": {
+      "item": "taintedmagic:shadow_metal_katana"
+    },
+    "itemTriggers": [],
+    "key": "SHADOWMETALKATANA",
+    "lost": false,
+    "pages": [
+      {
+        "text": "1",
+        "type": "text"
+      },
+      {
+        "recipes": [
+          "ItemKatana:2"
+        ],
+        "type": "infusion"
+      }
+    ],
+    "parents": [
+      "SHADOWFORTRESS"
+    ],
+    "parentsHidden": [
+      "VOIDMETALKATANA",
+      "INFUSION"
+    ],
+    "round": false,
+    "row": 5,
+    "secondary": true,
+    "siblings": [],
+    "special": false,
+    "stub": false,
+    "virtual": false,
+    "warp": 5
+  },
+  {
+    "aspectTriggers": [],
+    "aspects": [
+      [
+        "ignis",
+        8
+      ],
+      [
+        "perditio",
+        4
+      ],
+      [
+        "metallum",
+        6
+      ]
+    ],
+    "autoUnlock": false,
+    "category": "TAINTEDMAGIC",
+    "column": 14,
+    "complexity": 0,
+    "complexityClamped": 1,
+    "concealed": true,
+    "fake": null,
+    "hidden": false,
+    "icon": {
+      "texture": "taintedmagic:textures/misc/r_inscription0.png"
+    },
+    "itemTriggers": [],
+    "key": "INSCRIPTIONFIRE",
+    "lost": false,
+    "pages": [
+      {
+        "text": "1",
+        "type": "text"
+      },
+      {
+        "recipes": [
+          "ItemKatanaThaumium:inscription0"
+        ],
+        "type": "infusion"
+      }
+    ],
+    "parents": [
+      "THAUMIUMKATANA"
+    ],
+    "parentsHidden": [
+      "FOCUSFIRE",
+      "INFUSION"
+    ],
+    "round": false,
+    "row": 0,
+    "secondary": true,
+    "siblings": [],
+    "special": false,
+    "stub": false,
+    "virtual": false,
+    "warp": 0
+  },
+  {
+    "aspectTriggers": [],
+    "aspects": [
+      [
+        "perditio",
+        8
+      ],
+      [
+        "motus",
+        4
+      ],
+      [
+        "metallum",
+        6
+      ]
+    ],
+    "autoUnlock": false,
+    "category": "TAINTEDMAGIC",
+    "column": 14,
+    "complexity": 0,
+    "complexityClamped": 1,
+    "concealed": true,
+    "fake": null,
+    "hidden": false,
+    "icon": {
+      "texture": "taintedmagic:textures/misc/r_inscription1.png"
+    },
+    "itemTriggers": [],
+    "key": "INSCRIPTIONTHUNDER",
+    "lost": false,
+    "pages": [
+      {
+        "text": "1",
+        "type": "text"
+      },
+      {
+        "recipes": [
+          "ItemKatanaThaumium:inscription1"
+        ],
+        "type": "infusion"
+      }
+    ],
+    "parents": [
+      "THAUMIUMKATANA"
+    ],
+    "parentsHidden": [
+      "FOCUSSHOCKWAVE",
+      "INFUSION"
+    ],
+    "round": false,
+    "row": 1,
+    "secondary": true,
+    "siblings": [],
+    "special": false,
+    "stub": false,
+    "virtual": false,
+    "warp": 0
+  },
+  {
+    "aspectTriggers": [],
+    "aspects": [
+      [
+        "sano",
+        8
+      ],
+      [
+        "exanimis",
+        4
+      ],
+      [
+        "metallum",
+        6
+      ]
+    ],
+    "autoUnlock": false,
+    "category": "TAINTEDMAGIC",
+    "column": 14,
+    "complexity": 0,
+    "complexityClamped": 1,
+    "concealed": true,
+    "fake": null,
+    "hidden": false,
+    "icon": {
+      "texture": "taintedmagic:textures/misc/r_inscription2.png"
+    },
+    "itemTriggers": [],
+    "key": "INSCRIPTIONHEAL",
+    "lost": false,
+    "pages": [
+      {
+        "text": "1",
+        "type": "text"
+      },
+      {
+        "recipes": [
+          "ItemKatanaThaumium:inscription2"
+        ],
+        "type": "infusion"
+      }
+    ],
+    "parents": [
+      "THAUMIUMKATANA"
+    ],
+    "parentsHidden": [
+      "BATHSALTS",
+      "INFUSION"
+    ],
+    "round": false,
+    "row": 2,
+    "secondary": true,
+    "siblings": [],
+    "special": false,
+    "stub": false,
+    "virtual": false,
+    "warp": 2
+  },
+  {
+    "aspectTriggers": [],
+    "aspects": [
+      [
+        "vacuos",
+        8
+      ],
+      [
+        "tenebrae",
+        4
+      ],
+      [
+        "praecantatio",
+        6
+      ],
+      [
+        "sensus",
+        12
+      ]
+    ],
+    "autoUnlock": false,
+    "category": "TAINTEDMAGIC",
+    "column": 3,
+    "complexity": 0,
+    "complexityClamped": 1,
+    "concealed": true,
+    "fake": null,
+    "hidden": false,
+    "icon": {
+      "item": "taintedmagic:void_metal_goggles"
+    },
+    "itemTriggers": [],
+    "key": "VOIDGOGGLES",
+    "lost": false,
+    "pages": [
+      {
+        "text": "1",
+        "type": "text"
+      },
+      {
+        "recipes": [
+          "ItemVoidmetalGoggles"
+        ],
+        "type": "infusion"
+      }
+    ],
+    "parents": [
+      "WARPEDGOGGLES"
+    ],
+    "parentsHidden": [
+      "VOIDMETAL",
+      "INFUSION"
+    ],
+    "round": false,
+    "row": 3,
+    "secondary": true,
+    "siblings": [],
+    "special": false,
+    "stub": false,
+    "virtual": false,
+    "warp": 2
+  },
+  {
+    "aspectTriggers": [],
+    "aspects": [
+      [
+        "alienis",
+        22
+      ],
+      [
+        "perditio",
+        14
+      ],
+      [
+        "aer",
+        4
+      ],
+      [
+        "tenebrae",
+        6
+      ]
+    ],
+    "autoUnlock": false,
+    "category": "TAINTEDMAGIC",
+    "column": 5,
+    "complexity": 3,
+    "complexityClamped": 3,
+    "concealed": true,
+    "fake": null,
+    "hidden": false,
+    "icon": {
+      "item": "taintedmagic:focus_dark_matter"
+    },
+    "itemTriggers": [],
+    "key": "ELDRITCHFOCUS",
+    "lost": false,
+    "pages": [
+      {
+        "text": "1",
+        "type": "text"
+      },
+      {
+        "recipes": [
+          "ItemFocusDarkMatter"
+        ],
+        "type": "infusion"
+      }
+    ],
+    "parents": [
+      "TMELDRITCHMAJOR"
+    ],
+    "parentsHidden": [
+      "OUTERREV",
+      "INFUSION"
+    ],
+    "round": false,
+    "row": -5,
+    "secondary": false,
+    "siblings": [],
+    "special": true,
+    "stub": false,
+    "virtual": false,
+    "warp": 7
+  },
+  {
+    "aspectTriggers": [],
+    "aspects": [
+      [
+        "praecantatio",
+        4
+      ],
+      [
+        "tenebrae",
+        8
+      ],
+      [
+        "telum",
+        8
+      ],
+      [
+        "alienis",
+        10
+      ]
+    ],
+    "autoUnlock": false,
+    "category": "TAINTEDMAGIC",
+    "column": 6,
+    "complexity": 0,
+    "complexityClamped": 1,
+    "concealed": true,
+    "fake": null,
+    "hidden": false,
+    "icon": {
+      "texture": "taintedmagic:textures/foci/IconDiffusion.png"
+    },
+    "itemTriggers": [],
+    "key": "DIFFUSIONUPGRADE",
+    "lost": false,
+    "pages": [
+      {
+        "text": "1",
+        "type": "text"
+      }
+    ],
+    "parents": [
+      "ELDRITCHFOCUS"
+    ],
+    "parentsHidden": [
+      "FOCALMANIPULATION"
+    ],
+    "round": false,
+    "row": -4,
+    "secondary": true,
+    "siblings": [],
+    "special": false,
+    "stub": false,
+    "virtual": false,
+    "warp": 2
+  },
+  {
+    "aspectTriggers": [],
+    "aspects": [
+      [
+        "perditio",
+        10
+      ],
+      [
+        "terra",
+        4
+      ],
+      [
+        "telum",
+        6
+      ],
+      [
+        "praecantatio",
+        8
+      ]
+    ],
+    "autoUnlock": false,
+    "category": "TAINTEDMAGIC",
+    "column": 7,
+    "complexity": 2,
+    "complexityClamped": 2,
+    "concealed": true,
+    "fake": null,
+    "hidden": false,
+    "icon": {
+      "item": "taintedmagic:focus_mage_mace"
+    },
+    "itemTriggers": [],
+    "key": "MACEFOCUS",
+    "lost": false,
+    "pages": [
+      {
+        "text": "1",
+        "type": "text"
+      },
+      {
+        "recipes": [
+          "ItemFocusMageMace"
+        ],
+        "type": "infusion"
+      }
+    ],
+    "parents": [],
+    "parentsHidden": [
+      "THAUMIUM",
+      "FOCUSFIRE",
+      "INFUSION"
+    ],
+    "round": false,
+    "row": 3,
+    "secondary": false,
+    "siblings": [],
+    "special": false,
+    "stub": false,
+    "virtual": false,
+    "warp": 0
+  },
+  {
+    "aspectTriggers": [],
+    "aspects": [
+      [
+        "praecantatio",
+        20
+      ],
+      [
+        "perditio",
+        12
+      ],
+      [
+        "aer",
+        6
+      ],
+      [
+        "motus",
+        12
+      ]
+    ],
+    "autoUnlock": false,
+    "category": "TAINTEDMAGIC",
+    "column": 7,
+    "complexity": 0,
+    "complexityClamped": 1,
+    "concealed": true,
+    "fake": null,
+    "hidden": false,
+    "icon": {
+      "item": "taintedmagic:focus_shockwave"
+    },
+    "itemTriggers": [],
+    "key": "FOCUSSHOCKWAVE",
+    "lost": false,
+    "pages": [
+      {
+        "text": "1",
+        "type": "text"
+      },
+      {
+        "recipes": [
+          "ItemFocusShockwave"
+        ],
+        "type": "infusion"
+      }
+    ],
+    "parents": [],
+    "parentsHidden": [
+      "FOCUSSHOCK",
+      "INFUSION"
+    ],
+    "round": false,
+    "row": 2,
+    "secondary": true,
+    "siblings": [],
+    "special": false,
+    "stub": false,
+    "virtual": false,
+    "warp": 0
+  },
+  {
+    "aspectTriggers": [],
+    "aspects": [
+      [
+        "vitreus",
+        2
+      ],
+      [
+        "praecantatio",
+        4
+      ],
+      [
+        "motus",
+        6
+      ]
+    ],
+    "autoUnlock": false,
+    "category": "TAINTEDMAGIC",
+    "column": 6,
+    "complexity": 0,
+    "complexityClamped": 1,
+    "concealed": true,
+    "fake": null,
+    "hidden": false,
+    "icon": {
+      "item": "taintedmagic:focus_vis_shard"
+    },
+    "itemTriggers": [],
+    "key": "FOCUSSHARD",
+    "lost": false,
+    "pages": [
+      {
+        "text": "1",
+        "type": "text"
+      },
+      {
+        "recipes": [
+          "ItemFocusVisShard"
+        ],
+        "type": "arcane"
+      }
+    ],
+    "parents": [
+      "UNBALANCEDSHARDS"
+    ],
+    "parentsHidden": [
+      "FOCUSFIRE"
+    ],
+    "round": false,
+    "row": 1,
+    "secondary": true,
+    "siblings": [],
+    "special": false,
+    "stub": false,
+    "virtual": false,
+    "warp": 0
+  },
+  {
+    "aspectTriggers": [],
+    "aspects": [
+      [
+        "vitium",
+        4
+      ],
+      [
+        "victus",
+        4
+      ],
+      [
+        "motus",
+        4
+      ]
+    ],
+    "autoUnlock": false,
+    "category": "TAINTEDMAGIC",
+    "column": 5,
+    "complexity": 3,
+    "complexityClamped": 3,
+    "concealed": true,
+    "fake": null,
+    "hidden": false,
+    "icon": {
+      "item": "taintedmagic:focus_taint_swarm"
+    },
+    "itemTriggers": [],
+    "key": "TAINTFOCUS",
+    "lost": false,
+    "pages": [
+      {
+        "text": "1",
+        "type": "text"
+      },
+      {
+        "recipes": [
+          "ItemFocusTaintSwarm"
+        ],
+        "type": "infusion"
+      }
+    ],
+    "parents": [
+      "FOCUSSHARD"
+    ],
+    "parentsHidden": [
+      "INFUSION",
+      "BOTTLETAINT"
+    ],
+    "round": false,
+    "row": 2,
+    "secondary": false,
+    "siblings": [],
+    "special": false,
+    "stub": false,
+    "virtual": false,
+    "warp": 3
+  },
+  {
+    "aspectTriggers": [],
+    "aspects": [
+      [
+        "ignis",
+        16
+      ],
+      [
+        "lux",
+        24
+      ],
+      [
+        "potentia",
+        8
+      ]
+    ],
+    "autoUnlock": false,
+    "category": "TAINTEDMAGIC",
+    "column": 5,
+    "complexity": 0,
+    "complexityClamped": 1,
+    "concealed": true,
+    "fake": null,
+    "hidden": false,
+    "icon": {
+      "item": "taintedmagic:focus_lumos"
+    },
+    "itemTriggers": [],
+    "key": "FOCUSLUMOS",
+    "lost": false,
+    "pages": [
+      {
+        "text": "1",
+        "type": "text"
+      },
+      {
+        "recipes": [
+          "ItemFocusLumos"
+        ],
+        "type": "arcane"
+      }
+    ],
+    "parents": [],
+    "parentsHidden": [
+      "FOCUSFIRE"
+    ],
+    "round": false,
+    "row": 3,
+    "secondary": true,
+    "siblings": [],
+    "special": false,
+    "stub": false,
+    "virtual": false,
+    "warp": 0
+  },
+  {
+    "aspectTriggers": [],
+    "aspects": [
+      [
+        "tutamen",
+        16
+      ],
+      [
+        "auram",
+        12
+      ],
+      [
+        "lux",
+        24
+      ],
+      [
+        "potentia",
+        8
+      ]
+    ],
+    "autoUnlock": false,
+    "category": "TAINTEDMAGIC",
+    "column": 6,
+    "complexity": 2,
+    "complexityClamped": 2,
+    "concealed": true,
+    "fake": null,
+    "hidden": false,
+    "icon": {
+      "item": "taintedmagic:lumos_ring"
+    },
+    "itemTriggers": [],
+    "key": "LUMOSRING",
+    "lost": false,
+    "pages": [
+      {
+        "text": "1",
+        "type": "text"
+      },
+      {
+        "recipes": [
+          "ItemLumosRing"
+        ],
+        "type": "infusion"
+      }
+    ],
+    "parents": [
+      "FOCUSLUMOS"
+    ],
+    "parentsHidden": [
+      "RUNICARMOR",
+      "INFUSION"
+    ],
+    "round": false,
+    "row": 4,
+    "secondary": false,
+    "siblings": [],
+    "special": false,
+    "stub": false,
+    "virtual": false,
+    "warp": 0
+  },
+  {
+    "aspectTriggers": [],
+    "aspects": [
+      [
+        "volatus",
+        15
+      ],
+      [
+        "aer",
+        20
+      ],
+      [
+        "sensus",
+        8
+      ],
+      [
+        "praecantatio",
+        12
+      ]
+    ],
+    "autoUnlock": false,
+    "category": "TAINTEDMAGIC",
+    "column": 13,
+    "complexity": 3,
+    "complexityClamped": 3,
+    "concealed": true,
+    "fake": null,
+    "hidden": false,
+    "icon": {
+      "item": "taintedmagic:flyte_charm"
+    },
+    "itemTriggers": [],
+    "key": "FLYTECHARM",
+    "lost": false,
+    "pages": [
+      {
+        "text": "1",
+        "type": "text"
+      },
+      {
+        "recipes": [
+          "ItemFlyteCharm"
+        ],
+        "type": "infusion"
+      }
+    ],
+    "parents": [
+      "CREATION"
+    ],
+    "parentsHidden": [
+      "VOIDSASH",
+      "PRIMALARROW",
+      "INFUSION"
+    ],
+    "round": false,
+    "row": -4,
+    "secondary": false,
+    "siblings": [],
+    "special": false,
+    "stub": false,
+    "virtual": false,
+    "warp": 0
+  },
+  {
+    "aspectTriggers": [],
+    "aspects": [
+      [
+        "iter",
+        30
+      ],
+      [
+        "permutatio",
+        15
+      ],
+      [
+        "auram",
+        20
+      ],
+      [
+        "volatus",
+        10
+      ]
+    ],
+    "autoUnlock": false,
+    "category": "TAINTEDMAGIC",
+    "column": 9,
+    "complexity": 3,
+    "complexityClamped": 3,
+    "concealed": true,
+    "fake": null,
+    "hidden": false,
+    "icon": {
+      "item": "taintedmagic:gate_key"
+    },
+    "itemTriggers": [],
+    "key": "GATEKEY",
+    "lost": false,
+    "pages": [
+      {
+        "text": "1",
+        "type": "text"
+      },
+      {
+        "recipes": [
+          "ItemGateKey"
+        ],
+        "type": "infusion"
+      }
+    ],
+    "parents": [
+      "CREATION"
+    ],
+    "parentsHidden": [
+      "INFUSION"
+    ],
+    "round": false,
+    "row": -4,
+    "secondary": false,
+    "siblings": [],
+    "special": false,
+    "stub": false,
+    "virtual": false,
+    "warp": 0
+  }
+]

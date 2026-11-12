@@ -1,0 +1,26 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:registered",
+      "value": "taintedmagic:shadow_metal_hoe"
+    },
+    {
+      "type": "neoforge:registered",
+      "value": "taintedmagic:shadow_metal_ingot"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "A": "taintedmagic:shadow_metal_ingot",
+    "B": "minecraft:stick"
+  },
+  "pattern": [
+    "AA",
+    " B",
+    " B"
+  ],
+  "result": {
+    "id": "taintedmagic:shadow_metal_hoe"
+  }
+}

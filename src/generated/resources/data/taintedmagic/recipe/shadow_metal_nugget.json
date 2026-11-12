@@ -1,0 +1,24 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:registered",
+      "value": "taintedmagic:shadow_metal_ingot"
+    },
+    {
+      "type": "neoforge:registered",
+      "value": "taintedmagic:shadow_metal_nugget"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": "taintedmagic:shadow_metal_ingot"
+  },
+  "pattern": [
+    "A"
+  ],
+  "result": {
+    "id": "taintedmagic:shadow_metal_nugget",
+    "count": 9
+  }
+}

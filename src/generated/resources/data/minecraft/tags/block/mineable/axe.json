@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "taintedmagic:warpwood_knot",
+      "required": false
+    },
+    {
+      "id": "taintedmagic:warpwood_log",
+      "required": false
+    },
+    {
+      "id": "taintedmagic:warpwood_planks",
+      "required": false
+    }
+  ]
+}

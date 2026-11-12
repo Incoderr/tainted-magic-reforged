@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "taintedmagic:block/warpwood_log_top",
+    "side": "taintedmagic:block/warpwood_log_side"
+  }
+}

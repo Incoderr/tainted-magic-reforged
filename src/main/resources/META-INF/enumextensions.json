@@ -1,0 +1,13 @@
+{
+  "entries": [
+    {
+      "enum": "net/minecraft/world/item/Rarity",
+      "name": "TAINTEDMAGIC_CREATION",
+      "constructor": "(ILjava/lang/String;Lnet/minecraft/ChatFormatting;)V",
+      "parameters": {
+        "class": "taintedmagic/registry/TmRarity",
+        "field": "CREATION_PROXY"
+      }
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/leaves",
+  "textures": {
+    "all": "taintedmagic:block/warpwood_leaves_transparent"
+  }
+}

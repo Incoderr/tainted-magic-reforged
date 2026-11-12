@@ -1,0 +1,4 @@
+src/main/java/taintedmagic/Features.java merge=union
+src/main/java/taintedmagic/client/ClientFeatures.java merge=union
+tools/features.txt merge=union
+src/generated/** merge=ours

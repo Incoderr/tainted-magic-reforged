@@ -1,0 +1,2700 @@
+[
+  {
+    "key": "ItemShadowmetalPick",
+    "type": "crafting",
+    "research": null,
+    "result": {
+      "item": "taintedmagic:shadow_metal_pickaxe",
+      "count": 1,
+      "data": {}
+    },
+    "pattern": [
+      "AAA",
+      " B ",
+      " B "
+    ],
+    "symbols": {
+      "A": "taintedmagic:shadow_metal_ingot",
+      "B": "minecraft:stick"
+    }
+  },
+  {
+    "key": "ItemShadowmetalAxe",
+    "type": "crafting",
+    "research": null,
+    "result": {
+      "item": "taintedmagic:shadow_metal_axe",
+      "count": 1,
+      "data": {}
+    },
+    "pattern": [
+      "AA",
+      "AB",
+      " B"
+    ],
+    "symbols": {
+      "A": "taintedmagic:shadow_metal_ingot",
+      "B": "minecraft:stick"
+    }
+  },
+  {
+    "key": "ItemShadowmetalSpade",
+    "type": "crafting",
+    "research": null,
+    "result": {
+      "item": "taintedmagic:shadow_metal_shovel",
+      "count": 1,
+      "data": {}
+    },
+    "pattern": [
+      "A",
+      "B",
+      "B"
+    ],
+    "symbols": {
+      "A": "taintedmagic:shadow_metal_ingot",
+      "B": "minecraft:stick"
+    }
+  },
+  {
+    "key": "ItemShadowmetalHoe",
+    "type": "crafting",
+    "research": null,
+    "result": {
+      "item": "taintedmagic:shadow_metal_hoe",
+      "count": 1,
+      "data": {}
+    },
+    "pattern": [
+      "AA",
+      " B",
+      " B"
+    ],
+    "symbols": {
+      "A": "taintedmagic:shadow_metal_ingot",
+      "B": "minecraft:stick"
+    }
+  },
+  {
+    "key": "ItemShadowmetalSword",
+    "type": "crafting",
+    "research": null,
+    "result": {
+      "item": "taintedmagic:shadow_metal_sword",
+      "count": 1,
+      "data": {}
+    },
+    "pattern": [
+      "A",
+      "A",
+      "B"
+    ],
+    "symbols": {
+      "A": "taintedmagic:shadow_metal_ingot",
+      "B": "minecraft:stick"
+    }
+  },
+  {
+    "key": "ItemFocusShockwave",
+    "type": "infusion",
+    "research": "FOCUSSHOCKWAVE",
+    "result": {
+      "item": "taintedmagic:focus_shockwave",
+      "count": 1,
+      "data": {}
+    },
+    "instability": 6,
+    "aspects": [
+      [
+        "aer",
+        35
+      ],
+      [
+        "motus",
+        42
+      ],
+      [
+        "potentia",
+        42
+      ],
+      [
+        "praecantatio",
+        16
+      ]
+    ],
+    "central": "thaumcraft:focus_shock",
+    "components": [
+      "minecraft:tnt",
+      "minecraft:gunpowder",
+      "thaumcraft:air_shard",
+      "minecraft:tnt",
+      "minecraft:gunpowder",
+      "thaumcraft:air_shard"
+    ]
+  },
+  {
+    "key": "ItemPrimalBlade",
+    "type": "infusion",
+    "research": "PRIMALBLADE",
+    "result": {
+      "item": "taintedmagic:primal_blade",
+      "count": 1,
+      "data": {}
+    },
+    "instability": 8,
+    "aspects": [
+      [
+        "telum",
+        65
+      ],
+      [
+        "alienis",
+        46
+      ],
+      [
+        "tenebrae",
+        16
+      ],
+      [
+        "metallum",
+        60
+      ],
+      [
+        "vacuos",
+        56
+      ]
+    ],
+    "central": "thaumcraft:void_sword",
+    "components": [
+      "taintedmagic:creation_shard",
+      "thaumcraft:air_shard",
+      "thaumcraft:fire_shard",
+      "thaumcraft:water_shard",
+      "thaumcraft:balanced_shard",
+      "thaumcraft:earth_shard",
+      "thaumcraft:order_shard",
+      "thaumcraft:entropy_shard"
+    ]
+  },
+  {
+    "key": "ItemFocusMageMace",
+    "type": "infusion",
+    "research": "MACEFOCUS",
+    "result": {
+      "item": "taintedmagic:focus_mage_mace",
+      "count": 1,
+      "data": {}
+    },
+    "instability": 3,
+    "aspects": [
+      [
+        "telum",
+        32
+      ],
+      [
+        "metallum",
+        8
+      ],
+      [
+        "perditio",
+        18
+      ],
+      [
+        "praecantatio",
+        26
+      ]
+    ],
+    "central": "minecraft:iron_block",
+    "components": [
+      "minecraft:iron_sword",
+      "minecraft:quartz",
+      "thaumcraft:entropy_shard",
+      "minecraft:quartz",
+      "minecraft:iron_sword",
+      "minecraft:quartz",
+      "thaumcraft:entropy_shard",
+      "minecraft:quartz"
+    ]
+  },
+  {
+    "key": "ItemSwordCrimson",
+    "type": "infusion",
+    "research": "CRIMSONBLADE",
+    "result": {
+      "item": "thaumcraft:crimson_blade",
+      "count": 1,
+      "data": {}
+    },
+    "instability": 7,
+    "aspects": [
+      [
+        "telum",
+        32
+      ],
+      [
+        "metallum",
+        16
+      ],
+      [
+        "perditio",
+        8
+      ],
+      [
+        "alienis",
+        18
+      ],
+      [
+        "vacuos",
+        32
+      ]
+    ],
+    "central": "thaumcraft:void_sword",
+    "components": [
+      "taintedmagic:crimson_blood",
+      "taintedmagic:crimson_blood",
+      "taintedmagic:crimson_blood"
+    ]
+  },
+  {
+    "key": "ItemVoidwalkerSash",
+    "type": "infusion",
+    "research": "VOIDSASH",
+    "result": {
+      "item": "taintedmagic:voidwalker_sash",
+      "count": 1,
+      "data": {}
+    },
+    "instability": 7,
+    "aspects": [
+      [
+        "vacuos",
+        56
+      ],
+      [
+        "praecantatio",
+        40
+      ],
+      [
+        "tutamen",
+        76
+      ],
+      [
+        "iter",
+        16
+      ],
+      [
+        "volatus",
+        10
+      ]
+    ],
+    "central": "thaumcraft:runic_shielding_girdle",
+    "components": [
+      "taintedmagic:primordial_mote",
+      "taintedmagic:shadow_metal_ingot",
+      "thaumcraft:void_metal_ingot",
+      "taintedmagic:shadow_cloth",
+      "thaumcraft:void_metal_ingot",
+      "taintedmagic:shadow_metal_ingot",
+      "minecraft:iron_ingot",
+      "taintedmagic:shadow_metal_ingot",
+      "thaumcraft:void_metal_ingot",
+      "taintedmagic:shadow_cloth",
+      "thaumcraft:void_metal_ingot",
+      "taintedmagic:shadow_metal_ingot"
+    ]
+  },
+  {
+    "key": "ItemMaterial:5",
+    "type": "infusion",
+    "research": "CREATIONSHARD",
+    "result": {
+      "item": "taintedmagic:creation_shard",
+      "count": 1,
+      "data": {}
+    },
+    "instability": 8,
+    "aspects": [
+      [
+        "ignis",
+        55
+      ],
+      [
+        "aqua",
+        55
+      ],
+      [
+        "terra",
+        55
+      ],
+      [
+        "aer",
+        55
+      ],
+      [
+        "ordo",
+        55
+      ],
+      [
+        "perditio",
+        55
+      ]
+    ],
+    "central": "thaumcraft:balanced_shard",
+    "components": [
+      "thaumcraft:primordial_pearl",
+      "thaumcraft:air_shard",
+      "thaumcraft:fire_shard",
+      "thaumcraft:water_shard",
+      "minecraft:nether_star",
+      "thaumcraft:earth_shard",
+      "thaumcraft:order_shard",
+      "thaumcraft:entropy_shard"
+    ]
+  },
+  {
+    "key": "ItemWandRod:0",
+    "type": "infusion",
+    "research": "ROD_warpwood",
+    "result": {
+      "item": "taintedmagic:warpwood_rod",
+      "count": 1,
+      "data": {}
+    },
+    "instability": 8,
+    "aspects": [
+      [
+        "alienis",
+        65
+      ],
+      [
+        "tenebrae",
+        30
+      ],
+      [
+        "arbor",
+        12
+      ],
+      [
+        "praecantatio",
+        45
+      ],
+      [
+        "auram",
+        35
+      ]
+    ],
+    "central": "taintedmagic:warpwood_log",
+    "components": [
+      "taintedmagic:primordial_nodule",
+      "taintedmagic:shadow_metal_ingot",
+      "taintedmagic:warped_shard",
+      "thaumcraft:void_metal_ingot",
+      "thaumcraft:zombie_brain",
+      "taintedmagic:shadow_metal_ingot",
+      "taintedmagic:warped_shard",
+      "thaumcraft:void_metal_ingot"
+    ]
+  },
+  {
+    "key": "ItemVoidFortressHelmet:goggles",
+    "type": "infusion",
+    "research": "HELMGOGGLES",
+    "result": {
+      "item": "taintedmagic:void_fortress_helmet",
+      "count": 1,
+      "data": {
+        "goggles": "1"
+      }
+    },
+    "instability": 5,
+    "aspects": [
+      [
+        "sensus",
+        32
+      ],
+      [
+        "auram",
+        16
+      ],
+      [
+        "tutamen",
+        16
+      ]
+    ],
+    "central": "taintedmagic:void_fortress_helmet",
+    "components": [
+      "minecraft:slime_ball",
+      "thaumcraft:goggles_of_revealing"
+    ]
+  },
+  {
+    "key": "ItemVoidFortressHelmet:mask0",
+    "type": "infusion",
+    "research": "MASKGRINNINGDEVIL",
+    "result": {
+      "item": "taintedmagic:void_fortress_helmet",
+      "count": 1,
+      "data": {
+        "mask": "0"
+      }
+    },
+    "instability": 8,
+    "aspects": [
+      [
+        "cognitio",
+        64
+      ],
+      [
+        "sano",
+        64
+      ],
+      [
+        "tutamen",
+        16
+      ]
+    ],
+    "central": "taintedmagic:void_fortress_helmet",
+    "components": [
+      "minecraft:ink_sac",
+      "minecraft:iron_ingot",
+      "minecraft:leather",
+      "thaumcraft:shimmerleaf",
+      "thaumcraft:zombie_brain",
+      "minecraft:iron_ingot"
+    ]
+  },
+  {
+    "key": "ItemVoidFortressHelmet:mask1",
+    "type": "infusion",
+    "research": "MASKANGRYGHOST",
+    "result": {
+      "item": "taintedmagic:void_fortress_helmet",
+      "count": 1,
+      "data": {
+        "mask": "1"
+      }
+    },
+    "instability": 8,
+    "aspects": [
+      [
+        "perditio",
+        64
+      ],
+      [
+        "mortuus",
+        64
+      ],
+      [
+        "tutamen",
+        16
+      ]
+    ],
+    "central": "taintedmagic:void_fortress_helmet",
+    "components": [
+      "minecraft:bone_meal",
+      "minecraft:iron_ingot",
+      "minecraft:leather",
+      "minecraft:poisonous_potato",
+      "minecraft:wither_skeleton_skull",
+      "minecraft:iron_ingot"
+    ]
+  },
+  {
+    "key": "ItemVoidFortressHelmet:mask2",
+    "type": "infusion",
+    "research": "MASKSIPPINGFIEND",
+    "result": {
+      "item": "taintedmagic:void_fortress_helmet",
+      "count": 1,
+      "data": {
+        "mask": "2"
+      }
+    },
+    "instability": 8,
+    "aspects": [
+      [
+        "exanimis",
+        64
+      ],
+      [
+        "victus",
+        64
+      ],
+      [
+        "tutamen",
+        16
+      ]
+    ],
+    "central": "taintedmagic:void_fortress_helmet",
+    "components": [
+      "minecraft:red_dye",
+      "minecraft:iron_ingot",
+      "minecraft:leather",
+      "minecraft:ghast_tear",
+      "minecraft:milk_bucket",
+      "minecraft:iron_ingot"
+    ]
+  },
+  {
+    "key": "ItemVoidFortressHelmet",
+    "type": "infusion",
+    "research": "VOIDFORTRESS",
+    "result": {
+      "item": "taintedmagic:void_fortress_helmet",
+      "count": 1,
+      "data": {}
+    },
+    "instability": 6,
+    "aspects": [
+      [
+        "metallum",
+        24
+      ],
+      [
+        "tutamen",
+        16
+      ],
+      [
+        "praecantatio",
+        8
+      ],
+      [
+        "alienis",
+        16
+      ],
+      [
+        "vacuos",
+        16
+      ]
+    ],
+    "central": "thaumcraft:void_helmet",
+    "components": [
+      "thaumcraft:void_metal_ingot",
+      "thaumcraft:void_metal_ingot",
+      "minecraft:gold_ingot",
+      "minecraft:gold_ingot",
+      "minecraft:emerald"
+    ]
+  },
+  {
+    "key": "ItemVoidFortressChestplate",
+    "type": "infusion",
+    "research": "VOIDFORTRESS",
+    "result": {
+      "item": "taintedmagic:void_fortress_chestplate",
+      "count": 1,
+      "data": {}
+    },
+    "instability": 6,
+    "aspects": [
+      [
+        "metallum",
+        24
+      ],
+      [
+        "tutamen",
+        24
+      ],
+      [
+        "praecantatio",
+        8
+      ],
+      [
+        "alienis",
+        16
+      ],
+      [
+        "vacuos",
+        24
+      ]
+    ],
+    "central": "thaumcraft:void_chestplate",
+    "components": [
+      "thaumcraft:void_metal_ingot",
+      "thaumcraft:void_metal_ingot",
+      "thaumcraft:void_metal_ingot",
+      "thaumcraft:void_metal_ingot",
+      "minecraft:gold_ingot",
+      "minecraft:leather"
+    ]
+  },
+  {
+    "key": "ItemVoidFortressLeggings",
+    "type": "infusion",
+    "research": "VOIDFORTRESS",
+    "result": {
+      "item": "taintedmagic:void_fortress_leggings",
+      "count": 1,
+      "data": {}
+    },
+    "instability": 6,
+    "aspects": [
+      [
+        "metallum",
+        24
+      ],
+      [
+        "tutamen",
+        20
+      ],
+      [
+        "praecantatio",
+        8
+      ],
+      [
+        "alienis",
+        16
+      ],
+      [
+        "vacuos",
+        20
+      ]
+    ],
+    "central": "thaumcraft:void_leggings",
+    "components": [
+      "thaumcraft:void_metal_ingot",
+      "thaumcraft:void_metal_ingot",
+      "thaumcraft:void_metal_ingot",
+      "minecraft:gold_ingot",
+      "minecraft:leather"
+    ]
+  },
+  {
+    "key": "ItemWarpedGoggles",
+    "type": "infusion",
+    "research": "WARPEDGOGGLES",
+    "result": {
+      "item": "taintedmagic:warped_goggles",
+      "count": 1,
+      "data": {}
+    },
+    "instability": 3,
+    "aspects": [
+      [
+        "alienis",
+        35
+      ],
+      [
+        "tenebrae",
+        12
+      ],
+      [
+        "praecantatio",
+        16
+      ],
+      [
+        "tutamen",
+        8
+      ]
+    ],
+    "central": "thaumcraft:goggles_of_revealing",
+    "components": [
+      "taintedmagic:shadow_metal_ingot",
+      "thaumcraft:quicksilver_drop"
+    ]
+  },
+  {
+    "key": "ItemWandCap:0",
+    "type": "infusion",
+    "research": "CAP_shadowmetal",
+    "result": {
+      "item": "taintedmagic:shadow_metal_wand_cap",
+      "count": 1,
+      "data": {}
+    },
+    "instability": 8,
+    "aspects": [
+      [
+        "alienis",
+        55
+      ],
+      [
+        "tenebrae",
+        47
+      ],
+      [
+        "praecantatio",
+        52
+      ],
+      [
+        "metallum",
+        45
+      ],
+      [
+        "vacuos",
+        55
+      ]
+    ],
+    "central": "thaumcraft:void_wand_cap",
+    "components": [
+      "taintedmagic:warped_shard",
+      "taintedmagic:shadow_metal_ingot",
+      "thaumcraft:void_metal_ingot",
+      "taintedmagic:shadow_metal_ingot",
+      "taintedmagic:primordial_nodule",
+      "taintedmagic:shadow_metal_ingot",
+      "thaumcraft:void_metal_ingot",
+      "taintedmagic:shadow_metal_ingot"
+    ]
+  },
+  {
+    "key": "ItemFocusTaintSwarm",
+    "type": "infusion",
+    "research": "TAINTFOCUS",
+    "result": {
+      "item": "taintedmagic:focus_taint_swarm",
+      "count": 1,
+      "data": {}
+    },
+    "instability": 4,
+    "aspects": [
+      [
+        "vitium",
+        45
+      ],
+      [
+        "victus",
+        24
+      ],
+      [
+        "motus",
+        24
+      ],
+      [
+        "praecantatio",
+        16
+      ],
+      [
+        "mortuus",
+        37
+      ]
+    ],
+    "central": "taintedmagic:focus_vis_shard",
+    "components": [
+      "thaumcraft:tainted_goo",
+      "taintedmagic:tainted_shard",
+      "thaumcraft:bottled_taint",
+      "taintedmagic:tainted_shard",
+      "thaumcraft:tainted_goo",
+      "taintedmagic:tainted_shard",
+      "thaumcraft:bottled_taint",
+      "taintedmagic:tainted_shard"
+    ]
+  },
+  {
+    "key": "ItemFocusDarkMatter",
+    "type": "infusion",
+    "research": "ELDRITCHFOCUS",
+    "result": {
+      "item": "taintedmagic:focus_dark_matter",
+      "count": 1,
+      "data": {}
+    },
+    "instability": 6,
+    "aspects": [
+      [
+        "alienis",
+        64
+      ],
+      [
+        "tenebrae",
+        32
+      ],
+      [
+        "praecantatio",
+        32
+      ],
+      [
+        "mortuus",
+        32
+      ],
+      [
+        "vacuos",
+        32
+      ]
+    ],
+    "central": "thaumcraft:focus_portable_hole",
+    "components": [
+      "thaumcraft:primordial_pearl",
+      "taintedmagic:warped_shard",
+      "taintedmagic:shadow_metal_ingot",
+      "minecraft:gold_ingot",
+      "thaumcraft:void_metal_ingot",
+      "taintedmagic:warped_shard",
+      "thaumcraft:liquid_death_bucket",
+      "taintedmagic:warped_shard",
+      "taintedmagic:shadow_metal_ingot",
+      "minecraft:gold_ingot",
+      "thaumcraft:void_metal_ingot",
+      "taintedmagic:warped_shard"
+    ]
+  },
+  {
+    "key": "ItemMaterial:7",
+    "type": "infusion",
+    "research": "KNIGHTROBES",
+    "result": {
+      "item": "taintedmagic:crimson_plating",
+      "count": 9,
+      "data": {}
+    },
+    "instability": 2,
+    "aspects": [
+      [
+        "fames",
+        4
+      ],
+      [
+        "metallum",
+        8
+      ],
+      [
+        "praecantatio",
+        6
+      ]
+    ],
+    "central": "minecraft:iron_block",
+    "components": [
+      "taintedmagic:crimson_blood",
+      "minecraft:gold_nugget",
+      "taintedmagic:crimson_blood",
+      "minecraft:gold_nugget",
+      "taintedmagic:crimson_blood",
+      "minecraft:gold_nugget",
+      "taintedmagic:crimson_blood",
+      "minecraft:gold_nugget"
+    ]
+  },
+  {
+    "key": "ItemVoidwalkerBoots",
+    "type": "infusion",
+    "research": "VOIDWALKERBOOTS",
+    "result": {
+      "item": "taintedmagic:voidwalker_boots",
+      "count": 1,
+      "data": {}
+    },
+    "instability": 8,
+    "aspects": [
+      [
+        "tenebrae",
+        42
+      ],
+      [
+        "vacuos",
+        56
+      ],
+      [
+        "alienis",
+        38
+      ],
+      [
+        "tutamen",
+        60
+      ],
+      [
+        "iter",
+        45
+      ]
+    ],
+    "central": "thaumcraft:boots_traveller",
+    "components": [
+      "taintedmagic:primordial_mote",
+      "thaumcraft:void_metal_ingot",
+      "taintedmagic:shadow_cloth",
+      "taintedmagic:shadow_metal_ingot",
+      "taintedmagic:shadow_cloth",
+      "thaumcraft:void_metal_ingot",
+      "thaumcraft:eldritch_eye",
+      "thaumcraft:void_metal_ingot",
+      "taintedmagic:shadow_cloth",
+      "taintedmagic:shadow_metal_ingot",
+      "taintedmagic:shadow_cloth",
+      "thaumcraft:void_metal_ingot"
+    ]
+  },
+  {
+    "key": "ItemSalis:0",
+    "type": "infusion",
+    "research": "SKYSALT",
+    "result": {
+      "item": "taintedmagic:salis_tempestas",
+      "count": 3,
+      "data": {}
+    },
+    "instability": 7,
+    "aspects": [
+      [
+        "auram",
+        20
+      ],
+      [
+        "tempestas",
+        30
+      ],
+      [
+        "aqua",
+        30
+      ]
+    ],
+    "central": "thaumcraft:salis_mundus",
+    "components": [
+      "taintedmagic:creation_fragment",
+      "thaumcraft:quicksilver_drop"
+    ]
+  },
+  {
+    "key": "ItemSalis:1",
+    "type": "infusion",
+    "research": "TIMESALT",
+    "result": {
+      "item": "taintedmagic:salis_aevum",
+      "count": 3,
+      "data": {}
+    },
+    "instability": 7,
+    "aspects": [
+      [
+        "auram",
+        20
+      ],
+      [
+        "lux",
+        30
+      ],
+      [
+        "tenebrae",
+        30
+      ]
+    ],
+    "central": "thaumcraft:salis_mundus",
+    "components": [
+      "taintedmagic:creation_fragment",
+      "minecraft:gold_nugget"
+    ]
+  },
+  {
+    "key": "ItemThaumicDisassembler",
+    "type": "infusion",
+    "research": "THAUMICDISASSEMBLER",
+    "result": {
+      "item": "taintedmagic:thaumic_disassembler",
+      "count": 1,
+      "data": {}
+    },
+    "instability": 3,
+    "aspects": [
+      [
+        "metallum",
+        22
+      ],
+      [
+        "instrumentum",
+        24
+      ],
+      [
+        "telum",
+        14
+      ],
+      [
+        "machina",
+        12
+      ]
+    ],
+    "central": "taintedmagic:thaumic_alloy_plating",
+    "components": [
+      "taintedmagic:primordial_mote",
+      "thaumcraft:void_pickaxe",
+      "thaumcraft:thaumium_ingot",
+      "thaumcraft:void_shovel",
+      "minecraft:diamond",
+      "thaumcraft:void_sword",
+      "thaumcraft:thaumium_ingot",
+      "thaumcraft:void_axe"
+    ]
+  },
+  {
+    "key": "ItemShadowFortressHelmet:goggles",
+    "type": "infusion",
+    "research": "HELMGOGGLES",
+    "result": {
+      "item": "taintedmagic:shadow_fortress_helmet",
+      "count": 1,
+      "data": {
+        "goggles": "1"
+      }
+    },
+    "instability": 5,
+    "aspects": [
+      [
+        "sensus",
+        32
+      ],
+      [
+        "auram",
+        16
+      ],
+      [
+        "tutamen",
+        16
+      ]
+    ],
+    "central": "taintedmagic:shadow_fortress_helmet",
+    "components": [
+      "minecraft:slime_ball",
+      "thaumcraft:goggles_of_revealing"
+    ]
+  },
+  {
+    "key": "ItemShadowFortressHelmet:mask0",
+    "type": "infusion",
+    "research": "MASKGRINNINGDEVIL",
+    "result": {
+      "item": "taintedmagic:shadow_fortress_helmet",
+      "count": 1,
+      "data": {
+        "mask": "0"
+      }
+    },
+    "instability": 8,
+    "aspects": [
+      [
+        "cognitio",
+        64
+      ],
+      [
+        "sano",
+        64
+      ],
+      [
+        "tutamen",
+        16
+      ]
+    ],
+    "central": "taintedmagic:shadow_fortress_helmet",
+    "components": [
+      "minecraft:ink_sac",
+      "minecraft:iron_ingot",
+      "minecraft:leather",
+      "thaumcraft:shimmerleaf",
+      "thaumcraft:zombie_brain",
+      "minecraft:iron_ingot"
+    ]
+  },
+  {
+    "key": "ItemShadowFortressHelmet:mask1",
+    "type": "infusion",
+    "research": "MASKANGRYGHOST",
+    "result": {
+      "item": "taintedmagic:shadow_fortress_helmet",
+      "count": 1,
+      "data": {
+        "mask": "1"
+      }
+    },
+    "instability": 8,
+    "aspects": [
+      [
+        "perditio",
+        64
+      ],
+      [
+        "mortuus",
+        64
+      ],
+      [
+        "tutamen",
+        16
+      ]
+    ],
+    "central": "taintedmagic:shadow_fortress_helmet",
+    "components": [
+      "minecraft:bone_meal",
+      "minecraft:iron_ingot",
+      "minecraft:leather",
+      "minecraft:poisonous_potato",
+      "minecraft:wither_skeleton_skull",
+      "minecraft:iron_ingot"
+    ]
+  },
+  {
+    "key": "ItemShadowFortressHelmet:mask2",
+    "type": "infusion",
+    "research": "MASKSIPPINGFIEND",
+    "result": {
+      "item": "taintedmagic:shadow_fortress_helmet",
+      "count": 1,
+      "data": {
+        "mask": "2"
+      }
+    },
+    "instability": 8,
+    "aspects": [
+      [
+        "exanimis",
+        64
+      ],
+      [
+        "victus",
+        64
+      ],
+      [
+        "tutamen",
+        16
+      ]
+    ],
+    "central": "taintedmagic:shadow_fortress_helmet",
+    "components": [
+      "minecraft:red_dye",
+      "minecraft:iron_ingot",
+      "minecraft:leather",
+      "minecraft:ghast_tear",
+      "minecraft:milk_bucket",
+      "minecraft:iron_ingot"
+    ]
+  },
+  {
+    "key": "ItemShadowFortressHelmet",
+    "type": "infusion",
+    "research": "SHADOWFORTRESS",
+    "result": {
+      "item": "taintedmagic:shadow_fortress_helmet",
+      "count": 1,
+      "data": {}
+    },
+    "instability": 7,
+    "aspects": [
+      [
+        "metallum",
+        28
+      ],
+      [
+        "tutamen",
+        20
+      ],
+      [
+        "praecantatio",
+        12
+      ],
+      [
+        "tenebrae",
+        30
+      ],
+      [
+        "vacuos",
+        22
+      ]
+    ],
+    "central": "thaumcraft:void_helmet",
+    "components": [
+      "taintedmagic:shadow_metal_ingot",
+      "taintedmagic:shadow_metal_ingot",
+      "minecraft:iron_ingot",
+      "minecraft:iron_ingot",
+      "minecraft:emerald"
+    ]
+  },
+  {
+    "key": "ItemShadowFortressChestplate",
+    "type": "infusion",
+    "research": "SHADOWFORTRESS",
+    "result": {
+      "item": "taintedmagic:shadow_fortress_chestplate",
+      "count": 1,
+      "data": {}
+    },
+    "instability": 7,
+    "aspects": [
+      [
+        "metallum",
+        38
+      ],
+      [
+        "tutamen",
+        26
+      ],
+      [
+        "praecantatio",
+        18
+      ],
+      [
+        "tenebrae",
+        34
+      ],
+      [
+        "vacuos",
+        26
+      ]
+    ],
+    "central": "thaumcraft:void_chestplate",
+    "components": [
+      "taintedmagic:shadow_metal_ingot",
+      "taintedmagic:shadow_metal_ingot",
+      "taintedmagic:shadow_metal_ingot",
+      "taintedmagic:shadow_metal_ingot",
+      "minecraft:iron_ingot",
+      "minecraft:leather"
+    ]
+  },
+  {
+    "key": "ItemShadowFortressLeggings",
+    "type": "infusion",
+    "research": "SHADOWFORTRESS",
+    "result": {
+      "item": "taintedmagic:shadow_fortress_leggings",
+      "count": 1,
+      "data": {}
+    },
+    "instability": 7,
+    "aspects": [
+      [
+        "metallum",
+        32
+      ],
+      [
+        "tutamen",
+        24
+      ],
+      [
+        "praecantatio",
+        16
+      ],
+      [
+        "tenebrae",
+        32
+      ],
+      [
+        "vacuos",
+        24
+      ]
+    ],
+    "central": "thaumcraft:void_leggings",
+    "components": [
+      "taintedmagic:shadow_metal_ingot",
+      "taintedmagic:shadow_metal_ingot",
+      "taintedmagic:shadow_metal_ingot",
+      "minecraft:iron_ingot",
+      "minecraft:leather"
+    ]
+  },
+  {
+    "key": "ItemKatana:0",
+    "type": "infusion",
+    "research": "THAUMIUMKATANA",
+    "result": {
+      "item": "taintedmagic:thaumium_katana",
+      "count": 1,
+      "data": {}
+    },
+    "instability": 3,
+    "aspects": [
+      [
+        "metallum",
+        42
+      ],
+      [
+        "telum",
+        45
+      ],
+      [
+        "praecantatio",
+        22
+      ]
+    ],
+    "central": "thaumcraft:thaumium_sword",
+    "components": [
+      "minecraft:obsidian",
+      "thaumcraft:thaumium_ingot",
+      "minecraft:gold_ingot",
+      "minecraft:emerald",
+      "minecraft:iron_ingot",
+      "thaumcraft:thaumium_ingot",
+      "minecraft:obsidian",
+      "thaumcraft:thaumium_ingot",
+      "minecraft:gold_ingot",
+      "minecraft:emerald",
+      "minecraft:iron_ingot",
+      "thaumcraft:thaumium_ingot"
+    ]
+  },
+  {
+    "key": "ItemKatana:1",
+    "type": "infusion",
+    "research": "VOIDMETALKATANA",
+    "result": {
+      "item": "taintedmagic:void_metal_katana",
+      "count": 1,
+      "data": {}
+    },
+    "instability": 6,
+    "aspects": [
+      [
+        "metallum",
+        52
+      ],
+      [
+        "telum",
+        55
+      ],
+      [
+        "praecantatio",
+        32
+      ],
+      [
+        "vacuos",
+        46
+      ],
+      [
+        "alienis",
+        12
+      ]
+    ],
+    "central": "thaumcraft:void_sword",
+    "components": [
+      "minecraft:obsidian",
+      "thaumcraft:void_metal_ingot",
+      "minecraft:gold_ingot",
+      "minecraft:emerald",
+      "minecraft:iron_ingot",
+      "thaumcraft:void_metal_ingot",
+      "minecraft:obsidian",
+      "thaumcraft:void_metal_ingot",
+      "minecraft:gold_ingot",
+      "minecraft:emerald",
+      "minecraft:iron_ingot",
+      "thaumcraft:void_metal_ingot"
+    ]
+  },
+  {
+    "key": "ItemKatana:2",
+    "type": "infusion",
+    "research": "SHADOWMETALKATANA",
+    "result": {
+      "item": "taintedmagic:shadow_metal_katana",
+      "count": 1,
+      "data": {}
+    },
+    "instability": 7,
+    "aspects": [
+      [
+        "metallum",
+        62
+      ],
+      [
+        "telum",
+        65
+      ],
+      [
+        "praecantatio",
+        42
+      ],
+      [
+        "vacuos",
+        16
+      ],
+      [
+        "tenebrae",
+        46
+      ]
+    ],
+    "central": "taintedmagic:shadow_metal_sword",
+    "components": [
+      "minecraft:obsidian",
+      "taintedmagic:shadow_metal_ingot",
+      "minecraft:iron_ingot",
+      "minecraft:emerald",
+      "minecraft:iron_ingot",
+      "taintedmagic:shadow_metal_ingot",
+      "minecraft:obsidian",
+      "taintedmagic:shadow_metal_ingot",
+      "minecraft:iron_ingot",
+      "minecraft:emerald",
+      "minecraft:iron_ingot",
+      "taintedmagic:shadow_metal_ingot"
+    ]
+  },
+  {
+    "key": "ItemFlyteCharm",
+    "type": "infusion",
+    "research": "FLYTECHARM",
+    "result": {
+      "item": "taintedmagic:flyte_charm",
+      "count": 1,
+      "data": {}
+    },
+    "instability": 7,
+    "aspects": [
+      [
+        "volatus",
+        86
+      ],
+      [
+        "auram",
+        56
+      ],
+      [
+        "sensus",
+        25
+      ],
+      [
+        "praecantatio",
+        48
+      ],
+      [
+        "potentia",
+        65
+      ]
+    ],
+    "central": "thaumcraft:air_arrow",
+    "components": [
+      "taintedmagic:creation_shard",
+      "minecraft:gold_ingot",
+      "thaumcraft:air_shard",
+      "minecraft:iron_ingot",
+      "minecraft:feather",
+      "minecraft:gold_ingot",
+      "thaumcraft:air_shard",
+      "minecraft:iron_ingot"
+    ]
+  },
+  {
+    "key": "ItemGateKey",
+    "type": "infusion",
+    "research": "GATEKEY",
+    "result": {
+      "item": "taintedmagic:gate_key",
+      "count": 1,
+      "data": {}
+    },
+    "instability": 7,
+    "aspects": [
+      [
+        "motus",
+        40
+      ],
+      [
+        "auram",
+        20
+      ],
+      [
+        "iter",
+        25
+      ],
+      [
+        "praecantatio",
+        30
+      ]
+    ],
+    "central": "minecraft:gold_ingot",
+    "components": [
+      "taintedmagic:creation_fragment",
+      "minecraft:iron_ingot",
+      "thaumcraft:balanced_shard",
+      "minecraft:ender_pearl",
+      "minecraft:feather",
+      "minecraft:iron_ingot",
+      "thaumcraft:balanced_shard",
+      "minecraft:ender_pearl"
+    ]
+  },
+  {
+    "key": "ItemVoidmetalGoggles",
+    "type": "infusion",
+    "research": "VOIDGOGGLES",
+    "result": {
+      "item": "taintedmagic:void_metal_goggles",
+      "count": 1,
+      "data": {}
+    },
+    "instability": 5,
+    "aspects": [
+      [
+        "vacuos",
+        40
+      ],
+      [
+        "sensus",
+        35
+      ],
+      [
+        "tutamen",
+        20
+      ]
+    ],
+    "central": "taintedmagic:warped_goggles",
+    "components": [
+      "thaumcraft:void_metal_ingot",
+      "thaumcraft:quicksilver_drop"
+    ]
+  },
+  {
+    "key": "ItemLumosRing",
+    "type": "infusion",
+    "research": "LUMOSRING",
+    "result": {
+      "item": "taintedmagic:lumos_ring",
+      "count": 1,
+      "data": {}
+    },
+    "instability": 1,
+    "aspects": [
+      [
+        "lux",
+        35
+      ],
+      [
+        "sensus",
+        25
+      ],
+      [
+        "auram",
+        10
+      ]
+    ],
+    "central": "thaumcraft:mundane_ring",
+    "components": [
+      "taintedmagic:focus_lumos",
+      "thaumcraft:amber",
+      "minecraft:gold_ingot",
+      "thaumcraft:salis_mundus",
+      "thaumcraft:amber",
+      "minecraft:gold_ingot"
+    ]
+  },
+  {
+    "key": "ItemKatanaThaumium:inscription0",
+    "type": "infusion",
+    "research": "INSCRIPTIONFIRE",
+    "result": {
+      "item": "taintedmagic:thaumium_katana",
+      "count": 1,
+      "data": {
+        "inscription": "0"
+      }
+    },
+    "instability": 8,
+    "aspects": [
+      [
+        "ignis",
+        64
+      ],
+      [
+        "potentia",
+        64
+      ],
+      [
+        "telum",
+        16
+      ]
+    ],
+    "central": "taintedmagic:thaumium_katana",
+    "components": [
+      "thaumcraft:focus_fire",
+      "minecraft:coal",
+      "minecraft:netherrack",
+      "minecraft:fire_charge",
+      "minecraft:blaze_powder",
+      "thaumcraft:nitor"
+    ]
+  },
+  {
+    "key": "ItemKatanaThaumium:inscription1",
+    "type": "infusion",
+    "research": "INSCRIPTIONTHUNDER",
+    "result": {
+      "item": "taintedmagic:thaumium_katana",
+      "count": 1,
+      "data": {
+        "inscription": "1"
+      }
+    },
+    "instability": 8,
+    "aspects": [
+      [
+        "aer",
+        64
+      ],
+      [
+        "tempestas",
+        64
+      ],
+      [
+        "telum",
+        16
+      ]
+    ],
+    "central": "taintedmagic:thaumium_katana",
+    "components": [
+      "taintedmagic:focus_shockwave",
+      "thaumcraft:air_shard",
+      "minecraft:feather",
+      "minecraft:tnt",
+      "thaumcraft:entropy_shard",
+      "minecraft:gunpowder"
+    ]
+  },
+  {
+    "key": "ItemKatanaThaumium:inscription2",
+    "type": "infusion",
+    "research": "INSCRIPTIONHEAL",
+    "result": {
+      "item": "taintedmagic:thaumium_katana",
+      "count": 1,
+      "data": {
+        "inscription": "2"
+      }
+    },
+    "instability": 8,
+    "aspects": [
+      [
+        "sano",
+        64
+      ],
+      [
+        "exanimis",
+        64
+      ],
+      [
+        "telum",
+        16
+      ]
+    ],
+    "central": "taintedmagic:thaumium_katana",
+    "components": [
+      "thaumcraft:focus_pech",
+      "minecraft:bone",
+      "minecraft:rotten_flesh",
+      "minecraft:fermented_spider_eye",
+      "thaumcraft:zombie_brain",
+      "thaumcraft:bath_salts"
+    ]
+  },
+  {
+    "key": "ItemKatana:inscription0",
+    "type": "infusion",
+    "research": "INSCRIPTIONFIRE",
+    "result": {
+      "item": "taintedmagic:thaumium_katana",
+      "count": 1,
+      "data": {
+        "inscription": "0"
+      }
+    },
+    "instability": 8,
+    "aspects": [
+      [
+        "ignis",
+        64
+      ],
+      [
+        "potentia",
+        64
+      ],
+      [
+        "telum",
+        16
+      ]
+    ],
+    "central": [
+      "taintedmagic:thaumium_katana",
+      "taintedmagic:void_metal_katana",
+      "taintedmagic:shadow_metal_katana"
+    ],
+    "components": [
+      "thaumcraft:focus_fire",
+      "minecraft:coal",
+      "minecraft:netherrack",
+      "minecraft:fire_charge",
+      "minecraft:blaze_powder",
+      "thaumcraft:nitor"
+    ]
+  },
+  {
+    "key": "ItemKatana:inscription1",
+    "type": "infusion",
+    "research": "INSCRIPTIONTHUNDER",
+    "result": {
+      "item": "taintedmagic:thaumium_katana",
+      "count": 1,
+      "data": {
+        "inscription": "1"
+      }
+    },
+    "instability": 8,
+    "aspects": [
+      [
+        "aer",
+        64
+      ],
+      [
+        "tempestas",
+        64
+      ],
+      [
+        "telum",
+        16
+      ]
+    ],
+    "central": [
+      "taintedmagic:thaumium_katana",
+      "taintedmagic:void_metal_katana",
+      "taintedmagic:shadow_metal_katana"
+    ],
+    "components": [
+      "taintedmagic:focus_shockwave",
+      "thaumcraft:air_shard",
+      "minecraft:feather",
+      "minecraft:tnt",
+      "thaumcraft:entropy_shard",
+      "minecraft:gunpowder"
+    ]
+  },
+  {
+    "key": "ItemKatana:inscription2",
+    "type": "infusion",
+    "research": "INSCRIPTIONHEAL",
+    "result": {
+      "item": "taintedmagic:thaumium_katana",
+      "count": 1,
+      "data": {
+        "inscription": "2"
+      }
+    },
+    "instability": 8,
+    "aspects": [
+      [
+        "sano",
+        64
+      ],
+      [
+        "exanimis",
+        64
+      ],
+      [
+        "telum",
+        16
+      ]
+    ],
+    "central": [
+      "taintedmagic:thaumium_katana",
+      "taintedmagic:void_metal_katana",
+      "taintedmagic:shadow_metal_katana"
+    ],
+    "components": [
+      "thaumcraft:focus_pech",
+      "minecraft:bone",
+      "minecraft:rotten_flesh",
+      "minecraft:fermented_spider_eye",
+      "thaumcraft:zombie_brain",
+      "thaumcraft:bath_salts"
+    ]
+  },
+  {
+    "key": "ItemMaterial:2",
+    "type": "arcane_shapeless",
+    "research": "CRIMSONROBES",
+    "result": {
+      "item": "taintedmagic:crimson_cloth",
+      "count": 1,
+      "data": {}
+    },
+    "aspects": [
+      [
+        "ignis",
+        5
+      ],
+      [
+        "perditio",
+        5
+      ]
+    ],
+    "ingredients": [
+      "taintedmagic:crimson_blood",
+      "thaumcraft:enchanted_fabric",
+      "minecraft:gold_nugget"
+    ]
+  },
+  {
+    "key": "ItemWarpFertilizer",
+    "type": "arcane_shapeless",
+    "research": "WARPTREE",
+    "result": {
+      "item": "taintedmagic:warp_fertilizer",
+      "count": 1,
+      "data": {}
+    },
+    "aspects": [
+      [
+        "perditio",
+        150
+      ]
+    ],
+    "ingredients": [
+      "thaumcraft:zombie_brain",
+      "taintedmagic:warped_shard",
+      "thaumcraft:wisp_essence",
+      "minecraft:bone_meal"
+    ]
+  },
+  {
+    "key": "ItemMaterial:6",
+    "type": "arcane",
+    "research": "THAUMICDISASSEMBLER",
+    "result": {
+      "item": "taintedmagic:thaumic_alloy_plating",
+      "count": 1,
+      "data": {}
+    },
+    "aspects": [
+      [
+        "ordo",
+        50
+      ],
+      [
+        "perditio",
+        50
+      ]
+    ],
+    "pattern": [
+      "BAB",
+      "A A",
+      "BAB"
+    ],
+    "symbols": {
+      "A": "thaumcraft:thaumium_ingot",
+      "B": "thaumcraft:void_metal_ingot"
+    }
+  },
+  {
+    "key": "ItemHelmetCultistRobe",
+    "type": "arcane",
+    "research": "CRIMSONROBES",
+    "result": {
+      "item": "thaumcraft:crimson_cult_hood",
+      "count": 1,
+      "data": {}
+    },
+    "aspects": [
+      [
+        "ignis",
+        5
+      ],
+      [
+        "perditio",
+        5
+      ]
+    ],
+    "pattern": [
+      "AAA",
+      "A A"
+    ],
+    "symbols": {
+      "A": "taintedmagic:crimson_cloth"
+    }
+  },
+  {
+    "key": "ItemChestCultistRobe",
+    "type": "arcane",
+    "research": "CRIMSONROBES",
+    "result": {
+      "item": "thaumcraft:crimson_cult_robe",
+      "count": 1,
+      "data": {}
+    },
+    "aspects": [
+      [
+        "ignis",
+        10
+      ],
+      [
+        "perditio",
+        10
+      ]
+    ],
+    "pattern": [
+      "A A",
+      "CAC",
+      "ABA"
+    ],
+    "symbols": {
+      "A": "taintedmagic:crimson_cloth",
+      "B": "minecraft:gold_ingot",
+      "C": "minecraft:iron_ingot"
+    }
+  },
+  {
+    "key": "ItemLegsCultistRobe",
+    "type": "arcane",
+    "research": "CRIMSONROBES",
+    "result": {
+      "item": "thaumcraft:crimson_cult_leggings",
+      "count": 1,
+      "data": {}
+    },
+    "aspects": [
+      [
+        "ignis",
+        8
+      ],
+      [
+        "perditio",
+        8
+      ]
+    ],
+    "pattern": [
+      "ABA",
+      "ACA",
+      "A A"
+    ],
+    "symbols": {
+      "A": "taintedmagic:crimson_cloth",
+      "B": "minecraft:gold_ingot",
+      "C": "minecraft:iron_ingot"
+    }
+  },
+  {
+    "key": "ItemBootsCultist",
+    "type": "arcane",
+    "research": "CRIMSONROBES",
+    "result": {
+      "item": "thaumcraft:crimson_cult_boots",
+      "count": 1,
+      "data": {}
+    },
+    "aspects": [
+      [
+        "ignis",
+        5
+      ],
+      [
+        "perditio",
+        5
+      ]
+    ],
+    "pattern": [
+      "A A",
+      "A A"
+    ],
+    "symbols": {
+      "A": "taintedmagic:crimson_cloth"
+    }
+  },
+  {
+    "key": "ItemWandRod:1",
+    "type": "arcane",
+    "research": "ROD_warpwood_staff",
+    "result": {
+      "item": "taintedmagic:warpwood_staff_core",
+      "count": 1,
+      "data": {}
+    },
+    "aspects": [
+      [
+        "ignis",
+        120
+      ],
+      [
+        "aqua",
+        120
+      ],
+      [
+        "terra",
+        120
+      ],
+      [
+        "aer",
+        120
+      ],
+      [
+        "ordo",
+        120
+      ],
+      [
+        "perditio",
+        120
+      ]
+    ],
+    "pattern": [
+      "  A",
+      " B ",
+      "B  "
+    ],
+    "symbols": {
+      "A": "thaumcraft:primordial_pearl",
+      "B": "taintedmagic:warpwood_rod"
+    }
+  },
+  {
+    "key": "ItemHelmetCultistPlate",
+    "type": "arcane",
+    "research": "KNIGHTROBES",
+    "result": {
+      "item": "thaumcraft:crimson_cult_helm",
+      "count": 1,
+      "data": {}
+    },
+    "aspects": [
+      [
+        "terra",
+        5
+      ],
+      [
+        "ignis",
+        5
+      ],
+      [
+        "perditio",
+        5
+      ]
+    ],
+    "pattern": [
+      "ABA",
+      "C C"
+    ],
+    "symbols": {
+      "A": "taintedmagic:crimson_plating",
+      "B": "minecraft:gold_ingot",
+      "C": "minecraft:iron_ingot"
+    }
+  },
+  {
+    "key": "ItemChestCultistPlate",
+    "type": "arcane",
+    "research": "KNIGHTROBES",
+    "result": {
+      "item": "thaumcraft:crimson_cult_chestplate",
+      "count": 1,
+      "data": {}
+    },
+    "aspects": [
+      [
+        "terra",
+        10
+      ],
+      [
+        "ignis",
+        10
+      ],
+      [
+        "perditio",
+        10
+      ]
+    ],
+    "pattern": [
+      "A A",
+      "ABA",
+      "BBB"
+    ],
+    "symbols": {
+      "A": "minecraft:iron_ingot",
+      "B": "taintedmagic:crimson_plating"
+    }
+  },
+  {
+    "key": "ItemLegsCultistPlate",
+    "type": "arcane",
+    "research": "KNIGHTROBES",
+    "result": {
+      "item": "thaumcraft:crimson_cult_greaves",
+      "count": 1,
+      "data": {}
+    },
+    "aspects": [
+      [
+        "terra",
+        8
+      ],
+      [
+        "ignis",
+        8
+      ],
+      [
+        "perditio",
+        8
+      ]
+    ],
+    "pattern": [
+      "ABA",
+      "ACA",
+      " C "
+    ],
+    "symbols": {
+      "A": "minecraft:iron_ingot",
+      "B": "minecraft:gold_ingot",
+      "C": "taintedmagic:crimson_plating"
+    }
+  },
+  {
+    "key": "ItemHelmetCultistLeaderPlate",
+    "type": "arcane",
+    "research": "PRAETORARMOR",
+    "result": {
+      "item": "thaumcraft:crimson_praetor_helm",
+      "count": 1,
+      "data": {}
+    },
+    "aspects": [
+      [
+        "ordo",
+        15
+      ],
+      [
+        "perditio",
+        15
+      ],
+      [
+        "ignis",
+        15
+      ]
+    ],
+    "pattern": [
+      "BCB",
+      "DAD",
+      "BCB"
+    ],
+    "symbols": {
+      "A": "thaumcraft:crimson_cult_helm",
+      "B": "minecraft:iron_ingot",
+      "C": "taintedmagic:crimson_plating",
+      "D": "minecraft:gold_ingot"
+    }
+  },
+  {
+    "key": "ItemChestCultistLeaderPlate",
+    "type": "arcane",
+    "research": "PRAETORARMOR",
+    "result": {
+      "item": "thaumcraft:crimson_praetor_chestplate",
+      "count": 1,
+      "data": {}
+    },
+    "aspects": [
+      [
+        "ordo",
+        25
+      ],
+      [
+        "perditio",
+        25
+      ],
+      [
+        "ignis",
+        25
+      ]
+    ],
+    "pattern": [
+      "BBB",
+      "CAC",
+      "CDC"
+    ],
+    "symbols": {
+      "A": "thaumcraft:crimson_cult_chestplate",
+      "B": "minecraft:iron_ingot",
+      "C": "taintedmagic:crimson_plating",
+      "D": "minecraft:gold_ingot"
+    }
+  },
+  {
+    "key": "ItemLegsCultistLeaderPlate",
+    "type": "arcane",
+    "research": "PRAETORARMOR",
+    "result": {
+      "item": "thaumcraft:crimson_praetor_greaves",
+      "count": 1,
+      "data": {}
+    },
+    "aspects": [
+      [
+        "ordo",
+        20
+      ],
+      [
+        "perditio",
+        20
+      ],
+      [
+        "ignis",
+        20
+      ]
+    ],
+    "pattern": [
+      "CDC",
+      "BAB",
+      "BCB"
+    ],
+    "symbols": {
+      "A": "thaumcraft:crimson_cult_greaves",
+      "B": "taintedmagic:crimson_plating",
+      "C": "minecraft:iron_ingot",
+      "D": "minecraft:gold_ingot"
+    }
+  },
+  {
+    "key": "ItemMaterial:1",
+    "type": "arcane",
+    "research": "SHADOWMETAL",
+    "result": {
+      "item": "taintedmagic:shadow_cloth",
+      "count": 1,
+      "data": {}
+    },
+    "aspects": [
+      [
+        "ordo",
+        10
+      ],
+      [
+        "perditio",
+        10
+      ]
+    ],
+    "pattern": [
+      " A ",
+      "ABA",
+      " A "
+    ],
+    "symbols": {
+      "A": "taintedmagic:shadow_metal_nugget",
+      "B": "thaumcraft:enchanted_fabric"
+    }
+  },
+  {
+    "key": "ItemMagicFunguar",
+    "type": "arcane_shapeless",
+    "research": "MAGICFUNGUAR",
+    "result": {
+      "item": "taintedmagic:magic_funguar",
+      "count": 1,
+      "data": {}
+    },
+    "aspects": [
+      [
+        "ignis",
+        1
+      ],
+      [
+        "aqua",
+        1
+      ],
+      [
+        "terra",
+        1
+      ],
+      [
+        "aer",
+        1
+      ],
+      [
+        "ordo",
+        1
+      ],
+      [
+        "perditio",
+        1
+      ]
+    ],
+    "ingredients": [
+      "thaumcraft:vishroom",
+      [
+        "thaumcraft:air_shard",
+        "thaumcraft:fire_shard",
+        "thaumcraft:water_shard",
+        "thaumcraft:earth_shard",
+        "thaumcraft:order_shard",
+        "thaumcraft:entropy_shard",
+        "thaumcraft:balanced_shard"
+      ],
+      "minecraft:glowstone_dust",
+      "minecraft:redstone"
+    ]
+  },
+  {
+    "key": "ItemHollowDagger",
+    "type": "arcane",
+    "research": "HOLLOWDAGGER",
+    "result": {
+      "item": "taintedmagic:hollow_dagger",
+      "count": 1,
+      "data": {}
+    },
+    "aspects": [
+      [
+        "perditio",
+        85
+      ]
+    ],
+    "pattern": [
+      "  A",
+      " BD",
+      "C  "
+    ],
+    "symbols": {
+      "A": "thaumcraft:bone_rod",
+      "B": "thaumcraft:greatwood_log",
+      "C": "minecraft:stick",
+      "D": "minecraft:iron_nugget"
+    }
+  },
+  {
+    "key": "ItemWandCap:1",
+    "type": "arcane",
+    "research": "CAP_cloth",
+    "result": {
+      "item": "taintedmagic:cloth_wand_cap",
+      "count": 1,
+      "data": {}
+    },
+    "aspects": [
+      [
+        "terra",
+        10
+      ],
+      [
+        "ignis",
+        10
+      ],
+      [
+        "perditio",
+        10
+      ],
+      [
+        "ordo",
+        10
+      ]
+    ],
+    "pattern": [
+      "AAA",
+      "A A"
+    ],
+    "symbols": {
+      "A": "thaumcraft:enchanted_fabric"
+    }
+  },
+  {
+    "key": "ItemWandCap:2",
+    "type": "arcane",
+    "research": "CAP_crimsoncloth",
+    "result": {
+      "item": "taintedmagic:crimson_cloth_wand_cap",
+      "count": 1,
+      "data": {}
+    },
+    "aspects": [
+      [
+        "ignis",
+        25
+      ],
+      [
+        "perditio",
+        25
+      ],
+      [
+        "ordo",
+        25
+      ]
+    ],
+    "pattern": [
+      "AAA",
+      "ABA"
+    ],
+    "symbols": {
+      "A": "taintedmagic:crimson_cloth",
+      "B": "thaumcraft:salis_mundus"
+    }
+  },
+  {
+    "key": "ItemWandCap:3",
+    "type": "arcane",
+    "research": "CAP_shadowcloth",
+    "result": {
+      "item": "taintedmagic:shadow_cloth_wand_cap",
+      "count": 1,
+      "data": {}
+    },
+    "aspects": [
+      [
+        "terra",
+        55
+      ],
+      [
+        "ignis",
+        55
+      ],
+      [
+        "perditio",
+        55
+      ],
+      [
+        "ordo",
+        55
+      ]
+    ],
+    "pattern": [
+      "AAA",
+      "ABA"
+    ],
+    "symbols": {
+      "A": "taintedmagic:shadow_cloth",
+      "B": "thaumcraft:salis_mundus"
+    }
+  },
+  {
+    "key": "ItemFocusVisShard",
+    "type": "arcane",
+    "research": "FOCUSSHARD",
+    "result": {
+      "item": "taintedmagic:focus_vis_shard",
+      "count": 1,
+      "data": {}
+    },
+    "aspects": [
+      [
+        "aer",
+        46
+      ],
+      [
+        "perditio",
+        38
+      ],
+      [
+        "ordo",
+        22
+      ]
+    ],
+    "pattern": [
+      "BDC",
+      "DAD",
+      "CDB"
+    ],
+    "symbols": {
+      "A": "thaumcraft:quicksilver",
+      "B": "thaumcraft:balanced_shard",
+      "C": "taintedmagic:tainted_shard",
+      "D": "thaumcraft:wisp_essence"
+    }
+  },
+  {
+    "key": "ItemFocusLumos",
+    "type": "arcane",
+    "research": "FOCUSLUMOS",
+    "result": {
+      "item": "taintedmagic:focus_lumos",
+      "count": 1,
+      "data": {}
+    },
+    "aspects": [
+      [
+        "aer",
+        52
+      ],
+      [
+        "ignis",
+        56
+      ],
+      [
+        "ordo",
+        28
+      ]
+    ],
+    "pattern": [
+      "BDC",
+      "DAD",
+      "CDB"
+    ],
+    "symbols": {
+      "A": "thaumcraft:quicksilver",
+      "B": "thaumcraft:nitor",
+      "C": "thaumcraft:balanced_shard",
+      "D": "minecraft:glowstone_dust"
+    }
+  },
+  {
+    "key": "ItemMaterial:9",
+    "type": "arcane_shapeless",
+    "research": "BREAKPEARL",
+    "result": {
+      "item": "taintedmagic:primordial_nodule",
+      "count": 3,
+      "data": {}
+    },
+    "aspects": [
+      [
+        "perditio",
+        25
+      ]
+    ],
+    "ingredients": [
+      "thaumcraft:primordial_pearl"
+    ]
+  },
+  {
+    "key": "ItemMaterial:10",
+    "type": "arcane_shapeless",
+    "research": "BREAKPEARL",
+    "result": {
+      "item": "taintedmagic:primordial_mote",
+      "count": 3,
+      "data": {}
+    },
+    "aspects": [
+      [
+        "perditio",
+        15
+      ]
+    ],
+    "ingredients": [
+      "taintedmagic:primordial_nodule"
+    ]
+  },
+  {
+    "key": "ItemMaterial:11",
+    "type": "arcane_shapeless",
+    "research": "CREATIONSHARD",
+    "result": {
+      "item": "taintedmagic:creation_fragment",
+      "count": 9,
+      "data": {}
+    },
+    "aspects": [
+      [
+        "perditio",
+        99
+      ]
+    ],
+    "ingredients": [
+      "taintedmagic:creation_shard"
+    ]
+  },
+  {
+    "key": "ItemVoidBlood",
+    "type": "arcane",
+    "research": "VOIDBLOOD",
+    "result": {
+      "item": "taintedmagic:void_blood",
+      "count": 1,
+      "data": {}
+    },
+    "aspects": [
+      [
+        "ordo",
+        35
+      ],
+      [
+        "perditio",
+        25
+      ]
+    ],
+    "pattern": [
+      " B ",
+      "CAC",
+      " D "
+    ],
+    "symbols": {
+      "A": "taintedmagic:crimson_blood",
+      "B": "taintedmagic:primordial_mote",
+      "C": "thaumcraft:void_seed",
+      "D": "thaumcraft:wisp_essence"
+    }
+  },
+  {
+    "key": "ItemMaterial:3",
+    "type": "crucible",
+    "research": "UNBALANCEDSHARDS",
+    "result": {
+      "item": "taintedmagic:warped_shard",
+      "count": 1,
+      "data": {}
+    },
+    "catalyst": "thaumcraft:balanced_shard",
+    "aspects": [
+      [
+        "alienis",
+        4
+      ]
+    ]
+  },
+  {
+    "key": "ItemMaterial:4",
+    "type": "crucible",
+    "research": "UNBALANCEDSHARDS",
+    "result": {
+      "item": "taintedmagic:tainted_shard",
+      "count": 1,
+      "data": {}
+    },
+    "catalyst": "thaumcraft:balanced_shard",
+    "aspects": [
+      [
+        "vitium",
+        4
+      ]
+    ]
+  },
+  {
+    "key": "ItemMaterial:0",
+    "type": "crucible",
+    "research": "SHADOWMETAL",
+    "result": {
+      "item": "taintedmagic:shadow_metal_ingot",
+      "count": 1,
+      "data": {}
+    },
+    "catalyst": "minecraft:iron_ingot",
+    "aspects": [
+      [
+        "tenebrae",
+        3
+      ],
+      [
+        "metallum",
+        7
+      ],
+      [
+        "praecantatio",
+        2
+      ]
+    ]
+  },
+  {
+    "key": "Vishroom_brown",
+    "type": "crucible",
+    "research": "VISHROOMCRAFT",
+    "result": {
+      "item": "thaumcraft:vishroom",
+      "count": 1,
+      "data": {}
+    },
+    "catalyst": "minecraft:brown_mushroom",
+    "aspects": [
+      [
+        "praecantatio",
+        3
+      ],
+      [
+        "venenum",
+        1
+      ]
+    ]
+  },
+  {
+    "key": "Vishroom_red",
+    "type": "crucible",
+    "research": "VISHROOMCRAFT",
+    "result": {
+      "item": "thaumcraft:vishroom",
+      "count": 1,
+      "data": {}
+    },
+    "catalyst": "minecraft:red_mushroom",
+    "aspects": [
+      [
+        "praecantatio",
+        3
+      ],
+      [
+        "venenum",
+        1
+      ]
+    ]
+  }
+]

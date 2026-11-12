@@ -1,0 +1,26 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:registered",
+      "value": "taintedmagic:shadow_metal_ingot"
+    },
+    {
+      "type": "neoforge:registered",
+      "value": "taintedmagic:shadow_metal_shovel"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "A": "taintedmagic:shadow_metal_ingot",
+    "B": "minecraft:stick"
+  },
+  "pattern": [
+    "A",
+    "B",
+    "B"
+  ],
+  "result": {
+    "id": "taintedmagic:shadow_metal_shovel"
+  }
+}
