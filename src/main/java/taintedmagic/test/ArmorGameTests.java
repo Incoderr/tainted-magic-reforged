@@ -126,7 +126,7 @@ public final class ArmorGameTests {
 
     private static void gateKeyNeedsSpace(GameTestHelper helper) {
         BlockPos target = helper.absolutePos(new BlockPos(3, 1, 3));
-        String dimension = helper.getLevel().dimension().identifier().toString();
+        String dimension = helper.getLevel().dimension().location().toString();
         GateKeyItem.Binding binding = new GateKeyItem.Binding(target.getX(), target.getY(), target.getZ(), dimension, 10);
         helper.assertTrue(GateKeyItem.canTeleport(helper.getLevel(), binding), "free space rejected");
         helper.setBlock(new BlockPos(3, 2, 3), Blocks.STONE);

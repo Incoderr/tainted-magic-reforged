@@ -6,9 +6,9 @@ import net.minecraft.core.component.DataComponents;
 import net.minecraft.gametest.framework.GameTestHelper;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.EntityTypes;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.animal.pig.Pig;
+import net.minecraft.world.entity.animal.Pig;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
@@ -146,9 +146,9 @@ public final class FociGameTests {
     }
 
     private static void homingShardHitsTarget(GameTestHelper helper) {
-        Pig pig = helper.spawnWithNoFreeWill(EntityTypes.PIG, new BlockPos(5, 1, 5));
+        Pig pig = helper.spawnWithNoFreeWill(EntityType.PIG, new BlockPos(5, 1, 5));
         Player player = helper.makeMockPlayer(GameType.SURVIVAL);
-        player.snapTo(helper.absoluteVec(new Vec3(1.5, 1.0, 1.5)));
+        player.moveTo(helper.absoluteVec(new Vec3(1.5, 1.0, 1.5)));
         HomingShard shard = HomingShard.create(helper.getLevel(), player, pig, 4, false);
         helper.getLevel().addFreshEntity(shard);
         float health = pig.getHealth();
@@ -156,7 +156,7 @@ public final class FociGameTests {
     }
 
     private static void swarmTargetIsSet(GameTestHelper helper) {
-        Pig pig = helper.spawnWithNoFreeWill(EntityTypes.PIG, new BlockPos(1, 1, 1));
+        Pig pig = helper.spawnWithNoFreeWill(EntityType.PIG, new BlockPos(1, 1, 1));
         TaintSwarm swarm = helper.spawn(ModEntities.TAINT_SWARM.get(), new BlockPos(4, 2, 4));
         SwarmTargets.set(swarm, pig);
         helper.assertTrue(SwarmTargets.get(swarm) == pig, "swarm target was not set");

@@ -3,12 +3,11 @@ package taintedmagic.materials;
 import net.minecraft.core.Holder;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.world.clock.WorldClock;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.saveddata.WeatherData;
+import net.minecraft.world.level.storage.ServerLevelData;
 import thaumcraft.registry.ModSounds;
 import taintedmagic.fx.TmFx;
 
@@ -72,25 +71,19 @@ public class SalisItem extends Item {
     }
 
     public static void toggleWeather(ServerLevel level) {
-        WeatherData weather = level.getWeatherData();
+        ServerLevelData weather = (ServerLevelData) level.getLevelData();
         boolean raining = weather.isRaining();
         weather.setRainTime(raining ? 24000 : 0);
         weather.setRaining(!raining);
         weather.setThundering(!raining && level.getRandom().nextInt(10) == 0);
-        weather.setDirty();
     }
 
     public static void skipToDayOrNight(ServerLevel level) {
-        Holder<WorldClock> clock = level.dimensionTypeRegistration().value().defaultClock().orElse(null);
-        if (clock == null) {
-            return;
-        }
-        var clocks = level.getServer().clockManager();
-        long time = clocks.getInstance(clock).totalTicks();
-        long next = time - time % 24000 + (level.isBrightOutside() ? 14000 : 24000);
+        long time = level.getDayTime();
+        long next = time - time % 24000 + (level.isDay() ? 14000 : 24000);
         if (next <= time) {
             next += 24000;
         }
-        clocks.setTotalTicks(clock, next);
+        level.setDayTime(next);
     }
 }

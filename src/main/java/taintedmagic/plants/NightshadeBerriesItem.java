@@ -16,7 +16,7 @@ public class NightshadeBerriesItem extends Item {
     public ItemStack finishUsingItem(ItemStack stack, Level level, LivingEntity entity) {
         ItemStack result = super.finishUsingItem(stack, level, entity);
         if (level instanceof ServerLevel server && entity instanceof Player player) {
-            player.hurtServer(server, server.damageSources().source(PlantsFeature.NIGHTSHADE), Short.MAX_VALUE);
+            player.hurt(server.damageSources().source(PlantsFeature.NIGHTSHADE), Short.MAX_VALUE);
         }
         return result;
     }

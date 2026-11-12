@@ -9,15 +9,22 @@
           "children": [
             {
               "type": "minecraft:item",
-              "condition": "minecraft:tool/can_shear",
+              "conditions": [
+                {
+                  "condition": "minecraft:match_tool",
+                  "predicate": {
+                    "items": "minecraft:shears"
+                  }
+                }
+              ],
               "name": "taintedmagic:nightshade_bush"
             },
             {
               "type": "minecraft:item",
               "name": "taintedmagic:nightshade_berries",
-              "modifier": [
+              "functions": [
                 {
-                  "type": "minecraft:set_count",
+                  "function": "minecraft:set_count",
                   "count": {
                     "type": "minecraft:uniform",
                     "min": 1,

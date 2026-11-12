@@ -1,6 +1,6 @@
 package taintedmagic.foci;
 
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
@@ -11,7 +11,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
-import org.jspecify.annotations.Nullable;
+import javax.annotation.Nullable;
 import thaumcraft.aspect.Aspect;
 import thaumcraft.aspect.AspectList;
 import thaumcraft.entity.CombatUtils;
@@ -41,7 +41,7 @@ public class VisShardFocus extends TmFocus {
     }
 
     @Override
-    public @Nullable Identifier getFocusTexture(ItemStack focus) {
+    public @Nullable ResourceLocation getFocusTexture(ItemStack focus) {
         return TaintedMagic.id("item/focus_vis_shard");
     }
 
@@ -77,7 +77,7 @@ public class VisShardFocus extends TmFocus {
     }
 
     @Override
-    public FocusUpgradeType @Nullable [] getPossibleUpgradesByRank(ItemStack focus, int rank) {
+    @Nullable public FocusUpgradeType[] getPossibleUpgradesByRank(ItemStack focus, int rank) {
         return switch (rank) {
             case 1, 2, 3, 4 -> upgrades(FocusUpgradeType.FRUGAL, FocusUpgradeType.POTENCY);
             case 5 -> upgrades(FocusUpgradeType.FRUGAL, FocusUpgradeType.POTENCY, FociFeature.PERSISTENT);

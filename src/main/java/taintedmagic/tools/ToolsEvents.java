@@ -28,7 +28,7 @@ public final class ToolsEvents {
     }
 
     public static ItemStack hipKatana(Player player) {
-        for (ItemStack stack : player.getInventory().getNonEquipmentItems()) {
+        for (ItemStack stack : player.getInventory().items) {
             if (stack.getItem() instanceof KatanaItem) {
                 return stack;
             }

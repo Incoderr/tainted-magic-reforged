@@ -43,7 +43,7 @@ public class WarpwoodTreeGenerator {
         int y = origin.getY();
         int z = origin.getZ();
         int height = random.nextInt(randomTreeHeight) + minTreeHeight;
-        if (y < level.getMinY() + 1 || y + height + 1 > level.getMaxY() + 1) {
+        if (y < level.getMinBuildHeight() + 1 || y + height + 1 > level.getMaxBuildHeight()) {
             return false;
         }
         for (int layerY = y; layerY <= y + 1 + height; layerY++) {
@@ -68,7 +68,7 @@ public class WarpwoodTreeGenerator {
         }
         BlockPos soilPos = origin.below();
         BlockState soil = level.getBlockState(soilPos);
-        if (!PlantSoil.PLAINS.canSustain(soil, level, soilPos) || y >= level.getMaxY() + 1 - height - 1) {
+        if (!PlantSoil.PLAINS.canSustain(soil, level, soilPos) || y >= level.getMaxBuildHeight() - height - 1) {
             return false;
         }
         if (soil.is(Blocks.GRASS_BLOCK) || soil.is(Blocks.FARMLAND) || soil.is(Blocks.MYCELIUM)) {

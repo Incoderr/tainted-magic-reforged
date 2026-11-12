@@ -43,7 +43,7 @@ public final class WandsFeature {
         return WandRegistry.registerCap(tag, discount, List.of(), 0.0F, TaintedMagic.id(item), craftCost, null, texture(texture));
     }
 
-    private static net.minecraft.resources.Identifier texture(String name) {
+    private static net.minecraft.resources.ResourceLocation texture(String name) {
         return TaintedMagic.id("textures/models/" + name + ".png");
     }
 

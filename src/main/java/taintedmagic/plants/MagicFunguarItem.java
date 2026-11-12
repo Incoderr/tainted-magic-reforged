@@ -22,7 +22,7 @@ public class MagicFunguarItem extends Item {
         ItemStack result = super.finishUsingItem(stack, level, entity);
         if (!level.isClientSide() && entity instanceof Player player) {
             player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 60, 1));
-            player.addEffect(new MobEffectInstance(MobEffects.SPEED, 100, 2));
+            player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 100, 2));
             List<Aspect> primals = Aspect.getPrimalAspects();
             Aspect aspect = primals.get(level.getRandom().nextInt(primals.size()));
             if (player instanceof ServerPlayer serverPlayer) {

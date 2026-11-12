@@ -1,7 +1,7 @@
 package taintedmagic.foci;
 
 import net.minecraft.core.BlockPos;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -10,7 +10,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
-import org.jspecify.annotations.Nullable;
+import javax.annotation.Nullable;
 import thaumcraft.aspect.Aspect;
 import thaumcraft.aspect.AspectList;
 import thaumcraft.registry.ModSounds;
@@ -36,7 +36,7 @@ public class LumosFocus extends TmFocus {
     }
 
     @Override
-    public @Nullable Identifier getFocusTexture(ItemStack focus) {
+    public @Nullable ResourceLocation getFocusTexture(ItemStack focus) {
         return TaintedMagic.id("item/focus_lumos");
     }
 
@@ -73,7 +73,7 @@ public class LumosFocus extends TmFocus {
     }
 
     @Override
-    public FocusUpgradeType @Nullable [] getPossibleUpgradesByRank(ItemStack focus, int rank) {
+    @Nullable public FocusUpgradeType[] getPossibleUpgradesByRank(ItemStack focus, int rank) {
         return rank >= 1 && rank <= 5 ? upgrades(FocusUpgradeType.FRUGAL) : null;
     }
 }

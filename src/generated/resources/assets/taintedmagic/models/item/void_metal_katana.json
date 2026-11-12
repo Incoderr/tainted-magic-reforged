@@ -329,5 +329,13 @@
         0.7
       ]
     }
-  }
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "taintedmagic:charging": 1.0
+      },
+      "model": "taintedmagic:item/void_metal_katana_charging"
+    }
+  ]
 }

@@ -5,11 +5,11 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
-import net.neoforged.neoforge.registries.DeferredRegister;
+import taintedmagic.platform.TmRegistration;
 import taintedmagic.TaintedMagic;
 
 public final class ModBlocks {
-    public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(TaintedMagic.MODID);
+    public static final TmRegistration.Blocks BLOCKS = new TmRegistration.Blocks();
 
     private ModBlocks() {
     }

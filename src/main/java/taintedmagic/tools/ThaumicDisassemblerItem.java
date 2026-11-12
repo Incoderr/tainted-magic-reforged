@@ -1,5 +1,7 @@
 package taintedmagic.tools;
 
+import net.minecraft.world.InteractionResultHolder;
+import java.util.List;
 import java.util.function.Consumer;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
@@ -17,12 +19,11 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.item.component.TooltipDisplay;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
-import org.jspecify.annotations.Nullable;
+import javax.annotation.Nullable;
 import thaumcraft.aspect.Aspect;
 import thaumcraft.aspect.AspectList;
 import thaumcraft.wand.WandManager;
@@ -105,7 +106,10 @@ public class ThaumicDisassemblerItem extends Item {
     }
 
     @Override
-    public void inventoryTick(ItemStack stack, ServerLevel level, Entity owner, @Nullable EquipmentSlot slot) {
+    public void inventoryTick(ItemStack stack, Level world, Entity owner, int slotIndex, boolean selected) {
+        if (!(world instanceof ServerLevel level)) {
+            return;
+        }
         if (owner instanceof Player player && charge(stack) < MAX_CHARGE && owner.tickCount % 20 == 0) {
             int amount = Math.min(100, MAX_CHARGE - charge(stack));
             if (WandManager.consumeVisFromInventory(player, new AspectList().add(Aspect.ENTROPY, amount))) {
@@ -115,19 +119,19 @@ public class ThaumicDisassemblerItem extends Item {
     }
 
     @Override
-    public InteractionResult use(Level level, Player player, InteractionHand hand) {
+    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
         if (!player.isShiftKeyDown()) {
-            return InteractionResult.PASS;
+            return InteractionResultHolder.pass(player.getItemInHand(hand));
         }
         ItemStack stack = player.getItemInHand(hand);
         if (!level.isClientSide()) {
             int mode = (mode(stack) + 1) % 4;
             ToolsFeature.DISASSEMBLER_MODE.set(stack, mode);
-            player.sendOverlayMessage(Component.translatable("taintedmagic.text.disassembler.mode").withStyle(ChatFormatting.GRAY)
+            player.displayClientMessage(Component.translatable("taintedmagic.text.disassembler.mode").withStyle(ChatFormatting.GRAY)
                 .append(": ").append(modeName(mode))
-                .append(Component.literal(" (" + efficiency(mode) + ")").withStyle(mode == 3 ? ChatFormatting.RED : ChatFormatting.GREEN)));
+                .append(Component.literal(" (" + efficiency(mode) + ")").withStyle(mode == 3 ? ChatFormatting.RED : ChatFormatting.GREEN)), true);
         }
-        return InteractionResult.SUCCESS;
+        return InteractionResultHolder.sidedSuccess(player.getItemInHand(hand), level.isClientSide());
     }
 
     @Override
@@ -162,7 +166,7 @@ public class ThaumicDisassemblerItem extends Item {
         }
         if (!level.isClientSide()) {
             level.setBlockAndUpdate(pos, Blocks.FARMLAND.defaultBlockState());
-            level.playSound(null, pos, SoundEvents.HOE_TILL.value(), SoundSource.BLOCKS, 1.0F, 0.8F);
+            level.playSound(null, pos, SoundEvents.HOE_TILL, SoundSource.BLOCKS, 1.0F, 0.8F);
             if (!player.isCreative()) {
                 consume(stack, ENTROPY_USAGE_HOE);
             }
@@ -171,13 +175,13 @@ public class ThaumicDisassemblerItem extends Item {
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, TooltipContext context, TooltipDisplay display, Consumer<Component> builder, TooltipFlag flag) {
-        builder.accept(Component.translatable("taintedmagic.text.disassembler.charge").append(": ")
+    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> builder, TooltipFlag flag) {
+        builder.add(Component.translatable("taintedmagic.text.disassembler.charge").append(": ")
             .append(Component.literal(charge(stack) / 100 + "/" + MAX_CHARGE / 100).withStyle(ChatFormatting.DARK_GRAY)));
-        builder.accept(Component.translatable("taintedmagic.text.disassembler.mode").append(": ").append(modeName(mode(stack))));
-        builder.accept(Component.translatable("taintedmagic.text.disassembler.efficiency").append(": ")
+        builder.add(Component.translatable("taintedmagic.text.disassembler.mode").append(": ").append(modeName(mode(stack))));
+        builder.add(Component.translatable("taintedmagic.text.disassembler.efficiency").append(": ")
             .append(Component.literal(String.valueOf(efficiency(mode(stack)))).withStyle(mode(stack) == 3 ? ChatFormatting.RED : ChatFormatting.GREEN)));
-        builder.accept(Component.literal(" "));
-        builder.accept(Component.literal("+20 ").append(Component.translatable("taintedmagic.text.attackdamage")).withStyle(ChatFormatting.BLUE));
+        builder.add(Component.literal(" "));
+        builder.add(Component.literal("+20 ").append(Component.translatable("taintedmagic.text.attackdamage")).withStyle(ChatFormatting.BLUE));
     }
 }

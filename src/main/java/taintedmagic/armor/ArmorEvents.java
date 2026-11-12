@@ -28,10 +28,7 @@ public final class ArmorEvents {
     }
 
     private static boolean movingForward(Player player) {
-        if (player instanceof ServerPlayer serverPlayer) {
-            return serverPlayer.getLastClientInput().forward() && !serverPlayer.getLastClientInput().backward();
-        }
-        return player.zza > 0.0F;
+        return player.level().isClientSide() && player.zza > 0.0F;
     }
 
     public static boolean wearsVoidwalker(Player player) {
@@ -92,7 +89,7 @@ public final class ArmorEvents {
             }
         }
         if (player.fallDistance > 3.0) {
-            player.fallDistance = 1.0;
+            player.fallDistance = 1.0F;
         }
     }
 

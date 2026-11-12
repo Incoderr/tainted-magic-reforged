@@ -5,11 +5,11 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
-import net.neoforged.neoforge.registries.DeferredRegister;
+import taintedmagic.platform.TmRegistration;
 import taintedmagic.TaintedMagic;
 
 public final class ModEntities {
-    private static final DeferredRegister.Entities ENTITIES = DeferredRegister.createEntities(TaintedMagic.MODID);
+    private static final TmRegistration.Entities ENTITIES = new TmRegistration.Entities();
 
     private ModEntities() {
     }

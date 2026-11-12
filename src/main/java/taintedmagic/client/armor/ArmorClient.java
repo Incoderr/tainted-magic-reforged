@@ -1,14 +1,12 @@
 package taintedmagic.client.armor;
 
-import com.mojang.serialization.MapCodec;
 import java.awt.Color;
 import java.util.EnumMap;
 import java.util.Map;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.color.item.ItemTintSource;
+import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.model.Model;
 import net.minecraft.client.multiplayer.ClientLevel;
-import net.minecraft.client.resources.model.EquipmentClientInfo;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
@@ -18,7 +16,7 @@ import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
 import net.neoforged.neoforge.common.NeoForge;
-import org.jspecify.annotations.Nullable;
+import javax.annotation.Nullable;
 import thaumcraft.client.render.armor.ArmorKind;
 import thaumcraft.client.render.armor.TcArmorModel;
 import thaumcraft.item.armor.ArmorSupport;
@@ -53,12 +51,16 @@ public final class ArmorClient {
     private static void registerExtensions(RegisterClientExtensionsEvent event) {
         event.registerItem(new IClientItemExtensions() {
             @Override
-            public Model getHumanoidArmorModel(ItemStack stack, EquipmentClientInfo.LayerType layerType, Model original) {
-                if (layerType == EquipmentClientInfo.LayerType.HUMANOID_BABY) {
-                    return original;
-                }
+            public HumanoidModel<?> getHumanoidArmorModel(LivingEntity entity, ItemStack stack, EquipmentSlot slot, HumanoidModel<?> original) {
                 TcArmorModel model = fortress(stack);
                 return model == null ? original : model;
+            }
+
+            @Override
+            public void setupModelAnimations(LivingEntity entity, ItemStack stack, EquipmentSlot slot, Model model, float limbSwing, float limbSwingAmount, float partialTick, float ageInTicks, float netHeadYaw, float headPitch) {
+                if (model instanceof TcArmorModel armor) {
+                    armor.animateArmor(entity, limbSwing, limbSwingAmount, ageInTicks);
+                }
             }
         },
             ArmorFeature.VOID_FORTRESS_HELMET.get(),
@@ -70,31 +72,21 @@ public final class ArmorClient {
         );
     }
 
-    private static void registerTints(RegisterColorHandlersEvent.ItemTintSources event) {
-        event.register(TaintedMagic.id("gate_key"), GateKeyTint.MAP_CODEC);
+    private static void registerTints(RegisterColorHandlersEvent.Item event) {
+        event.register((stack, tintIndex) -> tintIndex == 1 ? gateKeyColor(stack) : -1, ArmorFeature.GATE_KEY.get());
     }
 
     private static void loggingOut(ClientPlayerNetworkEvent.LoggingOut event) {
         FlyteCharmItem.forgetClient();
     }
 
-    public record GateKeyTint() implements ItemTintSource {
-        public static final MapCodec<GateKeyTint> MAP_CODEC = MapCodec.unit(new GateKeyTint());
-
-        @Override
-        public int calculate(ItemStack stack, @Nullable ClientLevel level, @Nullable LivingEntity owner) {
-            GateKeyItem.Binding binding = GateKeyItem.binding(stack);
-            if (binding == null || binding.colour() == 0) {
-                return 0xFFFFFFFF;
-            }
-            var player = Minecraft.getInstance().player;
-            float brightness = player != null ? 0.2F * (float) Math.sin(player.tickCount / 10.0) + 0.8F : 1.0F;
-            return 0xFF000000 | Color.HSBtoRGB(binding.colour() / 360.0F, 1.0F, brightness);
+    public static int gateKeyColor(ItemStack stack) {
+        GateKeyItem.Binding binding = GateKeyItem.binding(stack);
+        if (binding == null || binding.colour() == 0) {
+            return 0xFFFFFFFF;
         }
-
-        @Override
-        public MapCodec<GateKeyTint> type() {
-            return MAP_CODEC;
-        }
+        var player = Minecraft.getInstance().player;
+        float brightness = player != null ? 0.2F * (float) Math.sin(player.tickCount / 10.0) + 0.8F : 1.0F;
+        return 0xFF000000 | Color.HSBtoRGB(binding.colour() / 360.0F, 1.0F, brightness);
     }
 }

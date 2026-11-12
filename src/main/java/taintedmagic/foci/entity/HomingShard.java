@@ -17,7 +17,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.Vec3;
-import org.jspecify.annotations.Nullable;
+import javax.annotation.Nullable;
 import thaumcraft.entity.CombatUtils;
 import thaumcraft.fx.Fx;
 import thaumcraft.registry.ModSounds;
@@ -43,7 +43,7 @@ public class HomingShard extends ThrowableProjectile {
         shard.persistent = persistent;
         shard.setStrength(strength);
         Vec3 look = thrower.getLookAngle();
-        shard.snapTo(thrower.getX() + look.x / 2.0, thrower.getEyeY() + look.y / 2.0, thrower.getZ() + look.z / 2.0, thrower.getYRot(), thrower.getXRot());
+        shard.moveTo(thrower.getX() + look.x / 2.0, thrower.getEyeY() + look.y / 2.0, thrower.getZ() + look.z / 2.0, thrower.getYRot(), thrower.getXRot());
         float yaw = thrower.getYRot() + (shard.random.nextFloat() - shard.random.nextFloat()) * 60.0F;
         float pitch = thrower.getXRot() + (shard.random.nextFloat() - shard.random.nextFloat()) * 60.0F;
         float speed = 0.5F;
@@ -81,7 +81,7 @@ public class HomingShard extends ThrowableProjectile {
     protected void onHitEntity(EntityHitResult hit) {
         if (this.level() instanceof ServerLevel level && hit.getEntity() != this.getOwner()) {
             Entity owner = this.getOwner();
-            hit.getEntity().hurtServer(level, level.damageSources().indirectMagic(this, owner), 2.0F + this.getStrength() * 0.5F);
+            hit.getEntity().hurt(level.damageSources().indirectMagic(this, owner), 2.0F + this.getStrength() * 0.5F);
             level.playSound(null, this.getX(), this.getY(), this.getZ(), ModSounds.ZAP.get(), SoundSource.PLAYERS, 1.0F, 1.0F + (this.random.nextFloat() - this.random.nextFloat()) * 0.2F);
             level.broadcastEntityEvent(this, (byte) 16);
             this.discard();
@@ -145,7 +145,7 @@ public class HomingShard extends ThrowableProjectile {
                     (this.target.getBoundingBox().minY + this.target.getBbHeight() * 0.6 - this.getY()) / distance,
                     (this.target.getZ() - this.getZ()) / distance
                 );
-                this.needsSync = true;
+                this.hurtMarked = true;
                 level.playSound(null, this.getX(), this.getY(), this.getZ(), taintedmagic.registry.ModSounds.SHARD.get(), SoundSource.PLAYERS, 0.1F, 2.0F * this.random.nextFloat());
             }
         }

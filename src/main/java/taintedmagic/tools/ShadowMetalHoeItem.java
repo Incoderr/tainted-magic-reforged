@@ -40,7 +40,7 @@ public class ShadowMetalHoeItem extends Item implements Repairable {
         }
         if (!level.isClientSide()) {
             level.setBlockAndUpdate(pos, result.defaultBlockState());
-            level.playSound(null, pos, SoundEvents.HOE_TILL.value(), SoundSource.BLOCKS, 1.0F, 0.8F);
+            level.playSound(null, pos, SoundEvents.HOE_TILL, SoundSource.BLOCKS, 1.0F, 0.8F);
             if (player != null) {
                 context.getItemInHand().hurtAndBreak(1, player, EquipmentSlot.MAINHAND);
             }

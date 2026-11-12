@@ -1,6 +1,6 @@
 package taintedmagic.foci;
 
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -11,7 +11,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
-import org.jspecify.annotations.Nullable;
+import javax.annotation.Nullable;
 import thaumcraft.Thaumcraft;
 import thaumcraft.aspect.Aspect;
 import thaumcraft.aspect.AspectList;
@@ -43,17 +43,17 @@ public class TaintSwarmFocus extends TmFocus {
     }
 
     @Override
-    public @Nullable Identifier getFocusTexture(ItemStack focus) {
+    public @Nullable ResourceLocation getFocusTexture(ItemStack focus) {
         return TaintedMagic.id("item/focus_taint_swarm");
     }
 
     @Override
-    public @Nullable Identifier getDepthLayerTexture(ItemStack focus) {
+    public @Nullable ResourceLocation getDepthLayerTexture(ItemStack focus) {
         return TaintedMagic.id("item/focus_taint_swarm_depth");
     }
 
     @Override
-    public @Nullable Identifier getOrnamentTexture(ItemStack focus) {
+    public @Nullable ResourceLocation getOrnamentTexture(ItemStack focus) {
         return Thaumcraft.id("item/focus_whatever_orn");
     }
 
@@ -74,7 +74,7 @@ public class TaintSwarmFocus extends TmFocus {
             if (level instanceof ServerLevel server && consume(wand, player, true)) {
                 TaintSwarm swarm = new TaintSwarm(ModEntities.TAINT_SWARM.get(), server);
                 Vec3 look = player.getLookAngle();
-                swarm.snapTo(player.getX() + look.x / 2.0, player.getEyeY() + look.y / 2.0, player.getZ() + look.z / 2.0, player.getYRot(), player.getXRot());
+                swarm.moveTo(player.getX() + look.x / 2.0, player.getEyeY() + look.y / 2.0, player.getZ() + look.z / 2.0, player.getYRot(), player.getXRot());
                 swarm.setDamageBonus(3 + Wands.getFocusPotency(wand));
                 SwarmTargets.set(swarm, target);
                 swarm.setSummoned(true);
@@ -88,7 +88,7 @@ public class TaintSwarmFocus extends TmFocus {
     }
 
     @Override
-    public FocusUpgradeType @Nullable [] getPossibleUpgradesByRank(ItemStack focus, int rank) {
+    @Nullable public FocusUpgradeType[] getPossibleUpgradesByRank(ItemStack focus, int rank) {
         return switch (rank) {
             case 1, 2, 4, 5 -> upgrades(FocusUpgradeType.FRUGAL, FocusUpgradeType.POTENCY);
             case 3 -> upgrades(FocusUpgradeType.FRUGAL, FocusUpgradeType.POTENCY, FociFeature.ANTIBODY);

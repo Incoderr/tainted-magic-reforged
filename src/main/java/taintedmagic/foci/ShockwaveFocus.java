@@ -1,9 +1,10 @@
 package taintedmagic.foci;
 
+import java.util.List;
 import java.util.function.Consumer;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
@@ -15,7 +16,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
-import org.jspecify.annotations.Nullable;
+import javax.annotation.Nullable;
 import thaumcraft.aspect.Aspect;
 import thaumcraft.aspect.AspectList;
 import thaumcraft.fx.Fx;
@@ -42,12 +43,12 @@ public class ShockwaveFocus extends TmFocus {
     }
 
     @Override
-    public @Nullable Identifier getFocusTexture(ItemStack focus) {
+    public @Nullable ResourceLocation getFocusTexture(ItemStack focus) {
         return TaintedMagic.id("item/focus_shockwave");
     }
 
     @Override
-    public @Nullable Identifier getDepthLayerTexture(ItemStack focus) {
+    public @Nullable ResourceLocation getDepthLayerTexture(ItemStack focus) {
         return TaintedMagic.id("item/focus_shockwave_depth");
     }
 
@@ -62,11 +63,11 @@ public class ShockwaveFocus extends TmFocus {
     }
 
     @Override
-    public void addFocusInformation(ItemStack stack, Consumer<Component> builder) {
+    public void addFocusInformation(ItemStack stack, List<Component> builder) {
         super.addFocusInformation(stack, builder);
-        builder.accept(Component.literal(" "));
+        builder.add(Component.literal(" "));
         int radius = 15 + getUpgradeLevel(stack, FocusUpgradeType.ENLARGE);
-        builder.accept(Component.literal("+" + radius + " ").append(Component.translatable("taintedmagic.text.radius")).withStyle(ChatFormatting.BLUE));
+        builder.add(Component.literal("+" + radius + " ").append(Component.translatable("taintedmagic.text.radius")).withStyle(ChatFormatting.BLUE));
     }
 
     public static AABB area(Player player, int enlarge) {
@@ -87,11 +88,11 @@ public class ShockwaveFocus extends TmFocus {
             }
             if (level instanceof ServerLevel server) {
                 if (player.distanceTo(entity) < 7.0F) {
-                    entity.hurtServer(server, server.damageSources().indirectMagic(player, player), 2.0F + potency);
+                    entity.hurt(server.damageSources().indirectMagic(player, player), 2.0F + potency);
                 }
                 Vec3 away = entity.position().subtract(player.position()).normalize();
                 entity.push(away.x * (5.0 + potency), 1.5 + potency * 0.1, away.z * (5.0 + potency));
-                entity.needsSync = true;
+                entity.hurtMarked = true;
             } else {
                 Fx.get().shockZap(level, player, entity);
                 RandomSource random = level.getRandom();
@@ -110,7 +111,7 @@ public class ShockwaveFocus extends TmFocus {
     }
 
     @Override
-    public FocusUpgradeType @Nullable [] getPossibleUpgradesByRank(ItemStack focus, int rank) {
+    @Nullable public FocusUpgradeType[] getPossibleUpgradesByRank(ItemStack focus, int rank) {
         return rank >= 1 && rank <= 5 ? upgrades(FocusUpgradeType.FRUGAL, FocusUpgradeType.ENLARGE, FocusUpgradeType.POTENCY) : null;
     }
 }

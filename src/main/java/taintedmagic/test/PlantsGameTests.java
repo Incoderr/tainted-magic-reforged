@@ -3,8 +3,8 @@ package taintedmagic.test;
 import net.minecraft.core.BlockPos;
 import net.minecraft.gametest.framework.GameTestHelper;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.EntityTypes;
-import net.minecraft.world.entity.animal.pig.Pig;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.animal.Pig;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.GameType;
@@ -38,7 +38,7 @@ public final class PlantsGameTests {
         Player player = helper.makeMockPlayer(GameType.SURVIVAL);
         new ItemStack(PlantsFeature.MAGIC_FUNGUAR.get()).finishUsingItem(helper.getLevel(), player);
         var regeneration = player.getEffect(MobEffects.REGENERATION);
-        var speed = player.getEffect(MobEffects.SPEED);
+        var speed = player.getEffect(MobEffects.MOVEMENT_SPEED);
         helper.assertTrue(regeneration != null && regeneration.getAmplifier() == 1, "regeneration II missing");
         helper.assertTrue(speed != null && speed.getAmplifier() == 2, "speed III missing");
         helper.succeed();
@@ -48,7 +48,7 @@ public final class PlantsGameTests {
         BlockPos pos = new BlockPos(2, 1, 2);
         helper.setBlock(pos.below(), Blocks.DIRT);
         helper.setBlock(pos, PlantsFeature.NIGHTSHADE_BUSH.get());
-        Pig pig = helper.spawn(EntityTypes.PIG, pos);
+        Pig pig = helper.spawn(EntityType.PIG, pos);
         helper.succeedWhen(() -> helper.assertTrue(pig.hasEffect(MobEffects.POISON), "pig is not poisoned"));
     }
 }

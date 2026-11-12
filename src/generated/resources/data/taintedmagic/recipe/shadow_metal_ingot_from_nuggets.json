@@ -1,18 +1,20 @@
 {
   "neoforge:conditions": [
     {
-      "type": "neoforge:registered",
-      "value": "taintedmagic:shadow_metal_ingot"
+      "type": "neoforge:item_exists",
+      "item": "taintedmagic:shadow_metal_ingot"
     },
     {
-      "type": "neoforge:registered",
-      "value": "taintedmagic:shadow_metal_nugget"
+      "type": "neoforge:item_exists",
+      "item": "taintedmagic:shadow_metal_nugget"
     }
   ],
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "key": {
-    "A": "taintedmagic:shadow_metal_nugget"
+    "A": {
+      "item": "taintedmagic:shadow_metal_nugget"
+    }
   },
   "pattern": [
     "AAA",

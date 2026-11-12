@@ -1,5 +1,7 @@
 package taintedmagic.tools;
 
+import net.minecraft.world.InteractionResultHolder;
+import java.util.List;
 import java.util.function.Consumer;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -15,13 +17,12 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.ItemUseAnimation;
+import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.item.component.TooltipDisplay;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
-import org.jspecify.annotations.Nullable;
+import javax.annotation.Nullable;
 import thaumcraft.item.gear.Repairable;
 import thaumcraft.item.gear.WarpingGear;
 import thaumcraft.registry.ModSounds;
@@ -44,15 +45,18 @@ public class PrimalBladeItem extends Item implements Repairable, WarpingGear {
     }
 
     @Override
-    public void inventoryTick(ItemStack stack, ServerLevel level, Entity owner, @Nullable EquipmentSlot slot) {
+    public void inventoryTick(ItemStack stack, Level world, Entity owner, int slotIndex, boolean selected) {
+        if (!(world instanceof ServerLevel level)) {
+            return;
+        }
         if (stack.isDamaged() && owner.tickCount % 20 == 0) {
             stack.setDamageValue(stack.getDamageValue() - 1);
         }
     }
 
     @Override
-    public ItemUseAnimation getUseAnimation(ItemStack stack) {
-        return ItemUseAnimation.BLOCK;
+    public UseAnim getUseAnimation(ItemStack stack) {
+        return UseAnim.BLOCK;
     }
 
     @Override
@@ -61,9 +65,9 @@ public class PrimalBladeItem extends Item implements Repairable, WarpingGear {
     }
 
     @Override
-    public InteractionResult use(Level level, Player player, InteractionHand hand) {
+    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
         player.startUsingItem(hand);
-        return InteractionResult.CONSUME;
+        return InteractionResultHolder.consume(player.getItemInHand(hand));
     }
 
     @Override
@@ -78,7 +82,7 @@ public class PrimalBladeItem extends Item implements Repairable, WarpingGear {
         AABB area = new AABB(user.getX(), user.getY(), user.getZ(), user.getX() + 1, user.getY() + 1, user.getZ() + 1).inflate(15.0);
         for (Entity entity : level.getEntities(user, area)) {
             if (level instanceof ServerLevel server && entity.isAlive() && !entity.isInvulnerable() && user.distanceTo(entity) < 2.0F) {
-                entity.hurtServer(server, server.damageSources().indirectMagic(user, user), 3.0F);
+                entity.hurt(server.damageSources().indirectMagic(user, user), 3.0F);
             }
             double x = (user.getX() + 0.5 - entity.getX()) / 20.0;
             double y = (user.getY() + 0.5 - entity.getY()) / 20.0;
@@ -88,13 +92,13 @@ public class PrimalBladeItem extends Item implements Repairable, WarpingGear {
             if (strength > 0.0 && length > 0.0) {
                 strength *= strength;
                 entity.setDeltaMovement(entity.getDeltaMovement().add(new Vec3(x / length * strength * 0.2, y / length * strength * 0.3, z / length * strength * 0.2)));
-                entity.needsSync = true;
+                entity.hurtMarked = true;
             }
         }
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, TooltipContext context, TooltipDisplay display, Consumer<Component> builder, TooltipFlag flag) {
-        builder.accept(Component.translatable("taintedmagic.text.sapprimal").withStyle(ChatFormatting.GOLD));
+    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> builder, TooltipFlag flag) {
+        builder.add(Component.translatable("taintedmagic.text.sapprimal").withStyle(ChatFormatting.GOLD));
     }
 }

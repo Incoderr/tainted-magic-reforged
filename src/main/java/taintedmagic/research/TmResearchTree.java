@@ -1,6 +1,6 @@
 package taintedmagic.research;
 
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import thaumcraft.aspect.Aspect;
 import thaumcraft.aspect.AspectList;
 import thaumcraft.crafting.TcStack;
@@ -11,7 +11,7 @@ public final class TmResearchTree {
     }
 
     public static void register() {
-        TmResearch.link("TMELDRITCHMAJOR", "ELDRITCHMAJOR", "ELDRITCH", 7, -7, Identifier.parse("thaumcraft:textures/misc/r_eldritchmajor.png"))
+        TmResearch.link("TMELDRITCHMAJOR", "ELDRITCHMAJOR", "ELDRITCH", 7, -7, ResourceLocation.parse("thaumcraft:textures/misc/r_eldritchmajor.png"))
             .setRound()
             .setSpecial()
             .setConcealed()

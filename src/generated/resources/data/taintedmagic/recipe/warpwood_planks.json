@@ -1,18 +1,20 @@
 {
   "neoforge:conditions": [
     {
-      "type": "neoforge:registered",
-      "value": "taintedmagic:warpwood_log"
+      "type": "neoforge:item_exists",
+      "item": "taintedmagic:warpwood_log"
     },
     {
-      "type": "neoforge:registered",
-      "value": "taintedmagic:warpwood_planks"
+      "type": "neoforge:item_exists",
+      "item": "taintedmagic:warpwood_planks"
     }
   ],
   "type": "minecraft:crafting_shaped",
   "category": "building",
   "key": {
-    "A": "taintedmagic:warpwood_log"
+    "A": {
+      "item": "taintedmagic:warpwood_log"
+    }
   },
   "pattern": [
     "A"

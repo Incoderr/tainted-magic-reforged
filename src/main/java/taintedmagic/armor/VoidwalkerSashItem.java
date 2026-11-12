@@ -1,5 +1,7 @@
 package taintedmagic.armor;
 
+import net.minecraft.world.InteractionResultHolder;
+import java.util.List;
 import java.util.function.Consumer;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -10,7 +12,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.item.component.TooltipDisplay;
 import net.minecraft.world.level.Level;
 import thaumcraft.item.gear.RunicArmor;
 import thaumcraft.item.gear.RunicShield;
@@ -69,18 +70,18 @@ public class VoidwalkerSashItem extends Item implements Bauble, RunicArmor, Warp
     }
 
     @Override
-    public InteractionResult use(Level level, Player player, InteractionHand hand) {
+    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
         ItemStack stack = player.getItemInHand(hand);
         if (!level.isClientSide() && player.isShiftKeyDown()) {
             ArmorFeature.SASH_SPEED.set(stack, !isSpeedEnabled(stack));
-            player.sendOverlayMessage(modeMessage(stack));
+            player.displayClientMessage(modeMessage(stack), true);
         }
-        return InteractionResult.PASS;
+        return InteractionResultHolder.pass(player.getItemInHand(hand));
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, TooltipContext context, TooltipDisplay display, Consumer<Component> builder, TooltipFlag flag) {
-        builder.accept(modeMessage(stack));
-        builder.accept(Component.literal(" "));
+    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> builder, TooltipFlag flag) {
+        builder.add(modeMessage(stack));
+        builder.add(Component.literal(" "));
     }
 }

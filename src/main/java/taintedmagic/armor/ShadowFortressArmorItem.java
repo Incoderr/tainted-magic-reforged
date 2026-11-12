@@ -1,11 +1,11 @@
 package taintedmagic.armor;
 
+import java.util.List;
 import java.util.function.Consumer;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.item.component.TooltipDisplay;
 import thaumcraft.aspect.Aspect;
 import thaumcraft.item.armor.ArmorSupport;
 import thaumcraft.item.armor.FortressArmorItem;
@@ -13,8 +13,8 @@ import thaumcraft.item.gear.WarpingGear;
 import thaumcraft.wand.VisDiscountGear;
 
 public class ShadowFortressArmorItem extends FortressArmorItem implements WarpingGear, VisDiscountGear {
-    public ShadowFortressArmorItem(Properties properties) {
-        super(properties);
+    public ShadowFortressArmorItem(thaumcraft.platform.TcArmorMaterial material, thaumcraft.platform.ArmorSlot slot, Properties properties) {
+        super(material, slot, properties);
     }
 
     @Override
@@ -28,8 +28,8 @@ public class ShadowFortressArmorItem extends FortressArmorItem implements Warpin
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, TooltipContext context, TooltipDisplay display, Consumer<Component> builder, TooltipFlag flag) {
+    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> builder, TooltipFlag flag) {
         ArmorSupport.visDiscountLine(builder, getVisDiscount(stack, null, null));
-        super.appendHoverText(stack, context, display, builder, flag);
+        super.appendHoverText(stack, context, builder, flag);
     }
 }

@@ -26,7 +26,7 @@ public class WarpwoodKnotBlock extends RotatedPillarBlock {
     }
 
     @Override
-    protected ItemStack getCloneItemStack(LevelReader level, BlockPos pos, BlockState state, boolean includeData) {
+    public ItemStack getCloneItemStack(LevelReader level, BlockPos pos, BlockState state) {
         return new ItemStack(WarpwoodFeature.WARPWOOD_LOG.get());
     }
 }

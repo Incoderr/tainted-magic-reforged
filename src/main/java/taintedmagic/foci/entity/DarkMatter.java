@@ -10,8 +10,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.storage.ValueInput;
-import net.minecraft.world.level.storage.ValueOutput;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.phys.HitResult;
 import thaumcraft.entity.CombatUtils;
 import thaumcraft.entity.projectile.EldritchOrb;
@@ -42,7 +41,7 @@ public class DarkMatter extends EldritchOrb {
             DamageSource source = level.damageSources().indirectMagic(this, owner);
             for (Entity entity : level.getEntities(owner, this.getBoundingBox().inflate(expand))) {
                 if (entity instanceof LivingEntity living) {
-                    living.hurtServer(level, source, this.damage);
+                    living.hurt(source, this.damage);
                     if (this.corrosive) {
                         living.addEffect(new MobEffectInstance(MobEffects.WITHER, 160, 1));
                     }
@@ -58,7 +57,7 @@ public class DarkMatter extends EldritchOrb {
     }
 
     @Override
-    protected void addAdditionalSaveData(ValueOutput output) {
+    protected void addAdditionalSaveData(CompoundTag output) {
         super.addAdditionalSaveData(output);
         output.putFloat("dmg", this.damage);
         output.putInt("enlarge", this.enlarge);
@@ -66,11 +65,11 @@ public class DarkMatter extends EldritchOrb {
     }
 
     @Override
-    protected void readAdditionalSaveData(ValueInput input) {
+    protected void readAdditionalSaveData(CompoundTag input) {
         super.readAdditionalSaveData(input);
-        this.damage = input.getFloatOr("dmg", 0.0F);
-        this.enlarge = input.getIntOr("enlarge", 0);
-        this.corrosive = input.getBooleanOr("corrosive", false);
+        this.damage = input.getFloat("dmg");
+        this.enlarge = input.getInt("enlarge");
+        this.corrosive = input.getBoolean("corrosive");
     }
 
     public float damage() {

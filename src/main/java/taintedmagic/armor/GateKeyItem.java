@@ -1,5 +1,7 @@
 package taintedmagic.armor;
 
+import net.minecraft.world.InteractionResultHolder;
+import java.util.List;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import io.netty.buffer.ByteBuf;
@@ -21,9 +23,8 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.ItemUseAnimation;
+import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.item.component.TooltipDisplay;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import thaumcraft.item.gear.WarpingGear;
@@ -65,8 +66,8 @@ public class GateKeyItem extends Item implements WarpingGear {
     }
 
     @Override
-    public ItemUseAnimation getUseAnimation(ItemStack stack) {
-        return ItemUseAnimation.BOW;
+    public UseAnim getUseAnimation(ItemStack stack) {
+        return UseAnim.BOW;
     }
 
     @Override
@@ -82,7 +83,7 @@ public class GateKeyItem extends Item implements WarpingGear {
         if (binding(stack) == null) {
             BlockPos pos = context.getClickedPos();
             if (!level.isClientSide()) {
-                ArmorFeature.GATE_BINDING.set(stack, new Binding(pos.getX(), pos.getY() + 1, pos.getZ(), level.dimension().identifier().toString(), level.getRandom().nextInt(360) + 1));
+                ArmorFeature.GATE_BINDING.set(stack, new Binding(pos.getX(), pos.getY() + 1, pos.getZ(), level.dimension().location().toString(), level.getRandom().nextInt(360) + 1));
             } else {
                 for (int index = 0; index < 9; index++) {
                     TmFx.get().gateSparkle(level, pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5);
@@ -96,12 +97,12 @@ public class GateKeyItem extends Item implements WarpingGear {
     }
 
     @Override
-    public InteractionResult use(Level level, Player player, InteractionHand hand) {
+    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
         if (binding(player.getItemInHand(hand)) != null) {
             player.startUsingItem(hand);
-            return InteractionResult.CONSUME;
+            return InteractionResultHolder.consume(player.getItemInHand(hand));
         }
-        return InteractionResult.PASS;
+        return InteractionResultHolder.pass(player.getItemInHand(hand));
     }
 
     @Override
@@ -117,7 +118,7 @@ public class GateKeyItem extends Item implements WarpingGear {
 
     public static boolean canTeleport(Level level, Binding binding) {
         BlockPos target = new BlockPos(binding.x(), binding.y(), binding.z());
-        return binding.y() > level.getMinY() - 1 && binding.dimension().equals(level.dimension().identifier().toString())
+        return binding.y() > level.getMinBuildHeight() - 1 && binding.dimension().equals(level.dimension().location().toString())
             && level.getBlockState(target).isAir() && level.getBlockState(target.above()).isAir();
     }
 
@@ -130,24 +131,24 @@ public class GateKeyItem extends Item implements WarpingGear {
                     serverPlayer.teleportTo(binding.x() + 0.5, binding.y(), binding.z() + 0.5);
                     server.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.ENDERMAN_TELEPORT, SoundSource.PLAYERS, 5.0F, 1.0F);
                 }
-                player.addEffect(new MobEffectInstance(MobEffects.NAUSEA, 160, 0));
+                player.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 160, 0));
             } else if (!level.isClientSide()) {
-                String key = binding.dimension().equals(level.dimension().identifier().toString()) ? "taintedmagic.key.error" : "taintedmagic.key.invaliddim";
-                player.sendOverlayMessage(Component.translatable(key).withStyle(ChatFormatting.RED));
+                String key = binding.dimension().equals(level.dimension().location().toString()) ? "taintedmagic.key.error" : "taintedmagic.key.invaliddim";
+                player.displayClientMessage(Component.translatable(key).withStyle(ChatFormatting.RED), true);
             }
         }
         return stack;
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, TooltipContext context, TooltipDisplay display, Consumer<Component> builder, TooltipFlag flag) {
+    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> builder, TooltipFlag flag) {
         Binding binding = binding(stack);
         if (binding != null) {
-            builder.accept(Component.translatable("taintedmagic.key.bound").withStyle(ChatFormatting.GREEN));
-            builder.accept(Component.literal(binding.dimension()));
-            builder.accept(Component.literal(binding.x() + ", " + binding.y() + ", " + binding.z()));
+            builder.add(Component.translatable("taintedmagic.key.bound").withStyle(ChatFormatting.GREEN));
+            builder.add(Component.literal(binding.dimension()));
+            builder.add(Component.literal(binding.x() + ", " + binding.y() + ", " + binding.z()));
         } else {
-            builder.accept(Component.translatable("taintedmagic.key.unbound").withStyle(ChatFormatting.RED));
+            builder.add(Component.translatable("taintedmagic.key.unbound").withStyle(ChatFormatting.RED));
         }
     }
 }

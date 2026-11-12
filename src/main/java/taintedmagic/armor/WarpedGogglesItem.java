@@ -11,6 +11,11 @@ public class WarpedGogglesItem extends GogglesItem implements WarpingGear {
     }
 
     @Override
+    public net.minecraft.resources.ResourceLocation getArmorTexture(ItemStack stack, net.minecraft.world.entity.Entity entity, net.minecraft.world.entity.EquipmentSlot slot, net.minecraft.world.item.ArmorMaterial.Layer layer, boolean innerModel) {
+        return taintedmagic.platform.TmArmor.texture(ArmorFeature.WARPED);
+    }
+
+    @Override
     public int getWarp(ItemStack stack, Player player) {
         return 1;
     }

@@ -19,7 +19,7 @@ public class HollowDaggerItem extends Item implements Repairable {
             if (stack.is(ModItems.GLASS_PHIAL.get())) {
                 stack.shrink(1);
                 ItemStack blood = new ItemStack(MaterialsFeature.CRIMSON_BLOOD.get());
-                inventory.placeItemBackInInventory(blood, net.minecraft.util.Prediction.SERVER_ONLY);
+                inventory.placeItemBackInInventory(blood);
                 return true;
             }
         }

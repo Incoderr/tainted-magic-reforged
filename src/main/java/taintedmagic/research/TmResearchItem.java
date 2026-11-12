@@ -2,7 +2,7 @@ package taintedmagic.research;
 
 import java.util.ArrayList;
 import java.util.List;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import thaumcraft.aspect.AspectList;
 import thaumcraft.crafting.TcStack;
 import thaumcraft.research.ResearchItem;
@@ -16,7 +16,7 @@ public class TmResearchItem extends ResearchItem {
         super(key, TmResearch.CATEGORY, tags, column, row, complexity, icon);
     }
 
-    public TmResearchItem(String key, AspectList tags, int column, int row, int complexity, Identifier icon) {
+    public TmResearchItem(String key, AspectList tags, int column, int row, int complexity, ResourceLocation icon) {
         super(key, TmResearch.CATEGORY, tags, column, row, complexity, icon);
     }
 

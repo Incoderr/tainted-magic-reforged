@@ -33,8 +33,8 @@ public final class WarpwoodFeature {
             .sound(SoundType.GRASS)
             .noOcclusion()
             .isSuffocating((state, level, pos) -> false)
-            .isViewBlocking((state, level, pos, box) -> false)
-            .pushReaction(PushReaction.POPPED)
+            .isViewBlocking((state, level, pos) -> false)
+            .pushReaction(PushReaction.DESTROY)
             .isRedstoneConductor((state, level, pos) -> false)
     ));
     public static final DeferredBlock<WarpwoodSaplingBlock> WARPWOOD_SAPLING = ModBlocks.withItem(ModBlocks.BLOCKS.registerBlock(
@@ -42,11 +42,11 @@ public final class WarpwoodFeature {
         WarpwoodSaplingBlock::new,
         properties -> properties
             .mapColor(MapColor.PLANT)
-            .noCollision()
+            .noCollission()
             .instabreak()
             .randomTicks()
             .sound(SoundType.GRASS)
-            .pushReaction(PushReaction.POPPED)
+            .pushReaction(PushReaction.DESTROY)
     ));
     public static final DeferredItem<WarpFertilizerItem> WARP_FERTILIZER = ModItems.ITEMS.registerItem(
         "warp_fertilizer", WarpFertilizerItem::new, properties -> properties.rarity(Rarity.UNCOMMON)

@@ -28,7 +28,7 @@ public final class CreationEvents {
     public static void giveResearch(ServerPlayer player) {
         if (!ResearchManager.isComplete(player, "CREATION") && ResearchManager.isComplete(player, "CREATIONSHARD")) {
             ResearchManager.complete(player, "CREATION");
-            player.sendOverlayMessage(Component.translatable("taintedmagic.text.creation").withStyle(ChatFormatting.DARK_PURPLE));
+            player.displayClientMessage(Component.translatable("taintedmagic.text.creation").withStyle(ChatFormatting.DARK_PURPLE), true);
             player.level().playSound(null, player.getX(), player.getY(), player.getZ(), ModSounds.ELDRITCH_GUARDIAN_IDLE.get(), SoundSource.PLAYERS, 1.0F, 1.0F);
             player.level().playSound(null, player.getX(), player.getY(), player.getZ(), ModSounds.HEARTBEAT.get(), SoundSource.PLAYERS, 1.0F, 1.0F);
             player.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 200, 0));

@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "taintedmagic:lumos_ring",
+      "required": false
+    }
+  ]
+}

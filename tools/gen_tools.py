@@ -85,6 +85,11 @@ def generate(ctx):
                 "elements": [element(*box) for box in boxes],
                 "display": display,
             })
+        if not ctx.profile.modern:
+            bare = ctx.json.loads((ctx.ASSETS / "models" / "item" / f"{name}.json").read_text(encoding="utf-8"))
+            bare["overrides"] = [{"predicate": {f"{ctx.NS}:charging": 1.0}, "model": f"{ctx.NS}:item/{name}_charging"}]
+            ctx.item_model(name, bare)
+            continue
         ref = lambda model: {"type": "minecraft:model", "model": f"{ctx.NS}:item/{model}"}
         ctx.write(ctx.ASSETS / "items" / f"{name}.json", {"model": {
             "type": "minecraft:select",

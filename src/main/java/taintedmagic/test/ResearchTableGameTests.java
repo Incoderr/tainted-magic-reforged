@@ -15,7 +15,7 @@ import java.util.Map;
 import java.util.Set;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.gametest.framework.GameTestHelper;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.resources.ResourceKey;
 import net.neoforged.bus.api.IEventBus;
 import thaumcraft.aspect.Aspect;
@@ -103,7 +103,7 @@ public final class ResearchTableGameTests {
                         problems.add(research.key() + ": result item missing for " + key);
                     }
                     if (recipe instanceof CraftingRecipeRef reference
-                        && helper.getLevel().getServer().getRecipeManager().byKey(ResourceKey.create(Registries.RECIPE, reference.recipe())).isEmpty()) {
+                        && helper.getLevel().getServer().getRecipeManager().byKey(reference.recipe()).isEmpty()) {
                         problems.add(research.key() + ": crafting recipe missing for " + key);
                     }
                 }
@@ -346,7 +346,7 @@ public final class ResearchTableGameTests {
         check(problems, key, "parents", strings(expected.getAsJsonArray("parents")), actual.parents());
         check(problems, key, "parentsHidden", strings(expected.getAsJsonArray("parentsHidden")), actual.parentsHidden());
         List<String> triggers = new ArrayList<>();
-        for (Identifier trigger : actual.itemTriggers()) {
+        for (ResourceLocation trigger : actual.itemTriggers()) {
             triggers.add(trigger.toString());
         }
         check(problems, key, "itemTriggers", strings(expected.getAsJsonArray("itemTriggers")), triggers);

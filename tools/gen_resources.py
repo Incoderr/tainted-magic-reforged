@@ -8,6 +8,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import mcformat
+import gen_curios
 
 profile = mcformat.init()
 OUT = mcformat.out_root
@@ -22,9 +23,57 @@ block_tags = defaultdict(set)
 item_tags = defaultdict(set)
 BLOCK_MODELS = {}
 TEXTURE_REFERENCES = set()
+INJECTIONS = []
+
+
+def legacy_item(path, definition):
+    name = path.stem
+    target = ASSETS / "models" / "item" / f"{name}.json"
+    own = ref(name, "item")
+    kind = definition["type"]
+    overrides = []
+    if kind == "minecraft:special":
+        display = mcformat.CHEST_DISPLAY
+        if target.exists():
+            display = json.loads(target.read_text(encoding="utf-8")).get("display", display)
+        content = {"parent": "builtin/entity", "textures": {"particle": "minecraft:block/oak_log"}, "display": display}
+    else:
+        if kind == "minecraft:model":
+            model = definition["model"]
+        elif kind == "minecraft:condition":
+            model = definition["on_false"]["model"]
+            overrides.append({"predicate": {"taintedmagic:active": 1.0}, "model": definition["on_true"]["model"]})
+        elif kind == "minecraft:range_dispatch":
+            model = definition["fallback"]["model"]
+            overrides = [{"predicate": {"custom_model_data": entry["threshold"]}, "model": entry["model"]["model"]} for entry in definition["entries"]]
+        elif kind == "minecraft:select":
+            model = definition["fallback"]["model"]
+            predicate = "taintedmagic:seed_aspect"
+            if definition.get("property") == "minecraft:component":
+                predicate = "taintedmagic:" + definition["component"].split(":")[1]
+            overrides = [{"predicate": {predicate: index + 1}, "model": case["model"]["model"]} for index, case in enumerate(definition["cases"])]
+        else:
+            raise ValueError(f"unsupported item model for {name}: {kind}")
+        content = json.loads(target.read_text()) if model == own and target.exists() else {"parent": model}
+    if overrides:
+        content["overrides"] = overrides
+    write(target, content)
 
 
 def write(path, content):
+    if not profile.modern and path.parent == ASSETS / "items":
+        legacy_item(path, content["model"])
+        return
+    if not profile.modern and path.parent == ASSETS / "equipment":
+        for layer, entries in content["layers"].items():
+            for entry in entries:
+                namespace, name = entry["texture"].split(":")
+                source = ASSETS / "textures" / "entity" / "equipment" / layer / f"{name}.png"
+                number = 2 if layer == "humanoid_leggings" else 1
+                destination = ASSETS / "textures" / "models" / "armor" / f"{name}_layer_{number}.png"
+                destination.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copyfile(source, destination)
+        return
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(content, indent=2) + "\n", encoding="utf-8", newline="\n")
 
@@ -50,6 +99,8 @@ def tint(color):
 def block_model(name, content):
     if "elements" in content and "parent" not in content:
         content = {"parent": "minecraft:block/block", **content}
+    if profile.explicit_render_types:
+        content = {"render_type": "minecraft:cutout", **content}
     BLOCK_MODELS[name] = content
     write(ASSETS / "models" / "block" / f"{name}.json", content)
 
@@ -117,6 +168,7 @@ def inject_loot(name, targets, rolls, vanilla_weight, entries):
     for index, target in enumerate(targets):
         modifier = name if len(targets) == 1 else f"{name}_{index}"
         write(DATA / NS / "loot_modifiers" / f"{modifier}.json", profile.loot_modifier(modifier, target, f"{NS}:inject/{name}"))
+        INJECTIONS.append(f"{NS}:{modifier}")
 
 
 def self_drop(name):
@@ -386,7 +438,12 @@ def main():
     ctx = sys.modules[__name__]
     for feature in FEATURES:
         importlib.import_module(f"gen_{feature}").generate(ctx)
+    gen_curios.generate(ctx)
     write_tags()
+    if INJECTIONS and not profile.modern:
+        write(DATA / profile.loot_modifier_namespace / "loot_modifiers" / "global_loot_modifiers.json", {"replace": False, "entries": INJECTIONS})
+    if profile.pack_mcmeta:
+        write(OUT / "pack.mcmeta", profile.pack_mcmeta)
     validate_textures()
     validate_models()
     count = sum(1 for _ in OUT.rglob("*.json"))

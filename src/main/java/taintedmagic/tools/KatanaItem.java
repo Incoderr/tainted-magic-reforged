@@ -1,5 +1,7 @@
 package taintedmagic.tools;
 
+import net.minecraft.world.InteractionResultHolder;
+import java.util.List;
 import java.util.Map;
 import java.util.function.Consumer;
 import net.minecraft.ChatFormatting;
@@ -15,9 +17,8 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.ItemUseAnimation;
+import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.item.component.TooltipDisplay;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
@@ -85,8 +86,8 @@ public class KatanaItem extends Item implements Repairable, WarpingGear {
     }
 
     @Override
-    public ItemUseAnimation getUseAnimation(ItemStack stack) {
-        return ItemUseAnimation.BOW;
+    public UseAnim getUseAnimation(ItemStack stack) {
+        return UseAnim.BOW;
     }
 
     @Override
@@ -95,12 +96,12 @@ public class KatanaItem extends Item implements Repairable, WarpingGear {
     }
 
     @Override
-    public InteractionResult use(Level level, Player player, InteractionHand hand) {
+    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
         if (cooldown(player.getItemInHand(hand), level) > 0) {
-            return InteractionResult.FAIL;
+            return InteractionResultHolder.fail(player.getItemInHand(hand));
         }
         player.startUsingItem(hand);
-        return InteractionResult.CONSUME;
+        return InteractionResultHolder.consume(player.getItemInHand(hand));
     }
 
     @Override
@@ -121,7 +122,7 @@ public class KatanaItem extends Item implements Repairable, WarpingGear {
         }
         switch (inscription(stack)) {
             case 0 -> mob.igniteForSeconds(3.0F);
-            case 1 -> mob.addEffect(new MobEffectInstance(MobEffects.SLOWNESS, 140), attacker);
+            case 1 -> mob.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 140), attacker);
             case 2 -> mob.addEffect(new MobEffectInstance(MobEffects.WITHER, 60), attacker);
             default -> {
             }
@@ -134,9 +135,9 @@ public class KatanaItem extends Item implements Repairable, WarpingGear {
     }
 
     @Override
-    public boolean releaseUsing(ItemStack stack, Level level, LivingEntity entity, int timeLeft) {
+    public void releaseUsing(ItemStack stack, Level level, LivingEntity entity, int timeLeft) {
         if (!(entity instanceof Player player) || getUseDuration(stack, entity) - timeLeft < CHARGE_TICKS) {
-            return false;
+            return;
         }
         int inscription = inscription(stack);
         if (inscription < 0 || player.isShiftKeyDown()) {
@@ -144,7 +145,7 @@ public class KatanaItem extends Item implements Repairable, WarpingGear {
                 chargedStrike(server, player);
             }
             swingSound(player);
-            return true;
+            return;
         }
         if (level instanceof ServerLevel server) {
             switch (inscription) {
@@ -164,7 +165,7 @@ public class KatanaItem extends Item implements Repairable, WarpingGear {
                 Fx.get().sparkle(level, (float) (player.getX() + level.getRandom().nextGaussian() * 0.25), (float) (player.getY() + 1.0 + level.getRandom().nextGaussian() * 0.5), (float) (player.getZ() + level.getRandom().nextGaussian() * 0.25), 1.5F, 5, 0.02F);
             }
         }
-        return true;
+        return;
     }
 
     private void chargedStrike(ServerLevel level, Player player) {
@@ -174,7 +175,7 @@ public class KatanaItem extends Item implements Repairable, WarpingGear {
             return;
         }
         float multiplier = level.getRandom().nextInt(10) == 0 ? 2.5F : 1.5F;
-        target.hurtServer(level, level.damageSources().playerAttack(player), tier.damage * multiplier);
+        target.hurt(level.damageSources().playerAttack(player), tier.damage * multiplier);
     }
 
     public static java.util.List<LivingEntity> targets(Level level, Player player, double range) {
@@ -192,10 +193,10 @@ public class KatanaItem extends Item implements Repairable, WarpingGear {
 
     private void thunder(ServerLevel level, Player player) {
         for (LivingEntity entity : targets(level, player, 10.0)) {
-            entity.hurtServer(level, level.damageSources().indirectMagic(player, player), tier.damage * 0.25F);
+            entity.hurt(level.damageSources().indirectMagic(player, player), tier.damage * 0.25F);
             Vec3 away = entity.position().subtract(player.position()).normalize();
             entity.push(away.x * 5.0, 1.5, away.z * 5.0);
-            entity.needsSync = true;
+            entity.hurtMarked = true;
         }
         level.playSound(null, player.getX(), player.getY(), player.getZ(), taintedmagic.registry.ModSounds.SHOCKWAVE.get(), SoundSource.PLAYERS, 5.0F, 1.5F * (float) Math.random());
     }
@@ -206,20 +207,20 @@ public class KatanaItem extends Item implements Repairable, WarpingGear {
             entity.addEffect(new MobEffectInstance(MobEffects.WITHER, 100, 1), player);
         }
         player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 60, 1));
-        player.addEffect(new MobEffectInstance(MobEffects.RESISTANCE, 120, 1));
+        player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 120, 1));
         level.playSound(null, player.getX(), player.getY(), player.getZ(), ModSounds.WAND.get(), SoundSource.PLAYERS, 1.0F, 0.9F + (float) Math.random() * 0.1F);
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, TooltipContext context, TooltipDisplay display, Consumer<Component> builder, TooltipFlag flag) {
+    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> builder, TooltipFlag flag) {
         if (tier == Tier.VOID_METAL) {
-            builder.accept(Component.translatable("enchantment.special.sapless").withStyle(ChatFormatting.GOLD));
+            builder.add(Component.translatable("enchantment.special.sapless").withStyle(ChatFormatting.GOLD));
         } else if (tier == Tier.SHADOW_METAL) {
-            builder.accept(Component.translatable("enchantment.special.sapgreat").withStyle(ChatFormatting.GOLD));
+            builder.add(Component.translatable("enchantment.special.sapgreat").withStyle(ChatFormatting.GOLD));
         }
         int inscription = inscription(stack);
         if (inscription >= 0) {
-            builder.accept(Component.translatable("taintedmagic.text.katana.inscription." + inscription).withStyle(ChatFormatting.GOLD));
+            builder.add(Component.translatable("taintedmagic.text.katana.inscription." + inscription).withStyle(ChatFormatting.GOLD));
         }
     }
 }

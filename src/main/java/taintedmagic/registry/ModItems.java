@@ -1,11 +1,11 @@
 package taintedmagic.registry;
 
 import net.neoforged.bus.api.IEventBus;
-import net.neoforged.neoforge.registries.DeferredRegister;
+import taintedmagic.platform.TmRegistration;
 import taintedmagic.TaintedMagic;
 
 public final class ModItems {
-    public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(TaintedMagic.MODID);
+    public static final TmRegistration.Items ITEMS = new TmRegistration.Items();
 
     private ModItems() {
     }

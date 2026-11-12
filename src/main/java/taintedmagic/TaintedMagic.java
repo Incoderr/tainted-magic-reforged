@@ -1,7 +1,7 @@
 package taintedmagic;
 
 import com.mojang.logging.LogUtils;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
@@ -28,7 +28,7 @@ public class TaintedMagic {
     public static final Logger LOGGER = LogUtils.getLogger();
 
     public TaintedMagic(IEventBus modEventBus, ModContainer modContainer) {
-        modContainer.registerConfig(ModConfig.Type.SYNCED, Config.SPEC);
+        modContainer.registerConfig(ModConfig.Type.SERVER, Config.SPEC);
         modContainer.registerConfig(ModConfig.Type.STARTUP, StartupConfig.SPEC);
         Features.load();
         ModBlocks.register(modEventBus);
@@ -51,7 +51,7 @@ public class TaintedMagic {
         Features.tests(modEventBus);
     }
 
-    public static Identifier id(String path) {
-        return Identifier.fromNamespaceAndPath(MODID, path);
+    public static ResourceLocation id(String path) {
+        return ResourceLocation.fromNamespaceAndPath(MODID, path);
     }
 }

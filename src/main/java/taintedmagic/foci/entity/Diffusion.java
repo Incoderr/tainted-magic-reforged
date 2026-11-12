@@ -10,8 +10,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.ThrowableProjectile;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.storage.ValueInput;
-import net.minecraft.world.level.storage.ValueOutput;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import thaumcraft.entity.CombatUtils;
@@ -70,7 +69,7 @@ public class Diffusion extends ThrowableProjectile {
                 DamageSource source = level.damageSources().indirectMagic(this, owner);
                 for (Entity entity : level.getEntities(owner, this.getBoundingBox().inflate(1.0))) {
                     if (entity instanceof LivingEntity living) {
-                        living.hurtServer(level, source, this.damage);
+                        living.hurt(source, this.damage);
                         if (this.corrosive) {
                             living.addEffect(new MobEffectInstance(MobEffects.WITHER, 40, 1));
                         }
@@ -100,21 +99,21 @@ public class Diffusion extends ThrowableProjectile {
     }
 
     @Override
-    public boolean hurtServer(ServerLevel level, DamageSource source, float amount) {
+    public boolean hurt(DamageSource source, float amount) {
         return false;
     }
 
     @Override
-    protected void addAdditionalSaveData(ValueOutput output) {
+    protected void addAdditionalSaveData(CompoundTag output) {
         super.addAdditionalSaveData(output);
         output.putFloat("dmg", this.damage);
         output.putBoolean("corrosive", this.corrosive);
     }
 
     @Override
-    protected void readAdditionalSaveData(ValueInput input) {
+    protected void readAdditionalSaveData(CompoundTag input) {
         super.readAdditionalSaveData(input);
-        this.damage = input.getFloatOr("dmg", 0.0F);
-        this.corrosive = input.getBooleanOr("corrosive", false);
+        this.damage = input.getFloat("dmg");
+        this.corrosive = input.getBoolean("corrosive");
     }
 }

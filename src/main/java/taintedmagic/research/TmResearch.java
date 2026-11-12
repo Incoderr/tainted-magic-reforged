@@ -1,7 +1,7 @@
 package taintedmagic.research;
 
 import java.util.function.BooleanSupplier;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import thaumcraft.Thaumcraft;
 import thaumcraft.aspect.Aspect;
 import thaumcraft.aspect.AspectList;
@@ -23,7 +23,7 @@ public final class TmResearch {
         ResearchCategories.registerCategory(CATEGORY, TaintedMagic.id("textures/misc/tab_tm.png"), background());
     }
 
-    static Identifier background() {
+    static ResourceLocation background() {
         return StartupConfig.customResearchTabBack()
             ? TaintedMagic.id("textures/gui/gui_tm_researchback.png")
             : Thaumcraft.id("textures/gui/gui_researchback.png");
@@ -51,11 +51,11 @@ public final class TmResearch {
         return new TmResearchItem(key, tags, column, row, complexity, icon).warp(warp);
     }
 
-    public static TmResearchItem item(String key, AspectList tags, int column, int row, Identifier icon, int complexity, int warp) {
+    public static TmResearchItem item(String key, AspectList tags, int column, int row, ResourceLocation icon, int complexity, int warp) {
         return new TmResearchItem(key, tags, column, row, complexity, icon).warp(warp);
     }
 
-    public static TmLinkedResearchItem link(String key, String original, String originalCategory, int column, int row, Identifier icon) {
+    public static TmLinkedResearchItem link(String key, String original, String originalCategory, int column, int row, ResourceLocation icon) {
         return new TmLinkedResearchItem(key, original, originalCategory, column, row, icon);
     }
 

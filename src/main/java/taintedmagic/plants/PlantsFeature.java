@@ -22,10 +22,10 @@ public final class PlantsFeature {
         NightshadeBushBlock::new,
         properties -> properties
             .mapColor(MapColor.PLANT)
-            .noCollision()
+            .noCollission()
             .instabreak()
             .sound(SoundType.GRASS)
-            .pushReaction(PushReaction.POPPED)
+            .pushReaction(PushReaction.DESTROY)
     ));
     public static final DeferredItem<NightshadeBerriesItem> NIGHTSHADE_BERRIES = ModItems.ITEMS.registerItem(
         "nightshade_berries",

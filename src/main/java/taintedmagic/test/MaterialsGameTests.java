@@ -5,10 +5,9 @@ import net.minecraft.core.Holder;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.gametest.framework.GameTestHelper;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.world.clock.WorldClock;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Rarity;
-import net.minecraft.world.level.saveddata.WeatherData;
+import net.minecraft.world.level.storage.ServerLevelData;
 import net.neoforged.bus.api.IEventBus;
 import taintedmagic.materials.MaterialsFeature;
 import taintedmagic.materials.SalisItem;
@@ -45,7 +44,7 @@ public final class MaterialsGameTests {
 
     private static void salisTempestasTogglesWeather(GameTestHelper helper) {
         ServerLevel level = helper.getLevel();
-        WeatherData weather = level.getWeatherData();
+        ServerLevelData weather = (ServerLevelData) level.getLevelData();
         boolean before = weather.isRaining();
         SalisItem.toggleWeather(level);
         helper.assertValueEqual(weather.isRaining(), !before, "rain after the first toggle");
@@ -57,12 +56,10 @@ public final class MaterialsGameTests {
 
     private static void salisAevumSkipsToDayOrNight(GameTestHelper helper) {
         ServerLevel level = helper.getLevel();
-        Holder<WorldClock> clock = level.dimensionTypeRegistration().value().defaultClock().orElseThrow();
-        var clocks = level.getServer().clockManager();
-        long before = clocks.getInstance(clock).totalTicks();
+        long before = level.getDayTime();
         SalisItem.skipToDayOrNight(level);
-        long after = clocks.getInstance(clock).totalTicks();
-        clocks.setTotalTicks(clock, before);
+        long after = level.getDayTime();
+        level.setDayTime(before);
         helper.assertTrue(after > before, "time did not move forward");
         helper.assertTrue(after % 24000 == 14000 || after % 24000 == 0, "time stopped at " + after % 24000);
         helper.succeed();

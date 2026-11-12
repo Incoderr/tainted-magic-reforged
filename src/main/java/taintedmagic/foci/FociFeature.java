@@ -40,13 +40,13 @@ public final class FociFeature {
         LumosBlock::new,
         properties -> properties
             .mapColor(MapColor.NONE)
-            .noCollision()
+            .noCollission()
             .instabreak()
             .replaceable()
             .noLootTable()
             .lightLevel(state -> 15)
             .sound(SoundType.STONE)
-            .pushReaction(PushReaction.POPPED)
+            .pushReaction(PushReaction.DESTROY)
     );
 
     public static final DeferredHolder<EntityType<?>, EntityType<DarkMatter>> DARK_MATTER = ModEntities.projectile("dark_matter", DarkMatter::new, 0.5F);
