@@ -38,7 +38,8 @@ public final class ArmorGameTests {
         .add("sash_speed_defaults_on", ArmorGameTests::sashSpeedDefaultsOn)
         .add("gate_key_needs_space", ArmorGameTests::gateKeyNeedsSpace)
         .add("flyte_charm_allows_flight", ArmorGameTests::flyteCharmAllowsFlight)
-        .add("lumos_ring_gives_night_vision", ArmorGameTests::lumosRingGivesNightVision);
+        .add("lumos_ring_gives_night_vision", ArmorGameTests::lumosRingGivesNightVision)
+        .add("special_armor_matches_tm", ArmorGameTests::specialArmorMatchesTm);
 
     private ArmorGameTests() {
     }
@@ -147,6 +148,26 @@ public final class ArmorGameTests {
         FlyteCharmItem.tick(player);
         helper.assertTrue(!player.getAbilities().mayfly, "flight stayed without the charm");
         FlyteCharmItem.forget(player);
+        helper.succeed();
+    }
+
+    private static void close(GameTestHelper helper, double expected, double actual, String label) {
+        helper.assertTrue(Math.abs(expected - actual) < 1.0E-6, label + " expected " + expected + " but was " + actual);
+    }
+
+    private static void specialArmorMatchesTm(GameTestHelper helper) {
+        Player player = helper.makeMockPlayer(GameType.SURVIVAL);
+        var sources = helper.getLevel().damageSources();
+        player.setItemSlot(EquipmentSlot.FEET, new ItemStack(ArmorFeature.VOIDWALKER_BOOTS.get()));
+        close(helper, 4.0 / 90.0 - 4.0 / 25.0, ArmorEvents.specialArmorDelta(player, sources.cactus()), "boots generic");
+        close(helper, 4.0 / 80.0, ArmorEvents.specialArmorDelta(player, sources.onFire()), "boots burning");
+        close(helper, 4.0 / 80.0, ArmorEvents.specialArmorDelta(player, sources.magic()), "boots magic");
+        player.setItemSlot(EquipmentSlot.FEET, ItemStack.EMPTY);
+        player.setItemSlot(EquipmentSlot.HEAD, new ItemStack(ArmorFeature.SHADOW_FORTRESS_HELMET.get()));
+        player.setItemSlot(EquipmentSlot.CHEST, new ItemStack(ArmorFeature.SHADOW_FORTRESS_CHESTPLATE.get()));
+        player.setItemSlot(EquipmentSlot.LEGS, new ItemStack(ArmorFeature.SHADOW_FORTRESS_LEGGINGS.get()));
+        close(helper, 20.0 / 25.0 * (1.2 - 1.25), ArmorEvents.specialArmorDelta(player, sources.cactus()), "shadow set generic");
+        close(helper, 20.0 / 35.0 * (1.2 - 1.25), ArmorEvents.specialArmorDelta(player, sources.magic()), "shadow set magic");
         helper.succeed();
     }
 

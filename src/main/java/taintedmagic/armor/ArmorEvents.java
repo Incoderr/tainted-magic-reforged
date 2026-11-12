@@ -113,6 +113,55 @@ public final class ArmorEvents {
     }
 
     @SubscribeEvent
+    static void damage(net.neoforged.neoforge.event.entity.living.LivingDamageEvent.Pre event) {
+        double delta = specialArmorDelta(event.getEntity(), event.getSource());
+        if (delta != 0.0) {
+            event.setNewDamage((float) (event.getNewDamage() * (1.0 - delta)));
+        }
+    }
+
+    public static double specialArmorDelta(net.minecraft.world.entity.LivingEntity entity, net.minecraft.world.damagesource.DamageSource source) {
+        boolean magic = source.is(net.minecraft.world.damagesource.DamageTypes.MAGIC) || source.is(net.minecraft.world.damagesource.DamageTypes.INDIRECT_MAGIC);
+        boolean fire = source.is(net.minecraft.tags.DamageTypeTags.IS_FIRE) || source.is(net.minecraft.tags.DamageTypeTags.IS_EXPLOSION);
+        boolean bypass = source.is(net.minecraft.tags.DamageTypeTags.BYPASSES_ARMOR);
+        double delta = 0.0;
+        if (entity.getItemBySlot(EquipmentSlot.FEET).is(ArmorFeature.VOIDWALKER_BOOTS.get())) {
+            double defense = ArmorFeature.VOIDWALKER.bootsDefense();
+            double tm = magic || fire ? defense / 80.0 : bypass ? 0.0 : defense / 90.0;
+            double vanilla = bypass ? 0.0 : defense / 25.0;
+            delta += tm - vanilla;
+        }
+        if (bypass && !magic && !fire) {
+            return delta;
+        }
+        int pieces = 0;
+        int masks = 0;
+        double shadow = 0.0;
+        for (EquipmentSlot slot : new EquipmentSlot[] {EquipmentSlot.HEAD, EquipmentSlot.CHEST, EquipmentSlot.LEGS}) {
+            ItemStack piece = entity.getItemBySlot(slot);
+            if (piece.getItem() instanceof thaumcraft.item.armor.FortressArmorItem) {
+                pieces++;
+                if (thaumcraft.item.armor.FortressArmorItem.hasMask(piece)) {
+                    masks++;
+                }
+                if (piece.getItem() instanceof ShadowFortressArmorItem) {
+                    shadow += ArmorFeature.SHADOW_FORTRESS.defense(switch (slot) {
+                        case HEAD -> thaumcraft.platform.ArmorSlot.HELMET;
+                        case CHEST -> thaumcraft.platform.ArmorSlot.CHESTPLATE;
+                        default -> thaumcraft.platform.ArmorSlot.LEGGINGS;
+                    });
+                }
+            }
+        }
+        if (shadow > 0.0) {
+            double divisor = magic ? 35.0 : fire ? 20.0 : 25.0;
+            double tmSet = 0.75 + 0.15 * pieces + 0.05 * masks;
+            delta += shadow / divisor * (tmSet - thaumcraft.item.armor.ArmorEvents.fortressSet(entity));
+        }
+        return delta;
+    }
+
+    @SubscribeEvent
     static void logout(PlayerEvent.PlayerLoggedOutEvent event) {
         FlyteCharmItem.forget(event.getEntity());
     }
