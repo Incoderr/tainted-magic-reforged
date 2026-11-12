@@ -56,8 +56,8 @@ DISPLAY = {
     "gui": {"rotation": [0, 0, -45], "translation": [0, 0, 0], "scale": [0.55, 0.55, 0.55]},
     "ground": {"rotation": [0, 0, 0], "translation": [0, 2, 0], "scale": [0.5, 0.5, 0.5]},
     "fixed": {"rotation": [0, 0, -45], "translation": [0, 0, 0], "scale": [0.6, 0.6, 0.6]},
-    "thirdperson_righthand": {"rotation": [0, 90, 0], "translation": [0, 3, 1], "scale": [1.0, 1.0, 1.0]},
-    "thirdperson_lefthand": {"rotation": [0, -90, 0], "translation": [0, 3, 1], "scale": [1.0, 1.0, 1.0]},
+    "thirdperson_righthand": {"rotation": [0, 0, 0], "translation": [0, 3, 1], "scale": [1.0, 1.0, 1.0]},
+    "thirdperson_lefthand": {"rotation": [0, 0, 0], "translation": [0, 3, 1], "scale": [1.0, 1.0, 1.0]},
     "firstperson_righthand": {"rotation": [-35, 0, 0], "translation": [1.5, -1.5, -2.0], "scale": [0.7, 0.7, 0.7]},
     "firstperson_lefthand": {"rotation": [-35, 0, 0], "translation": [-1.5, -1.5, -2.0], "scale": [0.7, 0.7, 0.7]},
 }
