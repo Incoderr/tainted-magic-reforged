@@ -62,8 +62,8 @@ DISPLAY = {
     "firstperson_lefthand": {"rotation": [-35, 0, 0], "translation": [-1.5, -1.5, -2.0], "scale": [0.7, 0.7, 0.7]},
 }
 CHARGING = dict(DISPLAY)
-CHARGING["firstperson_righthand"] = {"rotation": [-75, 0, 0], "translation": [1.5, -1.0, -2.0], "scale": [0.7, 0.7, 0.7]}
-CHARGING["firstperson_lefthand"] = {"rotation": [-75, 0, 0], "translation": [-1.5, -1.0, -2.0], "scale": [0.7, 0.7, 0.7]}
+CHARGING["firstperson_righthand"] = {"rotation": [-15, 0, 0], "translation": [1.5, -3.5, 2.0], "scale": [0.7, 0.7, 0.7]}
+CHARGING["firstperson_lefthand"] = {"rotation": [-15, 0, 0], "translation": [-1.5, -3.5, 2.0], "scale": [0.7, 0.7, 0.7]}
 
 
 def generate(ctx):

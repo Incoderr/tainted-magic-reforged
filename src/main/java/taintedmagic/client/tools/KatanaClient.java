@@ -43,6 +43,7 @@ import taintedmagic.tools.KatanaItem;
 public final class KatanaClient {
     private static final ModelLayerLocation KATANA_LAYER = new ModelLayerLocation(TaintedMagic.id("katana"), "main");
     private static final ModelLayerLocation SAYA_LAYER = new ModelLayerLocation(TaintedMagic.id("saya"), "main");
+    private static final Identifier CIRCLE = TaintedMagic.id("textures/misc/circle.png");
     private static final Identifier SCRIPT = Thaumcraft.id("textures/misc/script.png");
     private static ModelPart katana;
     private static ModelPart saya;
@@ -110,6 +111,9 @@ public final class KatanaClient {
             if (!(entity instanceof Player player)) {
                 return;
             }
+            if (player.getData(ModAttachments.FLYTE_CHARM)) {
+                circle(poseStack, collector, state.ageInTicks);
+            }
             ItemStack stack = player.getData(ModAttachments.HIP_KATANA);
             if (stack.isEmpty()) {
                 return;
@@ -126,6 +130,24 @@ public final class KatanaClient {
             }
             poseStack.popPose();
         }
+    }
+
+    private static void circle(PoseStack poseStack, SubmitNodeCollector collector, float age) {
+        poseStack.pushPose();
+        poseStack.rotate(new org.joml.Quaternionf().rotationAxis((float) Math.toRadians(45.0), -0.70710677F, 0.0F, -0.70710677F));
+        poseStack.translate(0.0F, -0.5F, -0.2F);
+        poseStack.scale(0.4F, 0.4F, 0.4F);
+        poseStack.rotateDegrees(Axis.YP, age);
+        collector.submitCustomGeometry(poseStack, TcRenderTypes.entityTranslucent(CIRCLE), (pose, buffer) -> {
+            thaumcraft.client.platform.EntityQuadSink sink = new thaumcraft.client.platform.EntityQuadSink(pose, buffer);
+            int color = 0xCCFFFFFF;
+            int light = 0xF000F0;
+            sink.vertex(-1.0F, 0.0F, -1.0F, 0.0F, 0.0F, color, light);
+            sink.vertex(-1.0F, 0.0F, 1.0F, 0.0F, 1.0F, color, light);
+            sink.vertex(1.0F, 0.0F, 1.0F, 1.0F, 1.0F, color, light);
+            sink.vertex(1.0F, 0.0F, -1.0F, 1.0F, 0.0F, color, light);
+        });
+        poseStack.popPose();
     }
 
     private static void registerGuiLayers(RegisterGuiLayersEvent event) {

@@ -16,6 +16,11 @@ public final class ModAttachments {
         .sync(ItemStack.OPTIONAL_STREAM_CODEC)
         .build());
 
+    public static final DeferredHolder<AttachmentType<?>, AttachmentType<Boolean>> FLYTE_CHARM = ATTACHMENTS.register("flyte_charm", () -> AttachmentType
+        .builder(() -> false)
+        .sync(net.minecraft.network.codec.ByteBufCodecs.BOOL)
+        .build());
+
     private ModAttachments() {
     }
 
