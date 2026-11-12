@@ -4,6 +4,6 @@ plants
 wands
 foci
 armor
-stubs
+tools
 recipes
 testing
