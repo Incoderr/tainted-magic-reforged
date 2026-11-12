@@ -1,10 +1,4 @@
 ITEMS = [
-    "focus_taint_swarm",
-    "focus_dark_matter",
-    "focus_mage_mace",
-    "focus_shockwave",
-    "focus_vis_shard",
-    "focus_lumos",
     "warped_goggles",
     "void_metal_goggles",
     "void_fortress_helmet",

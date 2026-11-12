@@ -12,6 +12,8 @@ import taintedmagic.crafting.TmRecipeBook;
 import taintedmagic.registry.ModBlocks;
 import taintedmagic.research.TmResearchTree;
 import taintedmagic.registry.ModCreativeTabs;
+import taintedmagic.registry.ModEntities;
+import taintedmagic.registry.ModSounds;
 import taintedmagic.registry.ModItems;
 import taintedmagic.research.TmResearch;
 import taintedmagic.test.CoreGameTests;
@@ -30,6 +32,8 @@ public class TaintedMagic {
         ModBlocks.register(modEventBus);
         ModItems.register(modEventBus);
         ModCreativeTabs.register(modEventBus);
+        ModEntities.register(modEventBus);
+        ModSounds.register(modEventBus);
         TmResearch.init();
         TmRecipeBook.register();
         Features.recipes();

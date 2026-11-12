@@ -1,6 +1,7 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "taintedmagic:item/focus_dark_matter"
+    "layer0": "thaumcraft:item/focus_warding_orn",
+    "layer1": "taintedmagic:item/focus_dark_matter"
   }
 }

@@ -2,6 +2,7 @@ materials
 warpwood
 plants
 wands
+foci
 stubs
 recipes
 testing

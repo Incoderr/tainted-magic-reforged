@@ -11,6 +11,21 @@ public interface TmFx {
     default void wispBurst(Level level, BlockPos pos, int count) {
     }
 
+    default void lumosPlace(Level level, BlockPos pos) {
+    }
+
+    default void lumosBreak(Level level, BlockPos pos) {
+    }
+
+    default void lumosGlow(Level level, BlockPos pos) {
+    }
+
+    default void shardCast(Level level, double x, double y, double z) {
+    }
+
+    default void diffusionBurst(Level level, double x, double y, double z) {
+    }
+
     static TmFx get() {
         return Holder.fx;
     }
