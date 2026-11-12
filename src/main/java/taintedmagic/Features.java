@@ -9,6 +9,7 @@ import taintedmagic.tools.ToolsFeature;
 import taintedmagic.wands.WandsFeature;
 import taintedmagic.plants.PlantsFeature;
 import taintedmagic.test.MaterialsGameTests;
+import taintedmagic.test.ArmorGameTests;
 import taintedmagic.test.FociGameTests;
 import taintedmagic.test.PlantsGameTests;
 import taintedmagic.test.WandsGameTests;
@@ -44,5 +45,6 @@ public final class Features {
         PlantsGameTests.register(modEventBus);
         WandsGameTests.register(modEventBus);
         FociGameTests.register(modEventBus);
+        ArmorGameTests.register(modEventBus);
     }
 }

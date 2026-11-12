@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "taintedmagic:shadow_fortress"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "taintedmagic:shadow_fortress"
+      }
+    ]
+  }
+}

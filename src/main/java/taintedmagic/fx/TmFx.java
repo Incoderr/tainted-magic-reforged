@@ -26,6 +26,12 @@ public interface TmFx {
     default void diffusionBurst(Level level, double x, double y, double z) {
     }
 
+    default void gateSparkle(Level level, double x, double y, double z) {
+    }
+
+    default void voidwalkerTrail(Entity entity) {
+    }
+
     static TmFx get() {
         return Holder.fx;
     }

@@ -17,6 +17,7 @@ public final class ClientFeatures {
         TmFx.set(new TmClientFx());
         TmResearch.setTags(TmClientConfig::researchTags);
         modEventBus.addListener(ClientFeatures::registerRenderers);
+        taintedmagic.client.armor.ArmorClient.init(modEventBus);
     }
 
     private static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {

@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "taintedmagic:shadow_fortress_leggings",
+      "required": false
+    },
+    {
+      "id": "taintedmagic:void_fortress_leggings",
+      "required": false
+    }
+  ]
+}

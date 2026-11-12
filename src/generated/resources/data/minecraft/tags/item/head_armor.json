@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "taintedmagic:shadow_fortress_helmet",
+      "required": false
+    },
+    {
+      "id": "taintedmagic:void_fortress_helmet",
+      "required": false
+    },
+    {
+      "id": "taintedmagic:void_metal_goggles",
+      "required": false
+    },
+    {
+      "id": "taintedmagic:warped_goggles",
+      "required": false
+    }
+  ]
+}

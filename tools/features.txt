@@ -3,6 +3,7 @@ warpwood
 plants
 wands
 foci
+armor
 stubs
 recipes
 testing

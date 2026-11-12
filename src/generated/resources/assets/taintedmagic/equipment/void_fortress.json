@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "taintedmagic:void_fortress"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "taintedmagic:void_fortress"
+      }
+    ]
+  }
+}

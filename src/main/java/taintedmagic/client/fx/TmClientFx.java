@@ -94,6 +94,28 @@ public final class TmClientFx implements TmFx {
     }
 
     @Override
+    public void gateSparkle(Level level, double x, double y, double z) {
+        RandomSource random = level.getRandom();
+        sparkle(random, x + 0.33F * random.nextGaussian(), y + 0.5 + random.nextFloat(), z + 0.33F * random.nextGaussian(), 6, 3 + random.nextInt(3), 0.1F);
+    }
+
+    @Override
+    public void voidwalkerTrail(Entity entity) {
+        RandomSource random = entity.level().getRandom();
+        WispFx fx = new WispFx(
+            random,
+            entity.getX() + (Math.random() - Math.random()) * 0.5,
+            entity.getBoundingBox().minY + 0.05 + (Math.random() - Math.random()) * 0.1,
+            entity.getZ() + (Math.random() - Math.random()) * 0.5,
+            0.6F,
+            0,
+            null
+        ).shrink(true);
+        fx.color(0.5F, 0.0F, 0.6F);
+        WorldFxRenderer.add(fx);
+    }
+
+    @Override
     public void wispBurst(Level level, BlockPos pos, int count) {
         RandomSource random = level.getRandom();
         for (int index = 0; index < count; index++) {
