@@ -20,6 +20,7 @@ BOXES = [
     ((0, 0), (-0.5, -40.0, -2.0), (1, 48, 4), -0.75),
     ((0, 52), (-2.5, -40.0, -3.5), (5, 1, 7), 0.0),
 ]
+SAYA = [((10, 0), (-1.0, -39.5, -2.0), (2, 48, 4), 0.0)]
 SCALE = 0.4
 OFFSET_Y = 26.4
 
@@ -57,9 +58,12 @@ DISPLAY = {
     "fixed": {"rotation": [0, 0, -45], "translation": [0, 0, 0], "scale": [0.6, 0.6, 0.6]},
     "thirdperson_righthand": {"rotation": [0, 90, 0], "translation": [0, 3, 1], "scale": [1.0, 1.0, 1.0]},
     "thirdperson_lefthand": {"rotation": [0, -90, 0], "translation": [0, 3, 1], "scale": [1.0, 1.0, 1.0]},
-    "firstperson_righthand": {"rotation": [0, -90, 25], "translation": [1.13, 3.2, 1.13], "scale": [0.8, 0.8, 0.8]},
-    "firstperson_lefthand": {"rotation": [0, 90, -25], "translation": [1.13, 3.2, 1.13], "scale": [0.8, 0.8, 0.8]},
+    "firstperson_righthand": {"rotation": [0, -90, 50], "translation": [1.5, 0.5, 0.5], "scale": [0.7, 0.7, 0.7]},
+    "firstperson_lefthand": {"rotation": [0, 90, -50], "translation": [1.5, 0.5, 0.5], "scale": [0.7, 0.7, 0.7]},
 }
+CHARGING = dict(DISPLAY)
+CHARGING["firstperson_righthand"] = {"rotation": [-15, 155, 70], "translation": [3.0, 0.5, -1.0], "scale": [0.7, 0.7, 0.7]}
+CHARGING["firstperson_lefthand"] = {"rotation": [-15, -155, -70], "translation": [3.0, 0.5, -1.0], "scale": [0.7, 0.7, 0.7]}
 
 
 def generate(ctx):
@@ -70,9 +74,26 @@ def generate(ctx):
         destination.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(ctx.SOURCE_TEXTURES / "models" / f"{source}.png", destination)
         texture = f"{ctx.NS}:item/{name}"
-        ctx.item_model(name, {
-            "textures": {"katana": texture, "particle": texture},
-            "elements": [element(*box) for box in BOXES],
-            "display": DISPLAY,
-        })
-        ctx.item_definition(name, f"{ctx.NS}:item/{name}")
+        models = {
+            name: (BOXES, DISPLAY),
+            f"{name}_charging": (BOXES, CHARGING),
+            f"{name}_sheathed": (BOXES + SAYA, DISPLAY),
+        }
+        for model, (boxes, display) in models.items():
+            ctx.item_model(model, {
+                "textures": {"katana": texture, "particle": texture},
+                "elements": [element(*box) for box in boxes],
+                "display": display,
+            })
+        ref = lambda model: {"type": "minecraft:model", "model": f"{ctx.NS}:item/{model}"}
+        ctx.write(ctx.ASSETS / "items" / f"{name}.json", {"model": {
+            "type": "minecraft:select",
+            "property": "minecraft:display_context",
+            "cases": [{"when": ["gui", "ground", "fixed"], "model": ref(f"{name}_sheathed")}],
+            "fallback": {
+                "type": "minecraft:condition",
+                "property": "minecraft:using_item",
+                "on_true": ref(f"{name}_charging"),
+                "on_false": ref(name),
+            },
+        }})

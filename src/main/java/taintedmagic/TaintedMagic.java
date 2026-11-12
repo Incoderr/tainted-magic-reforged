@@ -36,6 +36,7 @@ public class TaintedMagic {
         ModCreativeTabs.register(modEventBus);
         ModEntities.register(modEventBus);
         ModSounds.register(modEventBus);
+        taintedmagic.platform.ModAttachments.register(modEventBus);
         ModRecipes.register(modEventBus);
         TmStackData.register(modEventBus);
         TmResearch.init();

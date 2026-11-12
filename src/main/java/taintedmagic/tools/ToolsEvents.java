@@ -27,6 +27,28 @@ public final class ToolsEvents {
         }
     }
 
+    public static ItemStack hipKatana(Player player) {
+        for (ItemStack stack : player.getInventory().getNonEquipmentItems()) {
+            if (stack.getItem() instanceof KatanaItem) {
+                return stack;
+            }
+        }
+        return ItemStack.EMPTY;
+    }
+
+    @SubscribeEvent
+    static void playerTick(net.neoforged.neoforge.event.tick.PlayerTickEvent.Post event) {
+        Player player = event.getEntity();
+        if (player.level().isClientSide()) {
+            return;
+        }
+        ItemStack found = hipKatana(player);
+        ItemStack current = player.getData(taintedmagic.platform.ModAttachments.HIP_KATANA);
+        if (found.getItem() != current.getItem() || KatanaItem.inscription(found) != KatanaItem.inscription(current)) {
+            player.setData(taintedmagic.platform.ModAttachments.HIP_KATANA, found.copyWithCount(1));
+        }
+    }
+
     @SubscribeEvent
     static void hurt(LivingDamageEvent.Post event) {
         if (!event.getEntity().level().isClientSide()

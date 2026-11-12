@@ -1,6 +1,31 @@
 {
   "model": {
-    "type": "minecraft:model",
-    "model": "taintedmagic:item/shadow_metal_katana"
+    "type": "minecraft:select",
+    "property": "minecraft:display_context",
+    "cases": [
+      {
+        "when": [
+          "gui",
+          "ground",
+          "fixed"
+        ],
+        "model": {
+          "type": "minecraft:model",
+          "model": "taintedmagic:item/shadow_metal_katana_sheathed"
+        }
+      }
+    ],
+    "fallback": {
+      "type": "minecraft:condition",
+      "property": "minecraft:using_item",
+      "on_true": {
+        "type": "minecraft:model",
+        "model": "taintedmagic:item/shadow_metal_katana_charging"
+      },
+      "on_false": {
+        "type": "minecraft:model",
+        "model": "taintedmagic:item/shadow_metal_katana"
+      }
+    }
   }
 }

@@ -18,6 +18,7 @@ public final class ClientFeatures {
         TmResearch.setTags(TmClientConfig::researchTags);
         modEventBus.addListener(ClientFeatures::registerRenderers);
         taintedmagic.client.armor.ArmorClient.init(modEventBus);
+        taintedmagic.client.tools.KatanaClient.init(modEventBus);
     }
 
     private static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
